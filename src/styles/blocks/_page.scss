@@ -1,0 +1,13 @@
+//@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+[class*="page__"] {
+    @include adaptive-clamp("padding-top", 75, 35);
+    @include adaptive-clamp("padding-bottom", 75, 35);
+}
+.page {
+    &__welcome {}
+    &__visiting {}
+    &__explore {}
+    &__video {}
+}

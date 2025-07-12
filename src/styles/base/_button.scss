@@ -1,0 +1,60 @@
+//@use "sass:math" as math;
+@use './../config/css-variables' as *;
+//@use './../config/functions' as *;
+@use './../config/mixins' as *;
+/* .button {
+    border-radius: rem(8);
+    text-align: center;
+    padding-block: rem(16);
+    padding-inline: rem(40);
+
+    font-weight: 500;
+    font-size: rem(20);
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    background-color: var(--c-purple);
+    color: var(--c-white);
+    
+    transition: all 0.3s;
+    @media (any-hover: hover){
+        &:hover{
+        }
+    }   
+} */
+
+.btn {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 36px;
+    padding-block: 16px;
+    border-radius: 2px;
+    background-color: var(--c-dark);
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.09em;
+    text-align: center;
+    color: var(--c-white);
+    transition: all 0.3s;
+    @media (any-hover: hover){
+        &:hover{
+            background-color: var(--c-font-gold);
+            color: var(--c-dark);
+        }
+    }
+
+    &--accent {
+        padding-block: 26px;
+        padding-inline: 64px;
+        background-color: var(--c-dark-red);
+        border-radius: 10px;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: var(--c-font-gold);
+                color: var(--c-white);
+            }
+        }
+    }
+}
+

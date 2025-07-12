@@ -1,0 +1,76 @@
+//@use "sass:math" as math;
+//@use "../config/variables" as global;
+// @use "../config/functions" as *;
+@use "../config/mixins" as *;
+//@use '../config/root' as *;
+
+.visiting {
+
+		&__container {
+		}
+		&__header-block {
+      &:not(:last-child) {
+        margin-bottom: 75px;
+      }
+		}
+		&__title {
+		}
+		&__cards {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 20px;
+      //display: grid;
+      //grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      //@include adaptive-clamp("column-gap", 40, 20);
+      @include adaptive-clamp("row-gap", 60, 20);
+		}
+		&__card {
+		}
+}
+
+.card-visiting {
+    color: var(--c-dark);
+     transition: all 0.3s;
+    @media (any-hover: hover){
+      &:hover{
+        filter: grayscale(50%);
+      }
+    } 
+    &__image {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    &__img {
+    }
+    &__title {
+      font-family: var(--ff-secondary);
+      font-weight: 400;
+      font-size: 32px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+      &::before{
+        position: absolute;
+        content:'';
+        bottom: -10px;
+        left: 0;
+        height: 2px;
+        width: 68%;
+        background-color: var(--c-dark-red);
+      }
+    }
+    &__google {
+      font-size: 18px;
+    }
+    &__descr {
+      font-weight: 100;
+      font-size: 22px;
+    }
+}
+

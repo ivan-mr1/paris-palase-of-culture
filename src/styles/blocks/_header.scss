@@ -1,0 +1,63 @@
+// @use './../base/header-fon';
+ @use './../base/burger';
+ @use './../base/menu-header';
+
+//@use "sass:math" as math;
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+@use "../config/variables" as global;
+
+.header {
+	//position: fixed;
+    position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+    background-color: var(--c-bg-body-dark);
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+        @include adaptive-clamp("column-gap", 20, 15);
+        @include adaptive-clamp("padding-top", 62, 20);
+        @include adaptive-clamp("padding-bottom", 62, 20);
+	}
+    &__logo {
+    }
+
+    &__menu {
+    }
+}
+.menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: rem(10);
+        column-gap: 55px;
+        @media (max-width: em(1300)){
+            column-gap: 30px;              
+        }
+        @media (max-width: em(1200)){
+            column-gap: 10px;              
+        }
+        //@include adaptive-clamp("column-gap", 55, 15, 760, 0);
+		@media (max-width:em(1024.98)){
+			flex-direction: column;
+			gap: rem(20);
+	  }
+	}
+    &__body {
+    }
+    &__item {
+    }
+    &__link {
+        font-weight: 100;
+        font-size: 22px;
+        letter-spacing: 0.09em;
+        color: #fff;
+    }
+    &__icon {
+    }
+} 

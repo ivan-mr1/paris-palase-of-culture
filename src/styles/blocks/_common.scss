@@ -1,0 +1,72 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+@use '../config/css-variables' as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  &--img {
+  }
+  &--text {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #fff;
+    transform: 0.3s all;
+    @media (any-hover: hover){
+      &:hover{
+        color: var(--c-font-gold);
+      }
+    }
+  }
+}
+//=============================
+.header-block {
+  &__title {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 1.125;
+    letter-spacing: 0.06em;
+    color: var(--c-font-gold);
+    text-transform: uppercase; 
+    &:not(:last-child) {
+      margin-bottom: 25px;//welcome section and long line
+    }   
+    &--white {
+        color: var(--c-white);
+    }
+    @media (max-width: em(1024)){
+        font-size: 50px; 
+    }
+    @media (max-width: em(767.98)){
+        font-size: 40px;
+    }
+    @media (max-width: em(450)){
+        font-size: 28px;
+    }
+  }
+  &__subtitle {
+    font-family: var(--ff-primary);
+    color: var(--second-color);
+  }
+  &__line {
+    background-color: #710707;
+    height: 3px;
+    width: 100%;
+  }
+}
+//=============================
+.color-span {
+  color: var(--c-yellow-first);
+}
+//=============================
+
+//=============================
+
+//=============================
+
+//=============================

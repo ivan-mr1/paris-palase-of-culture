@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>museum</title>
+  <link rel="stylesheet" href="styles/main.scss">
+  <script defer type="module" src="js/app.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="#" data-goto=".hero" class="header__logo logo">
+          <img class="logo--img" src="assets/img/logo-header.svg" alt="logo museum">
+          <div class="logo--text">Louvre</div>
+        </a>
+        <div class="header__menu menu">
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li class="menu__item"><a href="#" data-goto=".visiting" class="menu__link hover-link2">Visiting</a></li>
+              <li class="menu__item"><a href="#" data-goto=".explore" class="menu__link hover-link2">Explore</a></li>
+              <li class="menu__item"><a href="#" data-goto=".video" class="menu__link hover-link2">Video</a></li>
+              <li class="menu__item"><a href="#" data-goto=".gallery" class="menu__link hover-link2">Gallery</a></li>
+              <li class="menu__item"><a href="#" data-goto=".tickets" class="menu__link hover-link2">Tickets</a></li>
+              <li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link hover-link2">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+        <button type="button" class="menu__icon icon-menu"><span></span></button>
+      </div>
+    </header>
+    <main class="page">
+      <section id="welcome" class="page__welcome welcome">
+        <div class="welcome__container">
+          <div class="welcome__content">
+            <div class="welcome__header-block header-block">
+              <h1 class="welcome__title header-block__title header-block__title--white">Welcome <br>to the Louvre</h1>
+              <div class="welcome__subtitle">
+                <p>From the castle to the museum</p>
+              </div>
+            </div>
+            <div class="welcome__action">
+              <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+                class="welcome__btn btn btn--accent" target="_blank">Discover the Louvre</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="visiting" class="page__visiting visiting">
+        <div class="visiting__container">
+          <div class="visiting__header-block header-block">
+            <h2 class="visiting__title header-block__title">Virtual tour</h2>
+            <div class="header-block__line"></div>
+          </div>
+          <ul class="visiting__cards">
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/1.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Royal Palace</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/2.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Denon Wing</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/3.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Colonnade Perrault</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/4.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Greek hall</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/5.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Mona Lisa</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+            <li class="visiting__card card-visiting"><a
+                href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652"
+                class="visiting__card card-visiting" target="_blank">
+                <div class="card-visiting__image"><img src="assets/img/visiting/6.jpg" alt="photo museum"
+                    class="card-visiting__img" width="440" height="285" loading="lazy"></div>
+                <h3 class="card-visiting__title">Night Palace</h3>
+                <div class="card-visiting__descr">
+                  <p>360° Virtual Tour</p>
+                  <p class="card-visiting__google">Google Street Panorama View</p>
+                </div>
+              </a></li>
+
+          </ul>
+        </div>
+      </section>
+
+      <section id="explore" class="page__explore explore">
+        <div class="explore__container">
+          <div class="explore__content">
+            <div class="explore__header-block header-block">
+              <h2 class="explore__title header-block__title header-block__title--white">Picture explore</h2>
+              <div class="header-block__line"></div>
+            </div>
+            <div class="explore__text">
+              <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+              <p>It was cleaned in 1984 to remove a <span class="color-span">"yellow veil"</span> of dust that had
+                gathered since the previous restoration in the 19th century.</p>
+              <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but
+                because it looked different.</p>
+            </div>
+          </div>
+          <div class="explore__images">
+            <img src="assets/img/explore-slider/after.jpg" alt="slider">
+          </div>
+        </div>
+      </section>
+
+      <section class="page__video video" id="video">
+        <div class="video__container">
+          <div class="video__header-block header-block">
+            <h2 class="video__title header-block__title">Video journey</h2>
+            <div class="video__subtitle header-block__subtitle">
+              <p>Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or
+                Hammurabi's Code</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="page__gallery gallery">
+        <div class="gallery__container">
+        </div>
+      </section>
+
+      <section id="tickets" class="page__tickets tickets">
+        <div class="tickets__container">
+        </div>
+      </section>
+
+      <section id="contacts" class="page__contacts contacts">
+        <div class="contacts__container">
+        </div>
+      </section>
+
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer__container">
+      </div>
+    </footer>
+
+    <!-- 
+		<div class="scroll-up">
+			<svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
+				<path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
+			</svg>
+		</div> -->
+
+  </div>
+</body>
+
+</html>

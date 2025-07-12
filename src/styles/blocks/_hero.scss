@@ -1,0 +1,48 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.welcome {
+    background-color: var(--c-bg-body-dark);
+    &__container {
+        @include adaptive-clamp("padding-top", 320, 90);
+        @include adaptive-clamp("padding-bottom", 272, 40);
+    }
+
+    &__content {
+        max-width: 600px;
+    }
+
+    &__header-block {
+        &:not(:last-child) {
+            margin-bottom: 75px
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 25px
+        }
+    }
+
+    &__subtitle {
+        font-weight: 300;
+        font-size: 28px;
+        letter-spacing: 0.07em;
+        color: #fff;
+        @media (max-width: em(1024)){
+            font-size: 24px; 
+        }
+        @media (max-width: em(767.98)){
+            font-size: 20px;
+        }
+        @media (max-width: em(450)){
+            font-size: 16px;
+        }
+    }
+
+    &__action {
+    }
+
+    &__btn {
+    }
+}
