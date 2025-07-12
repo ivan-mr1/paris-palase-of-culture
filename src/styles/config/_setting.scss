@@ -26,13 +26,13 @@ body {
 	//}
 
 	//only this project
-	@media (max-width: em(1024)){
+	@media (max-width: 1024px){
 		font-size: 20px; 
 	}
-	@media (max-width: em(767.98)){
+	@media (max-width: 767.98px){
 		font-size: 18px; 
 	}
-	@media (max-width: em(450)){
+	@media (max-width: 450px){
 		font-size: 16px; 
 	}
 }

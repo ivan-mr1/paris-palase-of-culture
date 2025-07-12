@@ -2,12 +2,32 @@
 @use "../config/mixins" as *;
 
 [class*="page__"] {
-    @include adaptive-clamp("padding-top", 75, 35);
-    @include adaptive-clamp("padding-bottom", 75, 35);
+    //@include adaptive-clamp("padding-top", 75, 35);
+    //@include adaptive-clamp("padding-bottom", 75, 35);
+    padding-top: 75px;
+    padding-bottom: 75px;
+    @media (max-width: 1025px){
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @media (max-width: 767.98px){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @media (max-width: 450px){
+    }
 }
 .page {
     &__welcome {}
     &__visiting {}
     &__explore {}
     &__video {}
+    &__video {}
+    &__tickets {}
+    &__gallery {
+        @media (max-width: 1025px){
+            padding-bottom: 0px;
+        }
+    }
+
 }
