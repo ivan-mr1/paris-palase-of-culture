@@ -10,6 +10,7 @@
  import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
  import menuBurger from "./modules/menu-burger";
+ import exploreSlider from "./modules/explore-slider";
 
 'use strict';
  
@@ -37,6 +38,8 @@ window.addEventListener('DOMContentLoaded', () => {
  pageNavigation();
 
  menuBurger();
+
+ exploreSlider();
 
 
 
