@@ -1,5 +1,104 @@
-@use "sass:math" as math;
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
-@use "../config/variables" as global;
+//@use "../config/functions" as *;
+//@use "../config/mixins" as *;
+//@use "../config/variables" as global;
 
+.footer {  
+  
+  background-color: var(--c-bg-body-dark);
+  &__container {
+  }
+
+  &__top {
+    //display: flex;
+    //justify-content: space-between;
+    display: grid;
+    grid-template-columns: 195px 365px 1fr;
+    column-gap: 145px;
+    padding-top: 85px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #666;
+  }
+
+  &__logo {
+    align-self: start;
+  }
+
+  &__menu {
+  }
+
+  &__social {
+    align-self: end;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    
+  }
+
+  &__bottom--school,
+  &__bottom--developer {
+  }
+}
+.menu-footer {
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  &__list {
+    display: flex;
+    column-gap: 150px;
+  }
+
+  &__column {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__link {
+  }
+}
+.social {
+
+		&__list {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      flex-wrap: wrap;
+      gap: 25px;
+		}
+
+		&__item {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border: 1px solid #666666;
+        border-radius: 50%;
+        transition: var(--transition);
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        @media (any-hover: hover){
+          &:hover{
+            transform: scale(1.1);
+            border: 1px solid var(--c-font-gold);
+          }
+        }
+		}
+}
+.year-development {
+}

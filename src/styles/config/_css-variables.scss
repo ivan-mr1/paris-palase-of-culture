@@ -4,8 +4,9 @@
 	--font-family: "Roboto", sans-serif;
 	--ff-primary: 'Roboto', sans-serif;
 	--ff-secondary: 'Forum', sans-serif;
-	--f-font-size: #{rem(22)};
-	--f-font-size-mobile: #{rem(16)};
+	//--f-font-size: #{rem(22)};
+	--f-font-size: 22px;
+	//--f-font-size-mobile: #{rem(16)};
 	--f-font-weight: 300;
 	--f-line-height: 1.18;
 
@@ -26,8 +27,8 @@
 
 	--transition: 0.3s ease 0s;
 
-	--c-lightgrey: #B2B2B9;	
-	--c-orange: #c2410c;	
+	//--c-lightgrey: #B2B2B9;	
+	//--c-orange: #c2410c;	
 	/* --c-black: #{rgba(#000, 10%)}; */	
 	/* --b-radius: #{rem(10)}; */
 }
