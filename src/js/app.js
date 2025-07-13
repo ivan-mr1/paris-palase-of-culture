@@ -6,11 +6,11 @@
  import tabs from "./modules/tabs";
  import popup from "./modules/popup";
  import spollers from "./modules/spollers";
-
+ 
  import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
  import menuBurger from "./modules/menu-burger";
- import exploreSlider from "./modules/explore-slider";
+ import sliderComparisonImages from "./modules/sliderExplore";
 
 'use strict';
  
@@ -39,21 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
  menuBurger();
 
- exploreSlider();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ sliderComparisonImages();
 
 
 });

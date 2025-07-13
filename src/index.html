@@ -139,25 +139,20 @@
               <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
               <p>It was cleaned in 1984 to remove a <span class="color-span">"yellow veil"</span> of dust that had
                 gathered since the previous restoration in the 19th century.</p>
-              <p class="explore__text--hidden">The cleaning provoked furious protests, not because the picture had been damaged in any way, but
+              <p class="explore__text--hidden">The cleaning provoked furious protests, not because the picture had been
+                damaged in any way, but
                 because it looked different.</p>
             </div>
           </div>
-          <div class="restore__example explore__images">
-            <div id="example">
-                <div class="slider-comparison">
-                  <span></span>
-                </div>
-                  <input type="range" min="0" max="100" value="50">
-                <div class="photo before-img">
-                  <img src="assets/img/explore-slider/before.webp" alt="Before slide">
-                </div>
-                <div class="photo after-img">
-                  <img src="assets/img/explore-slider/after.webp" alt="After slide">
-                </div>
-            </div>
+          <div class="explore__images slider-comparison"><!-- slider-comparison__ -->
+            <img src="assets/img/explore-slider/after.webp" alt="after image" class="slider-comparison__img slider-comparison__img--after" loading="lazy">
+            <img src="assets/img/explore-slider/before.webp" alt="before image" class="slider-comparison__img slider-comparison__img--before" loading="lazy"
+              style="clip-path: polygon(0px 0px, 53% 0px, 53% 100%, 0px 100%);">
+            <div class="slider-comparison__line-top" style="left: 53%;"></div>
+            <div class="slider-comparison__line-bottom" style="left: 53%;"></div>
+            <div class="slider-comparison__circle" style="left: 53%;"></div>
+            <input class="slider-comparison__input" type="range" min="0" max="100" value="61">
           </div>
-
         </div>
       </section>
 
@@ -199,14 +194,20 @@
           <nav class="footer__menu menu-footer">
             <ul class="menu-footer__list">
               <div class="menu-footer__column">
-                <li class="menu-footer__item"><a href="#" data-goto=".visiting" class="menu-footer__link hover-link">Visiting</a></li>
-                <li class="menu-footer__item"><a href="#" data-goto=".explore" class="menu-footer__link hover-link">Explore</a></li>
-                <li class="menu-footer__item"><a href="#" data-goto=".video" class="menu-footer__link hover-link">Video</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".visiting"
+                    class="menu-footer__link hover-link">Visiting</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".explore"
+                    class="menu-footer__link hover-link">Explore</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".video"
+                    class="menu-footer__link hover-link">Video</a></li>
               </div>
               <div class="menu-footer__column">
-                <li class="menu-footer__item"><a href="#" data-goto=".gallery" class="menu-footer__link hover-link">Gallery</a></li>
-                <li class="menu-footer__item"><a href="#" data-goto=".tickets" class="menu-footer__link hover-link">Tickets</a></li>
-                <li class="menu-footer__item"><a href="#" data-goto=".contacts" class="menu-footer__link hover-link">Contacts</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".gallery"
+                    class="menu-footer__link hover-link">Gallery</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".tickets"
+                    class="menu-footer__link hover-link">Tickets</a></li>
+                <li class="menu-footer__item"><a href="#" data-goto=".contacts"
+                    class="menu-footer__link hover-link">Contacts</a></li>
               </div>
             </ul>
           </nav>
@@ -242,8 +243,10 @@
         </div>
         <div class="footer__bottom">
           <span class="year-development">© 2025</span>
-          <a href="https://rs.school/" class="footer__bottom--school hover-link" target="_blank">The Rolling Scopes School</a>
-          <a href="https://github.com/ivan1986mrpl" class="footer__bottom--developer hover-link" target="_blank">ivan1986mrpl</a>
+          <a href="https://rs.school/" class="footer__bottom--school hover-link" target="_blank">The Rolling Scopes
+            School</a>
+          <a href="https://github.com/ivan1986mrpl" class="footer__bottom--developer hover-link"
+            target="_blank">ivan1986mrpl</a>
         </div>
       </div>
     </footer>
