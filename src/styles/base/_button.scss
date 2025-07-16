@@ -47,8 +47,13 @@
     &--accent {
         padding-block: 26px;
         padding-inline: 64px;
-        background-color: var(--c-dark-red);
         border-radius: 10px;
+        background-color: var(--c-dark-red);
+        @media (max-width: 1024px){
+            padding-block: 20px;
+            padding-inline: 45px;
+            font-size: 20px; 
+        }        
         @media (any-hover: hover){
             &:hover{
                 background-color: var(--c-font-gold);
