@@ -3,13 +3,35 @@
 
 .welcome {
     background-color: var(--c-bg-body-dark);
+    height: 810px;
     &__container {
-        @include adaptive-clamp("padding-top", 320, 90);
-        @include adaptive-clamp("padding-bottom", 272, 40);
+        position: relative;
+        display: flex;
+        justify-content: end;
     }
 
     &__content {
-        max-width: 600px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-65%);
+        left: 0;
+        z-index: 10;
+    }
+    &__images {
+        margin-top: -75px;
+        width: 1000px;
+        height: 810px;
+        position: relative;
+        &::before{
+            position: absolute;
+            content:'';
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+            z-index: 2;
+        }        
     }
 
     &__header-block {
@@ -46,9 +68,46 @@
     &__btn {
     }
 }
+.slider-welcome {
+    &__swiper {
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+
+    &__pagination {
+    }
+
+    &__prew {
+    }
+
+    &__next {
+    }
+
+}
 @media (max-width: 1024px){
 }
 @media (max-width: 767.98px){
 }
 @media (max-width: 450px){
+}
+
+
+
+
+
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.swiper-pagination {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
 }

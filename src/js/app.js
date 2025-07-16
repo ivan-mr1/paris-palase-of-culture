@@ -1,5 +1,12 @@
 // import { _slideDown, _slideUp, _slideToggle } from "./function";
- 
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
  import addDate from "./modules/addDate";
  import scrollUp from "./modules/scrollUp";
  import initCountdown from "./modules/timer-countdown";
@@ -15,31 +22,49 @@
 'use strict';
  
 window.addEventListener('DOMContentLoaded', () => {
-// getting today's date and displaying it on a page in Russian or English (HTML and JavaScript) <div class="date"></div> 
-// addDate();
+    // getting today's date and displaying it on a page in Russian or English (HTML and JavaScript) <div class="date"></div> 
+    // addDate();
 
-// go to top button with scroll indicator and smooth scrolling to the top
-// scrollUp();
+    // go to top button with scroll indicator and smooth scrolling to the top
+    // scrollUp();
 
-// для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
-// Передача конечной даты
-// initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
-// Передача количества секунд (сутки = 86400с) (1 час = 3600секунд)
-// initCountdown('.countdown', 86440, 'The timer is over'); // Таймер на 1 день (86400 секунд)
+    // для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
+    // Передача конечной даты
+    // initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
+    // Передача количества секунд (сутки = 86400с) (1 час = 3600секунд)
+    // initCountdown('.countdown', 86440, 'The timer is over'); // Таймер на 1 день (86400 секунд)
 
-// tabs();
+    // tabs();
 
-// popup();
+    // popup();
 
-// spollers();
+    // spollers();
 
-// headerFon();
+    // headerFon();
 
- pageNavigation();
+    pageNavigation();
 
- menuBurger();
+    menuBurger();
 
- sliderComparisonImages();
+    sliderComparisonImages();
+
+    // init Swiper:
+    const swiper = new Swiper('.slider-welcome__swiper', {
+        slidesPerView: 1,
+        loop: true,//бесконечно
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+        breakpoints: {},
+        modules: [Navigation, Pagination],
+    });
+
 
 
 });

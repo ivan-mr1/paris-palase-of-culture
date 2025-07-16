@@ -56,7 +56,7 @@ body.lock {
 	padding-inline: rem(global.$main-offset);
 }
 
-.map {
+.map {//у iframe удалить ширину, высоту и style
   position: relative;
   padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
   height: 0;
