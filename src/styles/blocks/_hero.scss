@@ -2,102 +2,176 @@
 @use "../config/mixins" as *;
 
 .welcome {
-    background-color: var(--c-bg-body-dark);
-    height: 810px;
-    &__container {
-        position: relative;
-        display: flex;
-        justify-content: end;
-    }
+  background-color: var(--c-bg-body-dark);
+  width: 100%;
+  padding-bottom: 0;
+  &__container {
+      position: relative;
+      padding: 0;
+  }
 
-    &__content {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-65%);
-        left: 0;
-        z-index: 10;
-    }
-    &__images {
-        margin-top: -75px;
-        width: 1000px;
-        height: 810px;
-        position: relative;
-        &::before{
-            position: absolute;
-            content:'';
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
-            z-index: 2;
-        }        
-    }
+  &__content {
+      position: absolute;
+      left: 20px;
+      top: 150px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  &__images {
+      margin-left: 30.6%;
+  }
 
-    &__header-block {
-        &:not(:last-child) {
-            margin-bottom: 75px
-        }
+  &__header-block {
+    &:not(:last-child) {
+        margin-bottom: 75px
     }
+  }
 
-    &__title {
-        &:not(:last-child) {
-            margin-bottom: 25px
-        }
+  &__title {
+    &:not(:last-child) {
+        margin-bottom: 25px
     }
+  }
 
-    &__subtitle {
-        font-weight: 300;
-        font-size: 28px;
-        letter-spacing: 0.07em;
-        color: #fff;
-        @media (max-width: em(1024)){
-            font-size: 24px; 
-        }
-        @media (max-width: em(767.98)){
-            font-size: 20px;
-        }
-        @media (max-width: em(450)){
-            font-size: 16px;
-        }
+  &__subtitle {
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 0.07em;
+    color: #fff;
+    @media (max-width: em(1024)){
+        font-size: 24px; 
     }
+    @media (max-width: em(767.98)){
+        font-size: 20px;
+    }
+    @media (max-width: em(450)){
+        font-size: 16px;
+    }
+  }
 
-    &__action {
-    }
+  &__action {
+  }
 
-    &__btn {
-    }
+  &__btn {
+  }
 }
 .slider-welcome {
-    &__swiper {
-    }
 
-    &__wrapper {
-    }
+  &__swiper {
+    position: relative;
+    max-width: 1000px;
+    padding-bottom: 55px;
+    overflow: hidden;
+  }
 
-    &__slide {
-    }
+  &__wrapper {
+  }
 
-    &__pagination {
+  &__slide {
+    position: relative;
+    &::after{
+      content:'';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #030303 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
     }
+  }
 
-    &__prew {
-    }
+  &__controls {
+    position: absolute;
+    z-index: 14;
+    bottom: 0;
+    left: 40%;
+    width: 60%;
+    height: 120px;
+    padding: 40px 74px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 15px;
+    background-color: var(--c-bg-body-dark);
+  }
 
-    &__next {
-    }
+  &__counter {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.81818;
+    text-transform: uppercase;
+    color: #fff;
+  }
 
+  &__dots {
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__prew {
+    width: 30px;
+    height: 8px;
+    cursor: pointer;
+  }
+
+  &__next {
+    width: 30px;
+    height: 8px;
+    cursor: pointer;
+
+  }
 }
+.dots.swiper-horizontal > .swiper-pagination-bullets,
+.dots.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.dots.swiper-pagination-fraction,
+.dots {
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	cursor: pointer;
+}
+
+.swiper-pagination-bullet,
+.dot {
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper-pagination-bullet-active,
+.dot_active {
+  background: #d2b183;
+}
+
+.swiper-button-disabled {
+  opacity: 0.6;
+}
+
+
+
+
+
+
 @media (max-width: 1024px){
 }
 @media (max-width: 767.98px){
 }
 @media (max-width: 450px){
 }
-
-
-
-
 
 .swiper {
 }

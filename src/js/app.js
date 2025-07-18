@@ -2,9 +2,9 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 
  import addDate from "./modules/addDate";
@@ -47,23 +47,45 @@ window.addEventListener('DOMContentLoaded', () => {
     menuBurger();
 
     sliderComparisonImages();
-
-    // init Swiper:
+    //=================================================
+    // init Swiper: welcome slider
     const swiper = new Swiper('.slider-welcome__swiper', {
         slidesPerView: 1,
-        loop: true,//бесконечно
+        //loop: true,//бесконечно
+        //init: false,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".slider-welcome__next",// swiper-button-next
+            prevEl: ".slider-welcome__prew",//swiper-button-prev
         },
         pagination: {
-            el: ".swiper-pagination",
+            el: '.dots',
+            type: "bullets",
+            clickable: true,
+            bulletClass: "dot",
+            bulletActiveClass: "dot_active",
+            renderBullet: function (index, className) {
+                return '<div class="' + className + '"></div>';
+            },
         },
         mousewheel: true,
         keyboard: true,
         breakpoints: {},
         modules: [Navigation, Pagination],
     });
+    // counter welcome section slider
+    swiper.on("slideChange afterInit slidesLengthChange", function () {
+            let currentSlide = this.activeIndex + 1;
+            document.querySelector('.counter').innerHTML = `
+            <span class="counter__current">
+            0${currentSlide}
+            </span> 
+             | 
+            <span class="counter__total">
+                0${this.slides.length}
+            </span>`;
+    });
+    //=================================================
+    
 
 
 

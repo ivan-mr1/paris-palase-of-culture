@@ -1,5 +1,12 @@
  @use 'config/fonts';
 // @use 'config/icons';
+
+// use swiper style
+@use 'swiper/css';
+// @use 'swiper/css/navigation';
+// @use 'swiper/css/pagination';
+
+
  @use 'config/variables';
  @use 'config/css-variables';
  @use 'config/reset';
