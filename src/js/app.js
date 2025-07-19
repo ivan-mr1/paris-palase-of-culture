@@ -1,11 +1,6 @@
 // import { _slideDown, _slideUp, _slideToggle } from "./function";
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-
 
  import addDate from "./modules/addDate";
  import scrollUp from "./modules/scrollUp";
@@ -85,8 +80,52 @@ window.addEventListener('DOMContentLoaded', () => {
             </span>`;
     });
     //=================================================
-    
+    function registerVideoCarousel() {
+        let currentItem = 0;
+        //let video = document.querySelector('video');
 
+        let videoCarousel = new Swiper('.video__swiper-container', {            
+            breakpoints: {
+                slidesPerView: 1,            
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 42
+                }
+            },
+            loop: true,
+            navigation: {
+                prevEl: '.video-counter__arrow_left',
+                nextEl: '.video-counter__arrow_right',
+            },
+            pagination: {
+                el: '.video-counter',
+                clickable: true,
+                bulletClass: 'video-counter__item',
+                bulletActiveClass: 'video-counter__item_active',
+                type: 'bullets'
+            }
+        });
+
+        videoCarousel.on('transitionEnd', function(e) {
+            if(currentItem !== videoCarousel.realIndex) {        
+                currentItem = videoCarousel.realIndex;
+                console.log('*** mySwiper.realIndex', videoCarousel.realIndex);
+                video.poster = `./assets/video/poster${videoCarousel.realIndex}.webp`;
+                video.src = `./assets/video/video${videoCarousel.realIndex}.mp4`;
+                document.querySelectorAll('iframe').forEach(function(el) {
+                el.contentWindow.postMessage(
+                    '{"event":"command","func":"pauseVideo","args":""}','*'
+                    )
+                });
+            }    
+        });
+    }    
+    registerVideoCarousel();
+    //=================================================
 
 
 });

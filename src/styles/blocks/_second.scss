@@ -92,6 +92,7 @@
         height: 2px;
         width: 68%;
         background-color: var(--c-dark-red);
+        transition: all 0.3s;
       }
       @media (max-width: 1440px) {
         font-size: 28px;
@@ -118,5 +119,10 @@
         font-size: 18px;
       }
     }
+}
+.card-visiting:hover {
+  .card-visiting__title::before {
+    width: 100%;
+  }
 }
 

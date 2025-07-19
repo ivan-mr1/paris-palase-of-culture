@@ -192,19 +192,87 @@
       </section>
 
       <section class="page__video video" id="video">
-        <div class="video__container">
-          <div class="video__header-block header-block">
-            <h2 class="video__title header-block__title">Video journey</h2>
-            <div class="video__subtitle header-block__subtitle">
-              <p>Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or
-                Hammurabi's Code</p>
+        <div class="container">
+          <div class="video__video-section">           
+            <div class="video__header-block header-block">
+              <h2 class="video__title header-block__title">Video journey</h2>
+              <div class="video__subtitle header-block__subtitle">
+                <p>Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa
+                  or
+                  Hammurabi's Code</p>
+              </div>
+            </div>
+            <div class="video__mock">
+              <video class="video__image player" poster="assets/video/poster0.webp" src="assets/video/video0.mp4">
+              </video>
+              <button class="video__btn_big"></button>
+              <div class="video__speed">1dsf</div>
+              <div class="video__settings">
+                <div class="video__state">
+                  <button class="video__btn video__btn_pause"></button>
+                </div>
+                <input class="range video__progress" type="range" value="0" min="0" max="100" step="0.1">
+                <button class="video__btn video__btn_volume"></button>
+                <input class="range video__volume" type="range" value="0.5" min="0" max="1" step="0.1">
+                <button class="video__btn video__btn_full"></button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-container video__swiper-container">
+            <div class="swiper-wrapper video__swiper-wrapper">
+              <div class="swiper-slide video__swiper-slide">
+                <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?version=3&enablejsapi=1"
+                  title="YouTube video player" allowfullscreen loading="lazy" data-item="0" id="item0">
+                </iframe>
+              </div>
+              <div class="swiper-slide video__swiper-slide">
+                <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo?version=3&enablejsapi=1"
+                  title="YouTube video player" allowfullscreen loading="lazy" data-item="1">
+                </iframe>
+              </div>
+              <div class="swiper-slide video__swiper-slide">
+                <iframe src="https://www.youtube.com/embed/NOhDysLnTvY?version=3&enablejsapi=1"
+                  title="YouTube video player" allowfullscreen loading="lazy" data-item="2">
+                </iframe>
+              </div>
+              <div class="swiper-slide video__swiper-slide">
+                <iframe id="33" src="https://www.youtube.com/embed/aWmJ5DgyWPI?version=3&enablejsapi=1"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen data-item="3">
+                </iframe>
+              </div>
+              <div class="swiper-slide video__swiper-slide">
+                <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE?version=3&enablejsapi=1"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen data-item="4">
+                </iframe>
+              </div>
+            </div>
+            <div class="video-counter_temp">
+              <button class="video-counter__arrow video-counter__arrow_left"></button>
+              <div class="video-counter">
+                <div class="video-counter__item video-counter__item_active"></div>
+                <div class="video-counter__item"></div>
+                <div class="video-counter__item"></div>
+                <div class="video-counter__item"></div>
+                <div class="video-counter__item"></div>
+              </div>
+              <button class="video-counter__arrow video-counter__arrow_right"></button>
             </div>
           </div>
         </div>
       </section>
 
+
       <section id="gallery" class="page__gallery gallery">
         <div class="gallery__container">
+          <h2 class="gallery__title">art gallery</h2>
+          <div class="picture-container">
+            <div class="picture-inner-container"></div>
+            <div class="wall"></div>
+          </div>
         </div>
       </section>
 
