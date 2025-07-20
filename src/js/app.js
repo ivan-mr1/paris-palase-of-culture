@@ -80,6 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
             </span>`;
     });
     //=================================================
+     
     function registerVideoCarousel() {
         let currentItem = 0;
         //let video = document.querySelector('video');
@@ -124,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }    
         });
     }    
-    registerVideoCarousel();
+    registerVideoCarousel(); 
     //=================================================
 
 
