@@ -12,6 +12,8 @@ import { Navigation, Pagination } from 'swiper/modules';
  import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
  import menuBurger from "./modules/menu-burger";
+
+ import sliderWelcome from './modules/welcome-slider';
  import sliderComparisonImages from "./modules/sliderExplore";
 
 'use strict';
@@ -42,43 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
     menuBurger();
 
     sliderComparisonImages();
-    //=================================================
-    // init Swiper: welcome slider
-    const swiper = new Swiper('.slider-welcome__swiper', {
-        slidesPerView: 1,
-        //loop: true,//бесконечно
-        //init: false,
-        navigation: {
-            nextEl: ".slider-welcome__next",// swiper-button-next
-            prevEl: ".slider-welcome__prew",//swiper-button-prev
-        },
-        pagination: {
-            el: '.dots',
-            type: "bullets",
-            clickable: true,
-            bulletClass: "dot",
-            bulletActiveClass: "dot_active",
-            renderBullet: function (index, className) {
-                return '<div class="' + className + '"></div>';
-            },
-        },
-        mousewheel: true,
-        keyboard: true,
-        breakpoints: {},
-        modules: [Navigation, Pagination],
-    });
-    // counter welcome section slider
-    swiper.on("slideChange afterInit slidesLengthChange", function () {
-            let currentSlide = this.activeIndex + 1;
-            document.querySelector('.counter').innerHTML = `
-            <span class="counter__current">
-            0${currentSlide}
-            </span> 
-             | 
-            <span class="counter__total">
-                0${this.slides.length}
-            </span>`;
-    });
+
+    sliderWelcome();
+    
     //=================================================
      
     function registerVideoCarousel() {
