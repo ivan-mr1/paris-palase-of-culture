@@ -66,6 +66,7 @@
 
   &__mock {
     position: relative;
+    margin-bottom: 40px;//до слайдера
   }
 
   &__image {
@@ -244,7 +245,13 @@
      }*/
   }
 
-  &__swiper-container {
+
+
+
+
+
+//=======================================
+  /* &__swiper-container {
   }
 
   &__swiper-wrapper {
@@ -279,25 +286,12 @@
   }
 
   &__arrow {
-    background-color: transparent;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    background-repeat: no-repeat;
-    width: 10px;
-    height: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    @media (max-width: 420px){
-      width: 8px;
-      height: 8px;
-      background-size: 100% 100%; 
-    }
+
     &_left {
-      background-image: url(../assets/svg/video-arr-left.svg);
+      
     }
     &_right {
-      background-image: url(../assets/svg/video-arr-right.svg);
+      
     }
   }
 
@@ -321,19 +315,81 @@
     &_active {
       background-color: #333;
     }
+  } */
+}
+
+
+
+.video {
+
+		&__slider {
+		}
+}
+.slider-video {
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__slide {
+    width: 452px;
+    height: 254px;
+    margin-bottom: 40px;//до буллетов
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  &__button {
+    //background-color: transparent;
+    //box-sizing: border-box;
+    //border: none;
+    //outline: none;
+    //background-repeat: no-repeat;
+    width: 10px;
+    height: 12px;
+    cursor: pointer;
+    //transition: all 0.3s;
+    @media (max-width: 420px){
+      width: 8px;
+      height: 8px;
+      //background-size: 100% 100%; 
+    }
+  }
+
+  &__button-next {
+    background-image: url(../assets/svg/video-arr-left.svg);
+  }
+
+  &__button-prev {
+    background-image: url(../assets/svg/video-arr-right.svg);
+  }
+}
+.slider-dot {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #999;
+
+  &_active {
+    background-color: #333;
   }
 }
 
-.player {
-}
-.range {
-}
-.swiper-container {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
+
 
 
 

@@ -192,7 +192,7 @@
       </section>
 
       <section class="page__video video" id="video">
-        <div class="container">
+        <div class="video__container">
           <div class="video__video-section">
             <div class="video__header-block header-block">
               <h2 class="video__title header-block__title">Video journey</h2>
@@ -218,48 +218,44 @@
               </div>
             </div>
           </div>
-          <div class="swiper-container video__swiper-container">
-            <div class="swiper-wrapper video__swiper-wrapper">
-              <div class="swiper-slide video__swiper-slide">
-                <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?version=3&enablejsapi=1"
-                  title="YouTube video player" allowfullscreen loading="lazy" data-item="0" id="item0">
-                </iframe>
+
+          <div class="swiper video__slider slider-video">
+            <div class="swiper-wrapper slider-video__wrapper">
+              <div class="swiper-slide iframe-wrapper slider-video__slide">
+                <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?si=JPrVlbV1fCzqO2Qs" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
               </div>
-              <div class="swiper-slide video__swiper-slide">
-                <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo?version=3&enablejsapi=1"
-                  title="YouTube video player" allowfullscreen loading="lazy" data-item="1">
-                </iframe>
+              <div class="swiper-slide iframe-wrapper slider-video__slide">
+                <iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo?si=UwCULNj1BP0z-nZQ" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
               </div>
-              <div class="swiper-slide video__swiper-slide">
-                <iframe src="https://www.youtube.com/embed/NOhDysLnTvY?version=3&enablejsapi=1"
-                  title="YouTube video player" allowfullscreen loading="lazy" data-item="2">
-                </iframe>
+              <div class="swiper-slide iframe-wrapper slider-video__slide">
+                <iframe src="https://www.youtube.com/embed/NOhDysLnTvY?si=h5hf0NdCM0C8xEvN" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
               </div>
-              <div class="swiper-slide video__swiper-slide">
-                <iframe id="33" src="https://www.youtube.com/embed/aWmJ5DgyWPI?version=3&enablejsapi=1"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen data-item="3">
-                </iframe>
+              <div class="swiper-slide iframe-wrapper slider-video__slide">
+                <iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=D7VyeK6Ry4dWGx4u" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
               </div>
-              <div class="swiper-slide video__swiper-slide">
-                <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE?version=3&enablejsapi=1"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen data-item="4">
-                </iframe>
+              <div class="swiper-slide iframe-wrapper slider-video__slide">
+                <iframe src="https://www.youtube.com/embed/2OR0OCr6uRE?si=N-aF6ArwcF3Akg3R" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
               </div>
             </div>
-            <div class="video-counter_temp">
-              <button class="video-counter__arrow video-counter__arrow_left"></button>
-              <div class="video-counter">
-                <div class="video-counter__item video-counter__item_active"></div>
-                <div class="video-counter__item"></div>
-                <div class="video-counter__item"></div>
-                <div class="video-counter__item"></div>
-                <div class="video-counter__item"></div>
-              </div>
-              <button class="video-counter__arrow video-counter__arrow_right"></button>
+            <div class="slider-video__controls">
+              <div class="swiper-button-next slider-video__button slider-video__button-next"></div>
+              <div class="swiper-pagination slider-video__pagination"></div>
+              <div class="swiper-button-prev slider-video__button slider-video__button-prev"></div>
             </div>
           </div>
         </div>
