@@ -14,7 +14,8 @@ import { Navigation, Pagination } from 'swiper/modules';
  import menuBurger from "./modules/menu-burger";
 
  import sliderWelcome from './modules/welcome-slider';
- import sliderComparisonImages from "./modules/sliderExplore";
+ import sliderComparisonImages from './modules/sliderComparisonImages';
+ //import sliderComparisonImages from "./modules/sliderExplore";
  import sliderVideo from './modules/video-slider';
 
 'use strict';
