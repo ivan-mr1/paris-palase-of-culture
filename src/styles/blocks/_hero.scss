@@ -139,10 +139,16 @@
     align-items: center;
     column-gap: 15px;
     background-color: var(--c-bg-body-dark);
+    @media (max-width:em(1220)){
+       padding: 40px 35px; 
+    }
     @media (max-width: em(1024)){
       left: 0;
       width: 100%;
       padding: 40px 74px 40px 220px;
+    }
+    @media (max-width: em(900)){
+      padding: 10px;
     }
     @media (max-width: em(768)){
       height: 100px;
