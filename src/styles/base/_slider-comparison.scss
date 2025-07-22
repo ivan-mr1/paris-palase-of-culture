@@ -1,6 +1,5 @@
 @use './../config/functions' as *;
 @use './../config/mixins' as *;
-//@use './../config/css-variables' as *;
 
 :root {
   --c-slider-comparison: #fff;
@@ -10,7 +9,7 @@
     position: relative;
     overflow: hidden;
     //aspect-ratio: 3 / 2;//первая ширина, вторая высота (надо задать, чтобы не плющило высоту)
-    aspect-ratio: 720 / 700;
+    aspect-ratio: 720 / 700;//первая ширина, вторая высота (надо задать, чтобы не плющило высоту)
 		&__img {
       position: absolute;
       top: 0;

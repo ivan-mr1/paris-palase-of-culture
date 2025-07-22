@@ -15,8 +15,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 
  import sliderWelcome from './modules/welcome-slider';
  import sliderComparisonImages from './modules/sliderComparisonImages';
- //import sliderComparisonImages from "./modules/sliderExplore";
  import sliderVideo from './modules/video-slider';
+ //import gallery from './modules/gallery';
 
 'use strict';
  
@@ -50,6 +50,8 @@ window.addEventListener('DOMContentLoaded', () => {
     sliderComparisonImages();
 
     sliderVideo();
+
+    //gallery();
     
  
 });

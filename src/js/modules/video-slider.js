@@ -18,8 +18,8 @@ export default function sliderVideo() {
     },
     loop: true,
       navigation: {
-          nextEl: ".slider-video__button-next",
-          prevEl: ".slider-video__button-prev",
+          nextEl: ".slider-video__button-prev",
+          prevEl: ".slider-video__button-next",
       },
       pagination: {
           el: '.slider-video__pagination',

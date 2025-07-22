@@ -60,8 +60,9 @@ body.lock {
 
 .iframe-wrapper {//у iframe удалить ширину, высоту и style
   position: relative;
+  //aspect-ratio: 452 / 254;
   //padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
-  height: 0;
+  //height: 0;
   overflow: hidden;
   iframe {
 	position: absolute;
