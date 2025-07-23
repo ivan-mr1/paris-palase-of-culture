@@ -59,18 +59,18 @@ body.lock {
 
 
 .iframe-wrapper {//у iframe удалить ширину, высоту и style
-  position: relative;
+  //position: relative;
   //aspect-ratio: 452 / 254;
   //padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
   //height: 0;
-  overflow: hidden;
+  //overflow: hidden;
   iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 0;
+	//position: absolute;
+	//top: 0;
+	//left: 0;
+	//width: 100%;
+	//height: 100%;
+	//border: 0;
   }
 }
 .map {//у iframe удалить ширину, высоту и style

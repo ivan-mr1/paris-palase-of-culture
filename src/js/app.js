@@ -15,8 +15,9 @@
 
  import sliderWelcome from './modules/welcome-slider';
  import sliderComparisonImages from './modules/sliderComparisonImages';
- import sliderVideo from './modules/video-slider';
+ import sliderVideoAPI from "./section-video/video-sliderAPI";
  import gallery from './modules/gallery';
+ 
 
 'use strict';
  
@@ -49,7 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sliderComparisonImages();
 
-    sliderVideo();
+    sliderVideoAPI();
 
     gallery();
     
