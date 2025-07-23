@@ -201,57 +201,68 @@
 
       <section class="page__video video" id="video">
         <div class="video__container">
-          <div class="video__video-section">
-            <div class="video__header-block header-block">
-              <h2 class="video__title header-block__title">Video journey</h2>
-              <div class="video__subtitle header-block__subtitle">
-                <p>Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa
-                  or
-                  Hammurabi's Code</p>
-              </div>
+          <div class="video__header-block header-block">
+            <h2 class="video__title header-block__title">Video journey</h2>
+            <div class="video__subtitle header-block__subtitle">
+              <p>Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or
+                Hammurabi's Code</p>
             </div>
-            <div class="video__mock">
-              <video class="video__image player" poster="./assets/video/poster0.webp" src="assets/video/video0.mp4">
+          </div>
+
+          <div class="video__main-player main-player">
+            <div class="main-player__wrapper">
+              <video class="main-player__video" preload="none">
+                <source src="./assets/video/video0.mp4" type="video/mp4">
+                <source src="./assets/video/video0.webm" type="video/webm">
+                Ваш браузер не поддерживает видео.
               </video>
-              <button class="video__btn_big"></button>
-              <div class="video__speed">1dsf</div>
-              <div class="video__settings">
-                <div class="video__state">
-                  <button class="video__btn video__btn_pause"></button>
-                </div>
-                <input class="range video__progress" type="range" value="0" min="0" max="100" step="0.1">
-                <button class="video__btn video__btn_volume"></button>
-                <input class="range video__volume" type="range" value="0.5" min="0" max="1" step="0.1">
-                <button class="video__btn video__btn_full"></button>
-              </div>
+              <img class="main-player__preloader" src="./assets/video/poster0.webp" alt="Loading" loading="lazy">
+              <!-- Большая кнопка Play -->
+              <button class="main-player__big-btn"></button>
             </div>
+            <!-- Панель управления -->
+            <div class="main-player__setting" id="setting">
+              <button class="main-player__play-btn"></button>
+              <input class="main-player__progress" type="range" value="0" step="0.1" min="0" max="100">
+              <button class="main-player__mute"></button>
+              <input class="main-player__volume" type="range" min="0" max="1" step="0.01" value="0.4">
+              <button class="main-player__fullscreen"></button>
+            </div>
+            <!-- Инфо про скорость -->
+            <div class="main-player__speed">1x</div>
           </div>
 
           <div class="swiper video__slider slider-video">
             <div class="swiper-wrapper slider-video__wrapper">
               <div class="swiper-slide slider-video__slide" data-video-id="zp1BXPX8jcU">
                 <div class="slider-video__video-container video-container" id="player-zp1BXPX8jcU"></div>
-                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster0.webp" alt="preview" loading="lazy">
+                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster0.webp" alt="preview"
+                  loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
               <div class="swiper-slide slider-video__slide" data-video-id="Vi5D6FKhRmo">
-                <div class="slider-video__video-container slider-video__ video-container" id="player-Vi5D6FKhRmo"></div>
-                <img class="slider-video__video-thumb slider-video__ video-thumb" src="./assets/video/poster1.webp" alt="preview" loading="lazy">
-                <button class="slider-video__play-btn slider-video__ play-btn" aria-label="Play video"></button>
+                <div class="slider-video__video-container video-container" id="player-Vi5D6FKhRmo">
+                </div>
+                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster1.webp"
+                  alt="preview" loading="lazy">
+                <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
               <div class="swiper-slide slider-video__slide" data-video-id="NOhDysLnTvY">
                 <div class="slider-video__video-container video-container" id="player-NOhDysLnTvY"></div>
-                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster2.webp" alt="preview" loading="lazy">
+                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster2.webp" alt="preview"
+                  loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
               <div class="swiper-slide slider-video__slide" data-video-id="aWmJ5DgyWPI">
                 <div class="slider-video__video-container video-container" id="player-aWmJ5DgyWPI"></div>
-                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster3.webp" alt="preview" loading="lazy">
+                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster3.webp" alt="preview"
+                  loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
               <div class="swiper-slide slider-video__slide" data-video-id="2OR0OCr6uRE">
                 <div class="slider-video__video-container video-container" id="player-2OR0OCr6uRE"></div>
-                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster4.webp" alt="preview" loading="lazy">
+                <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster4.webp" alt="preview"
+                  loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
             </div>
@@ -260,7 +271,7 @@
               <div class="swiper-pagination slider-video__pagination"></div>
               <div class="swiper-button-prev slider-video__button slider-video__button-prev"></div>
             </div>
-          </div>         
+          </div>
 
         </div>
       </section>
@@ -476,10 +487,30 @@
 
 
     <div class="scroll-up">
-      <svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
+      <svg class="scroll-up__svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 52 52">
         <path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
       </svg>
     </div>
+
+
+    <!-- 
+    <div class="video__mock">
+              <video class="video__image player" poster="assets/video/poster0.webp" src="assets/video/video0.mp4">
+              </video>
+              <button class="video__btn_big"></button>
+              <div class="video__speed">1dsf</div>
+              <div class="video__settings">
+                <div class="video__state">
+                  <button class="video__btn video__btn_pause"></button>
+                </div>
+                <input class="range video__progress" type="range" value="0" min="0" max="100" step="0.1">
+                <button class="video__btn video__btn_volume"></button>
+                <input class="range video__volume" type="range" value="0.5" min="0" max="1" step="0.1">
+                <button class="video__btn video__btn_full"></button>
+              </div>
+            </div>
+          </div>
+    -->
 
   </div>
 </body>

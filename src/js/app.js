@@ -15,7 +15,8 @@
 
  import sliderWelcome from './modules/welcome-slider';
  import sliderComparisonImages from './modules/sliderComparisonImages';
- import sliderVideoAPI from "./section-video/video-sliderAPI";
+ import customMainVideoPlayer from "./section-video/customMainVideoPlayer";
+ import sliderVideoAPI from "./section-video/sliderVideoAPI";
  import gallery from './modules/gallery';
  
 
@@ -50,7 +51,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sliderComparisonImages();
 
-    sliderVideoAPI();
+    customMainVideoPlayer();
+
+    // Запускаем слайдер видео и сохраняем промис для управления из главного видео
+    window.sliderVideoAPIInstance = sliderVideoAPI();
 
     gallery();
     
