@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>museum</title>
+  <link rel="preload" as="image" href="assets/img/welcome-slider/1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/welcome-slider/2.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/visiting/1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/visiting/2.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/visiting/3.webp" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/Forum-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
   <link rel="icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="styles/main.scss">
   <script type="module" src="js/app.js" defer></script>
@@ -219,7 +227,44 @@
             </div>
           </div>
 
+          <!-- Swiper слайдер -->
           <div class="swiper video__slider slider-video">
+            <div class="swiper-wrapper slider-video__wrapper">
+              <div class="swiper-slide iframe-wrapper slider-video__slide" data-video-id="zp1BXPX8jcU">
+                <div class="video-container"></div>
+                <button class="play-btn"></button>
+              </div>
+              <div class="swiper-slide iframe-wrapper slider-video__slide" data-video-id="Vi5D6FKhRmo">
+                <div class="video-container"></div>
+                <button class="play-btn"></button>
+              </div>
+              <div class="swiper-slide iframe-wrapper slider-video__slide" data-video-id="NOhDysLnTvY">
+                <div class="video-container"></div>
+                <button class="play-btn"></button>
+              </div>
+              <div class="swiper-slide iframe-wrapper slider-video__slide" data-video-id="aWmJ5DgyWPI">
+                <div class="video-container"></div>
+                <button class="play-btn"></button>
+              </div>
+              <div class="swiper-slide iframe-wrapper slider-video__slide" data-video-id="2OR0OCr6uRE">
+                <div class="video-container"></div>
+                <button class="play-btn"></button>
+              </div>
+            </div>
+            <div class="slider-video__controls">
+              <div class="swiper-button-next slider-video__button slider-video__button-next"></div>
+              <div class="swiper-pagination slider-video__pagination"></div>
+              <div class="swiper-button-prev slider-video__button slider-video__button-prev"></div>
+            </div>
+          </div>
+
+          <!-- Подключи YouTube API -->
+          <script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+          <!-- <div class="swiper video__slider slider-video">
             <div class="swiper-wrapper slider-video__wrapper">
               <div class="swiper-slide iframe-wrapper slider-video__slide">
                 <iframe src="https://www.youtube.com/embed/zp1BXPX8jcU?si=JPrVlbV1fCzqO2Qs" title="YouTube video player"
@@ -257,7 +302,9 @@
               <div class="swiper-pagination slider-video__pagination"></div>
               <div class="swiper-button-prev slider-video__button slider-video__button-prev"></div>
             </div>
-          </div>
+          </div> -->
+
+
         </div>
       </section>
 
@@ -287,7 +334,7 @@
                 <img src="assets/img/galery/galery12.webp" alt="img" class="gallery__img">
               </div>
             </div>
-            
+
           </div>
         </div>
         <div class="gallery__shadow"></div>
@@ -470,12 +517,12 @@
       </div>
     </footer>
 
-    <!-- 
-		<div class="scroll-up">
-			<svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
-				<path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
-			</svg>
-		</div> -->
+
+    <div class="scroll-up">
+      <svg class="scroll-up__svg" xmlns="" viewBox="-2 -2 52 52">
+        <path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
+      </svg>
+    </div>
 
   </div>
 </body>

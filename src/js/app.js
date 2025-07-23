@@ -1,13 +1,13 @@
-// import { _slideDown, _slideUp, _slideToggle } from "./function";
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+//import { _slideDown, _slideUp, _slideToggle } from "./function";
+//import Swiper from 'swiper';
+//import { Navigation, Pagination } from 'swiper/modules';
 
- import addDate from "./modules/addDate";
+// import addDate from "./modules/addDate";
  import scrollUp from "./modules/scrollUp";
- import initCountdown from "./modules/timer-countdown";
- import tabs from "./modules/tabs";
- import popup from "./modules/popup";
- import spollers from "./modules/spollers";
+// import initCountdown from "./modules/timer-countdown";
+// import tabs from "./modules/tabs";
+// import popup from "./modules/popup";
+// import spollers from "./modules/spollers";
  
  import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
@@ -16,7 +16,7 @@ import { Navigation, Pagination } from 'swiper/modules';
  import sliderWelcome from './modules/welcome-slider';
  import sliderComparisonImages from './modules/sliderComparisonImages';
  import sliderVideo from './modules/video-slider';
- //import gallery from './modules/gallery';
+ import gallery from './modules/gallery';
 
 'use strict';
  
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // addDate();
 
     // go to top button with scroll indicator and smooth scrolling to the top
-    // scrollUp();
+     scrollUp();
 
     // для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
     // Передача конечной даты
@@ -51,7 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sliderVideo();
 
-    //gallery();
+    gallery();
     
- 
+ console.log(`javascript функционал: кнопка плавного перехода вверх`);
 });
+
