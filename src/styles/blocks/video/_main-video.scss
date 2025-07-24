@@ -33,7 +33,8 @@
     padding: 25px 30px;
     display: flex;
     align-items: center;
-    column-gap: 50px;
+    justify-content: space-between;
+    column-gap: 16px;
   }
 
   &__play-btn {
@@ -100,11 +101,13 @@
     background: #fff;
   }
   &__progress {
-    width: 930px;
+    width: 63%;
+    //width: 930px;
   }
 
   &__volume {
-    width: 155px;
+    width: 11%;
+    //width: 155px;
   }
 
   &__speed {

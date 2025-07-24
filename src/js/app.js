@@ -8,6 +8,7 @@
 // import tabs from "./modules/tabs";
 // import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
+ import stepperPrice from "./modules/stepper";
  
  import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
@@ -40,6 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // popup();
 
     // spollers();
+     
+     stepperPrice();
 
     // headerFon();
 
