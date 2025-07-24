@@ -1,2 +1,44 @@
 @use "../config/functions" as *;
 @use "../config/mixins" as *;
+@use 'video/main-video';
+@use 'video/slider-videoAPI';
+
+
+.video {
+  &__container {
+  }
+  &__header-block {
+    display: flex;
+    margin-bottom: 75px;
+    @media (max-width: 1024px){
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px){
+      margin-bottom: 40px;
+    }
+    @media (max-width: 425px){
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    flex-basis: 50%;
+    @media (max-width: 768px){
+       flex-basis: auto;
+       &:not(:last-child) {
+        margin-bottom: 0;
+       }
+    }
+  }
+  &__subtitle {
+    flex-basis: 50%;
+    @media (max-width: 768px){
+      display: none; 
+    }
+  }
+  &__main-player {
+    margin-bottom: 40px;
+  }
+  &__slider {
+  }
+}

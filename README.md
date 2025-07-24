@@ -32,3 +32,7 @@
 - npm run preview
 
 - http://localhost:5173/
+
+git add .
+git commit -m "feat: add header"
+git push origin museum

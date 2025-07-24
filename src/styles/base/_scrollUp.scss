@@ -1,4 +1,3 @@
-@use "sass:math" as math;
 @use './../config/functions' as *;
 @use './../config/mixins' as *;
 $scrollUpMainColor: #dcdcdc;
@@ -20,7 +19,7 @@ $scrollUpAccentColor: var(--c-scrollUp);
     transform: translateY(1.6rem);
     &::before{//arrow up          
         content:'';
-        background: url('../assets/img/root/arrow-right.svg') center no-repeat;//белая стрелка
+        background: url('../assets/img/root/arrow-right.svg') center no-repeat;//белая стрелка (изменять цвет в Fill самой иконки)
         transform: rotate(-90deg);
 
         //content:'🠕';

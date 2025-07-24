@@ -1,5 +1,162 @@
-@use "sass:math" as math;
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
-@use "../config/variables" as global;
+//@use "../config/functions" as *;
+//@use "../config/mixins" as *;
+//@use "../config/variables" as global;
 
+.footer {    
+  background-color: var(--c-bg-body-dark);
+  &__container {
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 195px 365px 1fr;
+    column-gap: 145px;
+    padding-top: 85px;
+    padding-bottom: 50px;
+    border-bottom: 3px solid #666;
+    @media (max-width: 1230px){
+      padding-top: 65px;
+      padding-bottom: 50px;
+      grid-template-columns: 195px 315px 1fr;
+      column-gap: 45px;
+    }
+    @media (max-width: 980px){
+      padding-top: 57px;
+      padding-bottom: 40px;
+      grid-template-columns: 199px 395px;
+      grid-template-rows: 125px 48px;
+      column-gap: 80px;
+      row-gap: 45px;
+    }
+    @media (max-width: 650px){
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 20px 1fr 48px;
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    align-self: start;
+  }
+
+  &__menu {
+    @media (max-width: 650px){
+      grid-row-start: 2;
+    }
+  }
+
+  &__social {
+    align-self: end;
+    @media (max-width: 980px){
+      grid-column-start: 2;
+      grid-row-start: 2;
+    }
+    @media (max-width: 650px){
+      grid-column-start: 1;
+      grid-row-start: 3;        
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    @media (max-width: 767.98){
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__bottom--school {
+    @media (max-width: 650px){
+       display: none; 
+    }
+  }
+  &__bottom--developer {
+  }
+}
+.menu-footer {
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.09em;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: space-between;
+    column-gap: 16px;
+    row-gap: 25px;
+    @media (max-width: 1029px){
+    }
+    @media (max-width: 980px) {
+    }
+    @media (max-width: 650px){
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 8px;
+      font-size: 16px;
+    }
+  }
+
+  &__column {
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+}
+.social {
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 25px;
+    @media (max-width: 980px){
+        justify-content: start; 
+    }
+    @media (max-width: 650px){
+      gap: 5px;
+      justify-content: center;          
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #666666;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    color: var(--c-white); // начальный цвет иконки и текста внутри (currentColor)
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      fill: currentColor; // цвет иконки берётся из color родителя
+      transition: fill 0.3s ease;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+        border-color: var(--c-font-gold);
+        color: var(--c-font-gold); // меняем цвет иконки при ховере
+      }
+    }
+  }
+}

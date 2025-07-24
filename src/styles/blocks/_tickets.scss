@@ -1,0 +1,188 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.tickets {
+  color: var(--second-color);
+  &__container {
+  }
+  &__header-block {
+    margin-bottom: 75px;
+    @media (max-width: 1024px){
+       margin-bottom: 60px; 
+    }
+    @media (max-width: 768px){
+       margin-bottom: 40px; 
+    }
+  }
+  &__title {
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 60px;
+    @media (max-width: 1024px){
+      column-gap: 80px;
+      justify-content: start;
+    }
+    @media (max-width: 768px){
+      column-gap: 60px;
+    }
+    @media (max-width: 710px){
+       flex-direction: column;
+       gap: 40px; 
+    }
+  }
+  &__image {
+    width: 720px;
+    height: 550px;
+    @media (max-width: 1024px){
+       width: 700px;
+       height: 440px; 
+    }
+    @media (max-width: 1000px){
+       width: 480px;
+    }
+    @media (max-width: 768px){
+       width: 444px;
+       height: 340px; 
+    }
+    @media (max-width: 710px){
+      width: 100%;
+    }
+  }
+  &__img {
+  }
+  &__booking {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 200px;
+    @media (max-width: 1024px){
+      column-gap: 0;
+    }
+    @media (max-width: 710px){
+       justify-content: center; 
+    }
+  }
+  &__column {
+
+    &--flex-end {
+    }
+
+  }
+  &__type {
+    @media (max-width: 1024px){
+       display: none; 
+    }
+  }
+  &__type-title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  &__amount {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 710px){
+      align-items: center;
+    }
+  }
+  &__input {
+  }
+
+  &__btn {
+  }
+}
+.amount {
+  max-width: 155px;
+  &__title {
+    margin-bottom: 25px;
+    text-align: end;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  &__subtitle {
+    margin-bottom: 13px;
+    font-weight: 300;
+    font-size: 22px;
+  }
+  &__number-wrap {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3px 0;
+    margin-bottom: 10px;
+    border: 3px solid #000;
+  }
+  &__number {
+    text-align: center;
+    border: none;
+    outline: none;
+
+    &--basic {
+    }
+    &--senior {
+    }
+  }
+  &__price {
+    margin-top: 35px;
+    margin-bottom: 58px;
+    font-weight: 300;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 1.65px;
+  }
+}
+.input-container {
+  position: relative;
+  display: block;
+  padding-left: 40px;
+  margin-bottom: 23px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  user-select: none;
+}
+.input-container input {
+  display: none;
+}
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.checkmark:hover {
+  background-color: #dadada;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.tickets input:checked ~ .checkmark:after {
+  display: block;
+}
+.amount button {
+  background: none;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-weight: 400;
+  font-size: 32px;
+  cursor: pointer;
+}
+

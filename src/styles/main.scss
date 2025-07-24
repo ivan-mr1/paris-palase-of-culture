@@ -1,5 +1,12 @@
  @use 'config/fonts';
 // @use 'config/icons';
+
+// use swiper style
+@use 'swiper/css';
+// @use 'swiper/css/navigation';
+// @use 'swiper/css/pagination';
+
+
  @use 'config/variables';
  @use 'config/css-variables';
  @use 'config/reset';
@@ -15,5 +22,10 @@
  @use 'blocks/second';
  @use 'blocks/explore';
  @use 'blocks/video';
+ @use 'blocks/gallery'; 
+ @use 'blocks/tickets';
+ @use 'blocks/parallax';
+ @use 'blocks/contacts';
 
+ 
 
