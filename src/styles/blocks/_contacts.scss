@@ -24,19 +24,21 @@
   }
 
   &__map {
-    width: 960px;
-    height: 620px;
+    aspect-ratio: 960 / 620;
+    width: 66%;
+    //width: 960px;
+    //height: 620px;
     @media (max-width: 1280px) {//1024
-      width: 694px;
-      height: 454px;
+      //width: 694px;
+      //height: 454px;
     }
     @media (max-width: 990px) {//767.98
       width: 100%;
       //width: 728px;
-      height: 476px;
+      //height: 476px;
     }
     @media (max-width: 425px) {
-      height: 248px;
+      //height: 248px;
     }
   }
 }

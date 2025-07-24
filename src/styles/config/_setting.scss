@@ -75,8 +75,7 @@ body.lock {
 }
 .map {//у iframe удалить ширину, высоту и style
   position: relative;
-  padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
-  height: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   iframe {
 	position: absolute;
