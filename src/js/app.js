@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(m => m.default())
         .catch(err => console.error('Ошибка загрузки модуля "sliderComparisonImages":', err));
 
-    import('./section-video/customMainVideoPlayer')
+    /* import('./section-video/customMainVideoPlayer')
         .then(m => m.default())
         .catch(err => console.error('Ошибка загрузки модуля "customMainVideoPlayer":', err));
 
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(m => {
             window.sliderVideoAPIInstance = m.default();
         })
-        .catch(err => console.error('Ошибка загрузки модуля "sliderVideoAPI":', err));
+        .catch(err => console.error('Ошибка загрузки модуля "sliderVideoAPI":', err)); */
 
     console.log('Основной функционал загружен');
 });
