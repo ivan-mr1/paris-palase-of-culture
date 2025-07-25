@@ -1,64 +1,53 @@
-//import { _slideDown, _slideUp, _slideToggle } from "./function";
-//import Swiper from 'swiper';
-//import { Navigation, Pagination } from 'swiper/modules';
+// import { _slideDown, _slideUp, _slideToggle } from "./function";
+// import Swiper from 'swiper';
+// import { Navigation, Pagination } from 'swiper/modules';
 
 // import addDate from "./modules/addDate";
- import scrollUp from "./modules/scrollUp";
+import scrollUp from "./modules/scrollUp";
 // import initCountdown from "./modules/timer-countdown";
 // import tabs from "./modules/tabs";
- import popup from "./modules/popup";
+import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
- 
-// import headerFon from "./modules/headerFon";
- import pageNavigation from "./modules/page-navigation";
- import menuBurger from "./modules/menu-burger";
 
- import sliderWelcome from './modules/welcome-slider';
- import sliderComparisonImages from './modules/sliderComparisonImages';
- import customMainVideoPlayer from "./section-video/customMainVideoPlayer";
- import sliderVideoAPI from "./section-video/sliderVideoAPI";
- import gallery from './modules/gallery';
- 
+// import headerFon from "./modules/headerFon";
+import pageNavigation from "./modules/page-navigation";
+import menuBurger from "./modules/menu-burger";
+
+// Убраны статические импорты тяжёлых модулей
+// import sliderWelcome from './modules/welcome-slider';
+// import sliderComparisonImages from './modules/sliderComparisonImages';
+// import customMainVideoPlayer from "./section-video/customMainVideoPlayer";
+// import sliderVideoAPI from "./section-video/sliderVideoAPI";
+import gallery from './modules/gallery';
 
 'use strict';
- 
+
 window.addEventListener('DOMContentLoaded', () => {
-    // getting today's date and displaying it on a page in Russian or English (HTML and JavaScript) <div class="date"></div> 
-    // addDate();
-
-    // go to top button with scroll indicator and smooth scrolling to the top
-     scrollUp();
-
-    // для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
-    // Передача конечной даты
-    // initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
-    // Передача количества секунд (сутки = 86400с) (1 час = 3600секунд)
-    // initCountdown('.countdown', 86440, 'The timer is over'); // Таймер на 1 день (86400 секунд)
-
-    // tabs();
-
-     popup();
-
-    // spollers();
-     
-
-    // headerFon();
-
+    // Основные модули вызываем сразу
+    scrollUp();
+    popup();
     pageNavigation();
-
     menuBurger();
-
-    sliderWelcome();
-
-    sliderComparisonImages();
-
-    customMainVideoPlayer();
-
-    // Запускаем слайдер видео и сохраняем промис для управления из главного видео
-    window.sliderVideoAPIInstance = sliderVideoAPI();
-
     gallery();
-    
- console.log(`javascript функционал: кнопка плавного перехода вверх`);
-});
 
+    // Динамическая загрузка с обработкой ошибок для каждого модуля отдельно
+    import('./modules/welcome-slider')
+        .then(m => m.default())
+        .catch(err => console.error('Ошибка загрузки модуля "welcome-slider":', err));
+
+    import('./modules/sliderComparisonImages')
+        .then(m => m.default())
+        .catch(err => console.error('Ошибка загрузки модуля "sliderComparisonImages":', err));
+
+    import('./section-video/customMainVideoPlayer')
+        .then(m => m.default())
+        .catch(err => console.error('Ошибка загрузки модуля "customMainVideoPlayer":', err));
+
+    import('./section-video/sliderVideoAPI')
+        .then(m => {
+            window.sliderVideoAPIInstance = m.default();
+        })
+        .catch(err => console.error('Ошибка загрузки модуля "sliderVideoAPI":', err));
+
+    console.log('Основной функционал загружен');
+});
