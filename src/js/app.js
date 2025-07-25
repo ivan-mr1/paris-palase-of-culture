@@ -6,7 +6,7 @@
  import scrollUp from "./modules/scrollUp";
 // import initCountdown from "./modules/timer-countdown";
 // import tabs from "./modules/tabs";
-// import popup from "./modules/popup";
+ import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
  import stepperPrice from "./modules/stepper";
  
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // tabs();
 
-    // popup();
+     popup();
 
     // spollers();
      
