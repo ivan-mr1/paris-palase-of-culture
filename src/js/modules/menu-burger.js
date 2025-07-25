@@ -7,6 +7,8 @@ export default function menuBurger() {
 			menu.classList.toggle('menu-open');
 			menuBtn.classList.toggle('menu-open');
 			document.body.classList.toggle('lock');
+
+			document.querySelector('.welcome__content').classList.toggle('menu-open');//only project museum louvre, revove this instruction
 		});
 
 		menu.addEventListener('click', event => {
@@ -14,6 +16,10 @@ export default function menuBurger() {
 				menu.classList.remove('menu-open');
 				menuBtn.classList.remove('menu-open');
 				document.body.classList.remove('lock');
+
+				document.querySelector('.welcome__content').classList.remove('menu-open');//only project museum louvre, revove this instruction
+
+
 			}
 		});
 
@@ -22,6 +28,10 @@ export default function menuBurger() {
 				menu.classList.remove('menu-open');
 				menuBtn.classList.remove('menu-open');
 				document.body.classList.remove('lock');
+
+
+				document.querySelector('.welcome__content').classList.remove('menu-open');//only project museum louvre, revove this instruction
+
 			});
 		});
 	}

@@ -1,9 +1,8 @@
-@use "sass:math" as math;
 @use './../config/functions' as *;
 @use './../config/mixins' as *;
 
-$menuColor: #000;//text
-$menuBackground: #fff;//background
+$menuColor: #fff;//text
+$menuBackground: #000;//background
 $iconMenuColor: #000;//burger button
 .header {
 	&__logo {
@@ -13,18 +12,18 @@ $iconMenuColor: #000;//burger button
 }
 .menu {
 	&__body {
-		@media (max-width:em(1024.98)){//burger
+		@media (max-width: 1024px){//burger
 			display: grid;
 			grid-template-rows: 1fr auto;
 			gap: rem(25);
 			position: fixed;
-			width: 100%;
+			width: 31%;
 			height: 100%;
 			top: 0;
 			left: -100%;
 			overflow: auto;
 			background-color: $menuBackground;
-			padding: rem(100) rem(15) rem(30) rem(15);
+			padding: rem(120) rem(15) rem(30) rem(35);
 			transition: left 0.3s;
 			&::before{//подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
 				content:'';
@@ -40,23 +39,23 @@ $iconMenuColor: #000;//burger button
 		}
 	}
 	&__list {
-		@media (max-width:em(1024.98)){//burger
+		@media (max-width: 1024px){//burger
 			flex-direction: column;
-			column-gap: rem(20);
+			column-gap: rem(25);
 		}
 	}
 	&__item {
-		text-align: right;
+		
 	}
 	&__link {
-		display: inline-block;//burger
-		@media (max-width:em(1024.98)){//burger
+		display: block;//burger
+		@media (max-width: 1024px){//burger
 			color: $menuColor;//перепишется в header.scss
-			font-size: rem(28);
+			font-size: rem(20);
 		}
 	}
 }
-@media (max-width:em(1024.98)) {
+@media (max-width: 1024px) {
 	.menu-open.menu__body {
 		left: 0;
 	}

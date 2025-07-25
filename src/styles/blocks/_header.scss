@@ -1,6 +1,6 @@
-// @use './../base/header-fon';
+ @use './../base/header-fon';
  @use './../base/burger';
- @use './../base/menu-header';
+// @use './../base/menu-header';
 
 //@use "sass:math" as math;
 @use "../config/functions" as *;
@@ -20,8 +20,8 @@
 		align-items: center;
 		justify-content: space-between;
         @include adaptive-clamp("column-gap", 20, 15);
-        @include adaptive-clamp("padding-top", 62, 20);
-        @include adaptive-clamp("padding-bottom", 62, 20);
+        @include adaptive-clamp("padding-top", 50, 20);
+        @include adaptive-clamp("padding-bottom", 50, 20);
 	}
     &__logo {
     }
@@ -34,18 +34,18 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		row-gap: rem(10);
-        column-gap: 55px;
-        @media (max-width: em(1300)){
+		row-gap: 10px;
+        column-gap: 50px;
+        @media (max-width: 1300px){
             column-gap: 30px;              
         }
-        @media (max-width: em(1200)){
+        @media (max-width: 1200px){
             column-gap: 10px;              
         }
         //@include adaptive-clamp("column-gap", 55, 15, 760, 0);
-		@media (max-width:em(1024.98)){
-			flex-direction: column;
-			gap: rem(20);
+		@media (max-width: 1024.98px){
+			//flex-direction: column;
+			//gap: rem(20);
 	  }
 	}
     &__body {
@@ -60,4 +60,170 @@
     }
     &__icon {
     }
+
+    &__images,
+    &__social {
+        display: none;
+    }
 } 
+// adaptive
+$menuColor: #fff;//text
+$menuBackground: #000;//background
+$iconMenuColor: #000;//burger button
+.header {
+	&__logo {
+		position: relative;//burger
+		z-index: 5;//burger
+	}
+}
+.menu {
+	&__body {
+		@media (max-width: 1024px){//burger
+			display: grid;
+			grid-template-rows: 1fr auto;
+			gap: rem(25);
+			position: fixed;
+			width: 31%;
+			height: 100%;
+			top: 0;
+			left: -100%;
+			overflow: auto;
+			background-color: $menuBackground;
+			padding: rem(120) rem(15) rem(35) rem(35);
+			transition: left 0.3s;
+			&::before{//подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+				content:'';
+				position: fixed;
+				width: 100%;
+				@include adaptive-clamp("height", 110, 60);//должно совпадать с высотой header. для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+				top: 0;
+				left: -100%;
+				z-index: 2;
+				background-color: $menuBackground;
+				transition: left 0.3s;
+			}
+		}
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: rem(120) rem(55) rem(35) rem(55);
+        }
+        @media (max-width: 400px) {
+            width: 100%;
+            padding: rem(80) rem(15) rem(15) rem(15);
+        }
+	}
+    &__wrapper {
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__images,
+    &__social {
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+    &__images {
+        @media (max-width: 768px) {
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 35px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 425px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+    }
+    &__image {
+        &--1 {
+            @media (max-width: 768px) {
+                grid-column: span 2 / span 2;
+            }
+            @media (max-width: 425px) {
+                grid-column: auto;
+            }
+        }
+        &--2 {
+            @media (max-width: 768px) {
+                grid-row-start: 2;
+            }
+            @media (max-width: 425px) {
+                grid-row-start: auto;
+            }
+        }
+        &--3 {
+            @media (max-width: 768px) {
+                grid-row-start: 2;
+            }
+            @media (max-width: 425px) {
+                grid-row-start: auto;
+            }
+        }
+    }
+    &__social .social__list{
+        @media (max-width: 768px) {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+
+
+	&__list {
+		@media (max-width: 1024px){//burger
+			flex-direction: column;
+			column-gap: rem(25);
+            align-items: start;
+		}
+        @media (max-width: 768px) {
+            margin-bottom: 35px;
+        }
+        @media (max-width: 425px) {
+
+        }
+	}
+	&__item {
+		
+	}
+	&__link {
+		//display: block;//burger
+        //text-align: left;
+		@media (max-width: 1024px){//burger
+			color: $menuColor;//перепишется в header.scss
+			font-size: rem(20);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 122px;
+            position: relative;
+            &::before{
+                position: absolute;
+                content:'';
+                width: 12px;
+                height: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                background: url(../assets/svg/arrow-burger.svg);
+            }
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.menu-open.menu__body {
+		left: 0;
+	}
+	.menu-open.menu__body::before {
+		left: 0;
+	}
+}

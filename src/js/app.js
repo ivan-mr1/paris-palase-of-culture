@@ -6,11 +6,10 @@
  import scrollUp from "./modules/scrollUp";
 // import initCountdown from "./modules/timer-countdown";
 // import tabs from "./modules/tabs";
-// import popup from "./modules/popup";
+ import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
- import stepperPrice from "./modules/stepper";
  
- import headerFon from "./modules/headerFon";
+// import headerFon from "./modules/headerFon";
  import pageNavigation from "./modules/page-navigation";
  import menuBurger from "./modules/menu-burger";
 
@@ -38,11 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // tabs();
 
-    // popup();
+     popup();
 
     // spollers();
      
-     stepperPrice();
 
     // headerFon();
 

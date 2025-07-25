@@ -6,22 +6,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  &__slide {
-    width: 452px;
-    height: 254px;
-    aspect-ratio: 452 / 254;
     margin-bottom: 40px;//до буллетов
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
     @media (max-width: 768px){
        margin-bottom: 20px; 
     }
     @media (max-width: 425px){
        margin-bottom: 40px; 
     }
+  }
+
+  &__slide {
+    //width: 452px;
+    //height: 254px;
+    aspect-ratio: 452 / 254;
+    
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
   }
   &__video-container {
     position: absolute;
