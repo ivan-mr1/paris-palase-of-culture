@@ -82,6 +82,9 @@
     
   }
 }
+.welcome__content.menu-open {//only project museum louvre, revove this instruction
+    z-index: 1;
+}
 .slider-welcome {
 
   &__swiper {
