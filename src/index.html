@@ -40,9 +40,12 @@
                 <li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link hover-link">Contacts</a></li>
               </ul>
               <div class="menu__images">
-                <div class="menu__image menu__image--1 ibg"><img src="assets/img/header-1.webp" alt="photo" loading="lazy"></div>
-                <div class="menu__image menu__image--2"><img src="assets/img/header-2.webp" alt="photo" loading="lazy"></div>
-                <div class="menu__image menu__image--3"><img src="assets/img/header-3.webp" alt="photo" loading="lazy"></div>
+                <div class="menu__image menu__image--1 ibg"><img src="assets/img/header-1.webp" alt="photo"
+                    loading="lazy"></div>
+                <div class="menu__image menu__image--2"><img src="assets/img/header-2.webp" alt="photo" loading="lazy">
+                </div>
+                <div class="menu__image menu__image--3"><img src="assets/img/header-3.webp" alt="photo" loading="lazy">
+                </div>
               </div>
               <div class="menu__social social">
                 <ul class="social__list">
@@ -289,7 +292,7 @@
 
           <div class="swiper video__slider slider-video">
             <div class="swiper-wrapper slider-video__wrapper">
-              
+
               <div class="swiper-slide slider-video__slide" data-video-id="zp1BXPX8jcU">
                 <div class="slider-video__video-container video-container" id="player-zp1BXPX8jcU"></div>
                 <img class="slider-video__video-thumb video-thumb" src="assets/video/poster0.webp" alt="preview"
@@ -379,8 +382,51 @@
             <div class="tickets__image ibg">
               <img src="assets/img/ticket/Rectangle.webp" alt="img" class="tickets__img">
             </div>
+            <!-- ======================================== -->
+            <!-- <form action="#" class="form tickets__booking">
+              <div class="tickets__column tickets__type">
+                <h3 class="tickets__type-title">Ticket Type</h3>
+                <fieldset class="form__fieldset">
+                  <label class="form__label input-container">Permanent exhibition
+                    <input class="form__input--radio" type="radio" value="20" checked="checked" name="radioInput">
+                    <span class="form__span checkmark"></span>
+                  </label>
+                  <label class="form__label input-container">Temporary exhibition
+                    <input class="form__input--radio" type="radio" value="25" name="radioInput">
+                    <span class="form__span checkmark"></span>
+                  </label>
+                  <label class="form__label input-container">Combined Admission
+                    <input class="form__input--radio" type="radio" value="40" name="radioInput">
+                    <span class="form__span checkmark"></span>
+                  </label>
+                </fieldset>
+              </div>
+              <div class="tickets__end">
+                <div class="tickets__column tickets__amount amount">
+                  <h3 class="amount__title">Amount</h3>
+                  <h4 class="amount__subtitle">Basic 18+</h4>
+                  <div class="amount__number-wrap">
+                    <button type="button" class="amount__input">–</button>
+                    <input type="number" min="0" max="20" value="0" readonly
+                      class="amount__number amount__number--basic">
+                    <button type="button" class="amount__input">+</button>
+                  </div>
+                  <h4 class="amount__subtitle">Senior 65+</h4>
+                  <div class="amount__number-wrap">
+                    <button type="button" class="amount__input">–</button>
+                    <input type="number" min="0" max="20" value="0" readonly
+                      class="amount__number amount__number--senior">
+                    <button type="button" class="amount__input">+</button>
+                  </div>
+                  <span class="amount__price">Total €<span>0</span></span>
+                </div>
+                <a href="#popup1" class="popup-link tickets__btn btn">Buy Now</a>
+              </div>
+            </form> -->
+            <!-- ======================================= -->
             <div class="tickets__booking">
               <div class="tickets__column">
+
                 <div class="tickets__type">
                   <h3 class="tickets__type-title">Ticket Type</h3>
                   <label class="input-container">Permanent exhibition
@@ -396,6 +442,7 @@
                     <span class="checkmark"></span>
                   </label>
                 </div>
+
               </div>
               <div class="tickets__column tickets__column--flex-end">
                 <div class="tickets__amount amount">
@@ -418,6 +465,7 @@
                 </div>
                 <a href="#popup1" class="popup-link tickets__btn btn">Buy Now</a>
               </div>
+
             </div>
           </div>
         </div>
@@ -546,16 +594,46 @@
       </div>
     </footer>
 
+    <!-- <div id="popup1" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <a href="#header" type="button" class="popup__close close-popup">X</a>
+          <div class="booking">
+            <div class="booking__container">
+
+              <div class="booking__header-block">
+                <a href="" class="booking__logo"><img src="assets/img/booking/logo.svg" alt="logo"
+                    class="booking__logo---img"></a>
+                <h2 class="booking__title">Booking tickets</h2>
+                <div class="booking__subtitle">
+                  <p>Tour to Louvre</p>
+                </div>
+                <div class="header-block__line"></div>
+              </div>
+
+              <form action="#" class="form booking__form">
+                <fieldset class="form__fieldset">
+
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
 
+
+    <!-- 
     <div class="scroll-up">
       <svg class="scroll-up__svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 52 52">
         <path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
       </svg>
-    </div>
+    </div> -->
 
   </div>
-  <script type="module" src="js/app.js"></script> 
+  <script type="module" src="js/app.js"></script>
 </body>
 
 </html>
