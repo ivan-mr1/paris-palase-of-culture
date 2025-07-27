@@ -1,4 +1,3 @@
-/* 
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -30,8 +29,9 @@ export default function sliderVideoAPI() {
       slidesPerView: 3,
       loop: true,
       breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 20 },
-        769: { slidesPerView: 3, spaceBetween: 42 },
+        320: { slidesPerView: 1, spaceBetween: 15 },
+        425: { slidesPerView: 2, spaceBetween: 20 },
+        769: { slidesPerView: 3, spaceBetween: 30 },
       },
       navigation: {
         nextEl: ".slider-video__button-prev",
@@ -152,40 +152,4 @@ export default function sliderVideoAPI() {
   }
 
   return init();
-} */
-
-
-
-// only slider
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-
-export default function sliderVideoAPI() {
-  const swiper = new Swiper('.slider-video', {
-    spaceBetween: 40,
-    slidesPerView: 3,
-    loop: true,
-    breakpoints: {
-      320: { slidesPerView: 2, spaceBetween: 20 },
-      769: { slidesPerView: 3, spaceBetween: 42 },
-    },
-    navigation: {
-      nextEl: ".slider-video__button-prev",
-      prevEl: ".slider-video__button-next",
-    },
-    pagination: {
-      el: '.slider-video__pagination',
-      type: "bullets",
-      clickable: true,
-      bulletClass: "slider-dot",
-      bulletActiveClass: "slider-dot_active",
-      renderBullet: (index, className) => `<div class="${className}"></div>`
-    },
-    mousewheel: true,
-    keyboard: true,
-    modules: [Navigation, Pagination]
-  });
-
-  return swiper;
-}
-
+} 

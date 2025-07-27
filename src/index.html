@@ -113,7 +113,8 @@
               </div>
             </div>
             <div class="welcome__action">
-              <a href="tours/tour-welcome.html" class="welcome__btn btn btn--accent" target="_blank">Discover the
+              <a href="tours/tour-welcome.html" class="welcome__btn btn btn--accent btn--big" target="_blank">Discover
+                the
                 Louvre</a>
             </div>
           </div>
@@ -379,99 +380,74 @@
             <div class="header-block__line"></div>
           </div>
           <div class="tickets__content">
-            <div class="tickets__image ibg">
-              <img src="assets/img/ticket/Rectangle.webp" alt="img" class="tickets__img">
+            <div class="tickets__image">
+              <div class="swiper slider-tickets__swiper">
+                <div class="swiper-wrapper slider-tickets__wrapper">
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/Rectangle.webp" alt="slide" loading="lazy">
+                  </div>
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/lovre1.webp" alt="slide" loading="lazy">
+                  </div>
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/Louvre2.webp" alt="slide" loading="lazy">
+                  </div>
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/louvre3.webp" alt="slide" loading="lazy">
+                  </div>
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/louvre4.webp" alt="slide" loading="lazy">
+                  </div>
+                  <div class="swiper-slide slider-tickets__slide">
+                    <img src="assets/img/ticket/louvre5.webp" alt="slide" loading="lazy">
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- ======================================== -->
-            <!-- <form action="#" class="form tickets__booking">
-              <div class="tickets__column tickets__type">
-                <h3 class="tickets__type-title">Ticket Type</h3>
+            <form action="#" class="form tickets__booking">
+              <div class="tickets__type type-tickets">
                 <fieldset class="form__fieldset">
-                  <label class="form__label input-container">Permanent exhibition
-                    <input class="form__input--radio" type="radio" value="20" checked="checked" name="radioInput">
-                    <span class="form__span checkmark"></span>
+                  <legend class="form__legend type-tickets__title">Ticket Type</legend>
+                  <label for="20" class="form__label type-tickets__label">
+                    <input id="20" class="form__input--radio type-tickets__input--radio" type="radio" value="20"
+                      name="radio" checked="checked">
+                    <span class="type-tickets__span">Permanent exhibition</span>
                   </label>
-                  <label class="form__label input-container">Temporary exhibition
-                    <input class="form__input--radio" type="radio" value="25" name="radioInput">
-                    <span class="form__span checkmark"></span>
+                  <label for="25" class="form__label type-tickets__label">
+                    <input id="25" class="form__input--radio type-tickets__input--radio" type="radio" value="25"
+                      name="radio">
+                    <span class="type-tickets__span">Temporary exhibition</span>
                   </label>
-                  <label class="form__label input-container">Combined Admission
-                    <input class="form__input--radio" type="radio" value="40" name="radioInput">
-                    <span class="form__span checkmark"></span>
+                  <label for="40" class="form__label type-tickets__label">
+                    <input id="40" class="form__input--radio type-tickets__input--radio" type="radio" value="40"
+                      name="radio">
+                    <span class="type-tickets__span">Combined Admission</span>
                   </label>
                 </fieldset>
               </div>
-              <div class="tickets__end">
-                <div class="tickets__column tickets__amount amount">
-                  <h3 class="amount__title">Amount</h3>
-                  <h4 class="amount__subtitle">Basic 18+</h4>
-                  <div class="amount__number-wrap">
-                    <button type="button" class="amount__input">–</button>
-                    <input type="number" min="0" max="20" value="0" readonly
-                      class="amount__number amount__number--basic">
-                    <button type="button" class="amount__input">+</button>
-                  </div>
-                  <h4 class="amount__subtitle">Senior 65+</h4>
-                  <div class="amount__number-wrap">
-                    <button type="button" class="amount__input">–</button>
-                    <input type="number" min="0" max="20" value="0" readonly
-                      class="amount__number amount__number--senior">
-                    <button type="button" class="amount__input">+</button>
-                  </div>
-                  <span class="amount__price">Total €<span>0</span></span>
+              <div class="tickets__amount amount">
+                <h3 class="amount__title">Amount</h3>
+                <h4 class="amount__subtitle">Basic 18+</h4>
+                <div class="amount__stepper stapper">
+                  <button type="button" class="stapper__button">–</button>
+                  <input type="number" min="0" max="20" value="0" readonly class="stapper__number stapper__number--basic">
+                  <button type="button" class="stapper__button">+</button>
                 </div>
-                <a href="#popup1" class="popup-link tickets__btn btn">Buy Now</a>
-              </div>
-            </form> -->
-            <!-- ======================================= -->
-            <div class="tickets__booking">
-              <div class="tickets__column">
-
-                <div class="tickets__type">
-                  <h3 class="tickets__type-title">Ticket Type</h3>
-                  <label class="input-container">Permanent exhibition
-                    <input type="radio" value="20" checked="checked" name="radioInput">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="input-container">Temporary exhibition
-                    <input type="radio" value="25" name="radioInput">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="input-container">Combined Admission
-                    <input type="radio" value="40" name="radioInput">
-                    <span class="checkmark"></span>
-                  </label>
+                <h4 class="amount__subtitle">Senior 65+</h4>
+                <div class="amount__stepper stapper">
+                  <button type="button" class="stapper__button">–</button>
+                  <input type="number" min="0" max="20" value="0" readonly class="stapper__number stapper__number--senior">
+                  <button type="button" class="stapper__button">+</button>
                 </div>
-
+                <span class="amount__price">Total €<span>0</span></span>
+                <a href="#popup1" class="popup-link amount__btn btn">Buy Now</a>
               </div>
-              <div class="tickets__column tickets__column--flex-end">
-                <div class="tickets__amount amount">
-                  <h3 class="amount__title">Amount</h3>
-                  <h4 class="amount__subtitle">Basic 18+</h4>
-                  <div class="amount__number-wrap">
-                    <button type="button" class="amount__input">–</button>
-                    <input type="number" min="0" max="20" value="0" readonly
-                      class="amount__number amount__number--basic">
-                    <button type="button" class="amount__input">+</button>
-                  </div>
-                  <h4 class="amount__subtitle">Senior 65+</h4>
-                  <div class="amount__number-wrap">
-                    <button type="button" class="amount__input">–</button>
-                    <input type="number" min="0" max="20" value="0" readonly
-                      class="amount__number amount__number--senior">
-                    <button type="button" class="amount__input">+</button>
-                  </div>
-                  <span class="amount__price">Total €<span>0</span></span>
-                </div>
-                <a href="#popup1" class="popup-link tickets__btn btn">Buy Now</a>
-              </div>
-
-            </div>
+            </form>
           </div>
         </div>
       </section>
 
-      <div class="parallax"></div>
+      <div class="lock-padding parallax"></div>
 
       <section id="contacts" class="page__contacts contacts">
         <div class="contacts__container">
@@ -594,43 +570,104 @@
       </div>
     </footer>
 
-    <!-- <div id="popup1" class="popup">
+    <div id="popup1" class="popup">
       <div class="popup__body">
         <div class="popup__content">
-          <a href="#header" type="button" class="popup__close close-popup">X</a>
-          <div class="booking">
-            <div class="booking__container">
+          <div class="popup__container">
+            <a href="#header" type="button" class="popup__close close-popup">X</a>
+            <div class="booking">
+              <div class="booking__wrapper">
 
-              <div class="booking__header-block">
-                <a href="" class="booking__logo"><img src="assets/img/booking/logo.svg" alt="logo"
-                    class="booking__logo---img"></a>
-                <h2 class="booking__title">Booking tickets</h2>
-                <div class="booking__subtitle">
-                  <p>Tour to Louvre</p>
+                <div class="booking__main">
+                  <div class="booking__header-block">
+                    <a href="#" class="booking__logo"><img src="assets/img/booking/logo.svg" alt="logo"
+                        class="booking__logo--img"></a>
+                    <h2 class="booking__title">Booking tickets</h2>
+                    <div class="booking__subtitle">
+                      <p>Tour to Louvre</p>
+                    </div>
+                    <div class="header-block__line"></div>
+                  </div>
+                  <form action="#" class="booking__form form-booking">
+                    <fieldset class="form-booking__wrap-date">
+                      <label class="form-booking__date">Date
+                        <input type="date" name="user-date" placeholder="Date" required>
+                      </label>
+                      <label class="form-booking__time">
+                        <input type="time" name="user-time" placeholder="Time" required>
+                      </label>
+                    </fieldset>
+                    <label class="form-booking__name">
+                      <input type="text" name="user-name" placeholder="Name" required minlength="3" maxlength="15">
+                    </label>
+                    <label class="form-booking__email">
+                      <input type="email" name="user-email" placeholder="E-mail" required minlength="3" maxlength="15"
+                        inputmode="email">
+                    </label>
+                    <label class="form-booking__phone">
+                      <input type="tel" name="user-phone" placeholder="Phone" required inputmode="tel">
+                    </label>
+                    <label for="ticket-type" class="form-booking__select">
+                      <select name="ticket-type" id="ticket-type" class="select" required>
+                        <option value="" class="option" disabled selected>Ticket Type</option>
+                        <option value="Permanent exhibition" class="option">Permanent exhibition</option>
+                        <option value="Temporary exhibition" class="option">Temporary exhibition</option>
+                        <option value="Combined Admission" class="option">Combined Admission</option>
+                      </select>
+                    </label>
+                    <div class="form-booking__steppers">
+                      <h4 class="form-booking__title">Entry ticket</h4>
+                      <div class="header-block__line"></div>
+                      <fieldset class="">
+                      </fieldset>
+                    </div>
+                  </form>
                 </div>
-                <div class="header-block__line"></div>
+
+                <div class="booking__overwiev overwiev">
+                  <div class="overwiev__top">
+                    <div class="overwiev__content">
+                      <h4 class="overwiev__title">Overview</h4>
+                      <div class="overwiev__subtitle">Tour to Louvre</div>
+                      <div class="overwiev__booking">
+                        <div class="overwiev__date"></div>
+                        <div class="overwiev__time"></div>
+                        <div class="overwiev__type-ticket"></div>
+                      </div>
+                    </div>
+                    <div class="overwiev__images">
+                      <div class="swiper slider-overwiev__swiper">
+                        <div class="swiper-wrapper slider-overwiev__wrapper">
+                          <div class="swiper-slide slider-overwiev__slide">
+                            <img src="assets/img/booking/slider1.webp" alt="slide" loading="lazy">
+                          </div>
+                          <div class="swiper-slide slider-overwiev__slide">
+                            <img src="assets/img/booking/slider2.webp" alt="slide" loading="lazy">
+                          </div>
+                          <div class="swiper-slide slider-overwiev__slide">
+                            <img src="assets/img/booking/slider3.webp" alt="slide" loading="lazy">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="overwiev__price"></div>
+                  <div class="overwiev__payment"></div>
+                  <button type="submit" class="overwiev__btn btn btn--accent btn--long">Book</button>
+                </div>
               </div>
-
-              <form action="#" class="form booking__form">
-                <fieldset class="form__fieldset">
-
-                </fieldset>
-              </form>
-
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
-
-
-    <!-- 
     <div class="scroll-up">
       <svg class="scroll-up__svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 52 52">
         <path class="scroll-up__path" d="M 24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48" />
       </svg>
-    </div> -->
+    </div>
 
   </div>
   <script type="module" src="js/app.js"></script>

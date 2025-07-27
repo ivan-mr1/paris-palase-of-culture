@@ -1,2 +1,158 @@
 @use "../config/functions" as *;
 @use "../config/mixins" as *;
+
+.booking {
+  &__wrapper {
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__main {
+    width: 41%;
+    flex: 0 1 41%;
+  }
+  &__overwiev {
+    width: 54%;
+    flex: 0 1 54%;
+  }
+
+  &__header-block {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__logo {
+  }
+  &__logo--img {
+  }
+
+  &__title {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #9d8665;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    color: #710707;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__form {
+  }
+}
+
+.form-booking {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  &__wrap-date {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &label {
+    height: 45px;
+  }
+
+  &__date {
+    width: 190px;
+  }
+
+  &__time {
+    width: 190px;
+  }
+
+  &__name {
+  }
+
+  &__email {
+  }
+
+  &__phone {
+  }
+
+  &__select {
+  }
+
+  &__steppers {
+  }
+
+  &__title {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #9d8665;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+
+}
+.overwiev {
+  border: 1px solid #000;
+
+  &__top {
+  }
+
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+  }
+
+  &__booking {
+  }
+
+  &__date {
+  }
+
+  &__time {
+  }
+
+  &__type-ticket {
+  }
+
+  &__images {
+  }
+
+  &__price {
+  }
+
+  &__payment {
+  }
+
+  &__btn {
+  }
+}
+.slider-overwiev {
+
+  &__swiper {
+    width: 150px;
+    height: 120px;
+
+  }
+  &__wrapper {}
+
+  &__slide {
+  }
+
+  &__slide img {
+  }
+}

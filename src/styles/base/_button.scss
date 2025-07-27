@@ -44,19 +44,26 @@
     }
 
     &--accent {
-        padding: 26px 64px;
-        border-radius: 10px;
         background-color: var(--c-dark-red);
-        @media (max-width: 1024px){
-            padding: 20px 45px;
-            font-size: 20px; 
-        }        
         @media (any-hover: hover){
             &:hover{
                 background-color: var(--c-font-gold);
                 color: var(--c-white);
             }
         }
+    }
+
+    &--big {
+        padding: 26px 64px;
+        border-radius: 10px;        
+        @media (max-width: 1024px){
+            padding: 20px 45px;
+            font-size: 20px; 
+        }    
+    }
+
+    &--long {
+        padding: 11px 85px;
     }
 }
 
