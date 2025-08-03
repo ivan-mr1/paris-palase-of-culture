@@ -1,0 +1,1 @@
+import{S as e}from"./swiper-core.js";import{A as o,E as s}from"./effect-cube.js";function r(){new e(".slider-overwiev__swiper",{modules:[o,s],spaceBetween:10,centeredSlides:!1,loop:!0,autoplay:{delay:2500,disableOnInteraction:!1},effect:"cube",grabCursor:!0,cubeEffect:{shadow:!1,slideShadows:!1}}),console.log("sliderBooking loaded")}export{r as default};
