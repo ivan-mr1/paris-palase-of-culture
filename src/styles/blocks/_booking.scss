@@ -174,29 +174,33 @@
 
   &__name {
     input {
-      background: url('../../assets/svg/form/name.svg') no-repeat left 15px center;
+      background: url('../assets/svg/form/name.svg') no-repeat left 15px center;
     }
   }
 
   &__email {
     input {
-      background: url('../../assets/svg/form/email.svg') no-repeat left 15px center;
+      background: url('../assets/svg/form/email.svg') no-repeat left 15px center;
     }
   }
 
   &__phone {
     input {
-      background: url('../../assets/svg/form/phone.svg') no-repeat left 15px center;
+      background: url('../assets/svg/form/phone.svg') no-repeat left 15px center;
     }
   }
 
   &__select {
     select {
-      background: url('../../assets/svg/form/type-ticket.svg') no-repeat left 15px center;
+      background: url('../assets/svg/form/type-ticket.svg') no-repeat left 15px center;
     }
   }
 
   &__steppers {
+
+    .header-block__line {
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
@@ -368,9 +372,15 @@
   font-weight: 400;
   font-size: 18px;
   &__basic {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
   }
 
   &__senior {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
   }
 
   &__subtitle {
@@ -379,11 +389,4 @@
   &__stepper {
   }
 }
-.stappers-booking.stapper {
 
-  &__button {
-  }
-
-  &__number {
-  }
-}
