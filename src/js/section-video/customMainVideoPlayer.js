@@ -162,5 +162,5 @@ export default function customMainVideoPlayer() {
   window.mainPlayerAPI = {
     stopMainVideo,
   };
-  console.log('customMainVideoPlayer loaded');
+  //console.log('customMainVideoPlayer loaded');
 }

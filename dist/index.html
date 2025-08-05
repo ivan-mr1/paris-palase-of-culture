@@ -415,21 +415,19 @@
                   </label>
                 </fieldset>
               </div>
-              <div class="tickets__amount amount">
+              <div class="tickets__amount amount js-cart">
                 <h3 class="amount__title">Amount</h3>
                 <h4 class="amount__subtitle">Basic 18+</h4>
-                <div class="amount__stepper stapper">
-                  <button type="button" class="stapper__button">–</button>
-                  <input type="number" min="0" max="20" value="0" readonly
-                    class="stapper__number stapper__number--basic">
-                  <button type="button" class="stapper__button">+</button>
+                <div class="amount__stepper stapper js-counter">
+                  <button type="button" class="stapper__button stapper__button--light js-minus disabled">–</button>
+                  <div class="stapper__number stapper__number--basic  js-current-items">0</div>
+                  <button type="button" class="stapper__button stapper__button--light js-plus">+</button>
                 </div>
                 <h4 class="amount__subtitle">Senior 65+</h4>
-                <div class="amount__stepper stapper">
-                  <button type="button" class="stapper__button">–</button>
-                  <input type="number" min="0" max="20" value="0" readonly
-                    class="stapper__number stapper__number--senior">
-                  <button type="button" class="stapper__button">+</button>
+                <div class="amount__stepper stapper js-counter">
+                  <button type="button" class="stapper__button stapper__button--light js-minus disabled">–</button>
+                  <div class="stapper__number stapper__number--senior js-current-items">0</div>
+                  <button type="button" class="stapper__button stapper__button--light js-plus">+</button>
                 </div>
                 <span class="amount__price">Total €<span>0</span></span>
                 <a href="#popup1" class="popup-link amount__btn btn">Buy Now</a>
@@ -579,27 +577,31 @@
                       <p>Tour to Louvre</p>
                     </div>
                     <div class="header-block__line"></div>
-                  </div>
-                  <form action="#" class="booking__form form-booking">
+                  </div>                
+                  <form action="#" class="booking__form form-booking" id="bookingForm" novalidate>
                     <fieldset class="form-booking__wrap-date">
                       <label class="form-booking__date">
                         <span>Date</span>
-                        <input type="date" name="user-date" required>
+                        <input type="date" name="user-date" id="datePicker" required>
+                        <span class="error" id="dateError"></span>
                       </label>
                       <label class="form-booking__time">
                         <span>Time</span>
-                        <input type="time" name="user-time" required>
+                        <input type="time" name="user-time" min="09:00" max="18:00" step="1800" required>
+                        <span class="error" id="timeError"></span>
                       </label>
                     </fieldset>
                     <label class="form-booking__name">
-                      <input type="text" name="user-name" placeholder="Name" required minlength="3" maxlength="15">
+                      <input type="text" name="user-name" id="userName" placeholder="Name" required>
+                      <span class="error" id="nameError"></span>
                     </label>
                     <label class="form-booking__email">
-                      <input type="email" name="user-email" placeholder="E-mail" required minlength="3" maxlength="15"
-                        inputmode="email">
+                      <input type="email" name="user-email" id="userEmail" placeholder="E-mail" required>
+                      <span class="error" id="emailError"></span>
                     </label>
                     <label class="form-booking__phone">
-                      <input type="tel" name="user-phone" placeholder="Phone" required inputmode="tel">
+                      <input type="tel" name="user-phone" id="userPhone" placeholder="Phone" required>
+                      <span class="error" id="phoneError"></span>
                     </label>
                     <label for="ticket-type" class="form-booking__select">
                       <select name="ticket-type" id="ticket-type" class="select" required>
@@ -610,6 +612,7 @@
                       </select>
                     </label>
                   </form>
+
                   <div class="form-booking__steppers">
                     <h5 class="form-booking__title">Entry ticket</h5>
                     <div class="header-block__line"></div>
@@ -618,7 +621,7 @@
                         <div class="stappers-booking__subtitle">Basic 18+ (20 €)</div>
                         <div class="stappers-booking__stepper stapper js-counter">
                           <button type="button" class="stapper__button js-minus disabled">–</button>
-                          <div class="stapper__number stapper__number--senior js-current-items">1</div>
+                          <div class="stapper__number stapper__number--senior js-current-items">0</div>
                           <button type="button" class="stapper__button js-plus">+</button>
                         </div>
                       </div>
@@ -626,7 +629,7 @@
                         <div class="stappers-booking__subtitle">Senior 65+ (10 €)</div>
                         <div class="stappers-booking__stepper stapper js-counter">
                           <button type="button" class="stapper__button js-minus disabled">–</button>
-                          <div class="stapper__number stapper__number--senior js-current-items">1</div>
+                          <div class="stapper__number stapper__number--senior js-current-items">0</div>
                           <button type="button" class="stapper__button js-plus">+</button>
                         </div>
                       </div>
@@ -721,7 +724,7 @@
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="overwiev__btn btn btn--accent btn--long">Book</button>
+                  <button type="submit" form="bookingForm" class="overwiev__btn btn btn--accent btn--long">Book</button>
                 </div>
               </div>
             </div>
@@ -740,148 +743,3 @@
 </body>
 
 </html>
-
-
-
-
-<div class="booking">
-  <div class="container">
-    <img src="assets/svg/booking/close.svg" alt="close" class="close">
-    <div class="booking-wrap">
-      <div class="booking-settings">
-        <img src="assets/svg/booking/logo.svg" alt="logo" class="booking-logo">
-        <h2 class="section-title gold">Booking tickets</h2>
-        <h3 class="booking-tour underline">Tour to Louvre</h3>
-        <form action="#" class="booking-form">
-          <div class="datetime">
-            <div class="date">
-              <span class="on-text-date">Date</span>
-              <input type="date" name="date" class="date-input">
-            </div>
-            <div class="time">
-              <span class="on-text-time">Time</span>
-              <input type="time" name="time" class="time-input">
-            </div>
-          </div>
-          <div class="text-input-wrap">
-            <img src="assets/svg/booking/name.svg" alt="name-logo">
-            <input type="text" name="name" placeholder="Name" class="name-input">
-          </div>
-          <div class="text-input-wrap">
-            <img src="assets/svg/booking/email.svg" alt="name-logo">
-            <input type="email" name="email" placeholder="E-mail" class="email-input">
-          </div>
-          <div class="text-input-wrap">
-            <img src="assets/svg/booking/tel.svg" alt="name-logo">
-            <input type="tel" name="tel" placeholder="Phone" class="tel-input">
-          </div>
-          <div class="text-input-wrap">
-            <img src="assets/svg/booking/type.svg" alt="name-logo">
-            <select name="type" class="type-select">
-              <option value="">Ticket Type</option>
-              <option value="20">Permanent exhibition</option>
-              <option value="25">Temporary exhibition</option>
-              <option value="40">Combined Admission</option>
-            </select>
-          </div>
-          <div class="setting-amount">
-            <h4 class="amount-title gold underline">Entry Ticket</h4>
-
-            <div class="amounts">
-              <div class="amount amount-list">
-                <p>Basic 18+ (20 €)</p>
-                <p>Senior 65+ (10 €)</p>
-              </div>
-              <div class="amount amount-inputs">
-                <div class="number-wrap">
-                  <button type="button" class="modal-input" onclick="this.nextElementSibling.stepDown()">–</button>
-                  <input type="number" min="0" max="20" value="0" readonly class="number booking-entry_basic">
-                  <button type="button" class="modal-input" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div>
-                <div class="number-wrap">
-                  <button type="button" class="modal-input" onclick="this.nextElementSibling.stepDown()">–</button>
-                  <input type="number" min="0" max="20" value="0" readonly class="number booking-entry_senior">
-                  <button type="button" class="modal-input" onclick="this.previousElementSibling.stepUp()">+</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </form>
-      </div>
-      <div class="booking-overview">
-        <div class="over-header">
-          <div class="over-main-info">
-            <h3 class="over-title">Overview</h3>
-            <h4 class="over-subtitle">Tour to Louvre</h4>
-            <ul class="over-info">
-              <li class="over-info-item">
-                <img src="assets/svg/booking/date.svg" alt="date">
-                <span class="info-date">Choose date</span>
-              </li>
-              <li class="over-info-item">
-                <img src="assets/svg/booking/time.svg" alt="time">
-                <span class="info-time">Choose time</span>
-              </li>
-              <li class="over-info-item">
-                <img src="assets/svg/booking/success.svg" alt="type">
-                <span class="info-type">Permanent exhibition</span>
-              </li>
-            </ul>
-          </div>
-          <img src="assets/img/overview.webp" alt="img" class="over-img">
-        </div>
-        <div class="receipt">
-          <div class="receipt-list">
-            <div class="receipt-list-item">
-              <div class="receipt-list-item__info">
-                <span class="receipt-list-amount booking-overview_basic">0</span>
-                <span class="receipt-list-type receipt-list-type_basic">Basic (20 €)</span>
-              </div>
-              <span class="receipt-list-item__info-price booking-price_basic">0 €</span>
-            </div>
-            <div class="receipt-list-item">
-              <div class="receipt-list-item__info">
-                <span class="receipt-list-amount booking-overview_senior">0</span>
-                <span class="receipt-list-type receipt-list-type_senior">Senior (10 €)</span>
-              </div>
-              <span class="receipt-list-item__info-price booking-price_senior">0 €</span>
-            </div>
-          </div>
-          <div class="receipt-total">
-            <span class="receipt-total-title">Total:</span>
-            <span class="receipt-total-price">0 €</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="front-card">
-            <img src="assets/img/card-img.webp" alt="visa/mscard">
-            <form action="#" class="card-form">
-              <p class="card-number">Card number</p>
-              <input type="text" class="header-text">
-              <p class="card-date">Expiration date</p>
-              <div>
-                <input type="number" value="03" class="number">
-                <input type="number" value="2024" class="number">
-              </div>
-              <p class="card-number">Cardholder name</p>
-              <input type="text" class="text">
-            </form>
-          </div>
-          <div class="back-card">
-            <div class="back-card-wrap">
-              <div class="black-code"></div>
-              <div class="cvc-wrap">
-                <p class="cvc">CVC/CVV</p>
-                <input type="password">
-                <p class="cvc-info">The last 3 or 4 digits on back of the card</p>
-              </div>
-            </div>
-          </div>
-          <button class="book">Book</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="overlay"></div>
-</div>

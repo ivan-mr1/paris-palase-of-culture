@@ -20,7 +20,7 @@ export default function sliderBooking() {
             //shadowScale: 0.94,
         },
     });
-    console.log('sliderBooking loaded');
+    //console.log('sliderBooking loaded');
 }
 
 

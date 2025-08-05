@@ -390,3 +390,19 @@
   }
 }
 
+.error {
+  display: block;
+  color: red;
+  font-size: 14px;
+}
+input.valid, 
+select.valid, 
+textarea.valid {
+  border: 2px solid green;
+}
+
+input.invalid, 
+select.invalid, 
+textarea.invalid {
+  border: 2px solid red;
+}

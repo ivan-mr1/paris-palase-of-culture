@@ -9,6 +9,8 @@
  import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
  import { stepperCounter } from "./modules/stepperCounter";
+ import { formValidate } from "./modules/form-validate";
+ import { inputToDiv } from "./modules/inputToDiv";
 
 // import headerFon from "./modules/headerFon";
 import pageNavigation from "./modules/page-navigation";
@@ -28,7 +30,12 @@ window.addEventListener('DOMContentLoaded', () => {
     // Основные модули вызываем сразу
     scrollUp();
     popup();
+    
     stepperCounter();
+    formValidate();
+    inputToDiv();
+
+
     pageNavigation();
     menuBurger();
     gallery();
@@ -66,5 +73,5 @@ window.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error('Error loading module "sliderBooking":', err));
 
-    console.log('main functionality loaded');
+    //console.log('main functionality loaded');
 });

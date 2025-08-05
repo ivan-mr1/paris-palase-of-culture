@@ -20,7 +20,7 @@ export default function sliderTickets() {
             shadowScale: 0.94,
         },
     });
-    console.log('sliderTickets loaded');
+    //console.log('sliderTickets loaded');
 }
 
 

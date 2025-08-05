@@ -14,11 +14,15 @@
     background-color: var(--c-dark);
     color: var(--c-white);
     cursor: pointer;
+    &--light {
+      background-color: var(--c-white);
+      color: var(--c-dark);
+    }
   }
 
   &__number {
     width: 35px;
     height: 25px;
-    color: var(--c-dark);    
+    color: var(--c-dark);
   }
 }
