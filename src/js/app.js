@@ -8,6 +8,7 @@
 // import tabs from "./modules/tabs";
  import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
+ import { stepperCounter } from "./modules/stepperCounter";
 
 // import headerFon from "./modules/headerFon";
 import pageNavigation from "./modules/page-navigation";
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Основные модули вызываем сразу
     scrollUp();
     popup();
+    stepperCounter();
     pageNavigation();
     menuBurger();
     gallery();
