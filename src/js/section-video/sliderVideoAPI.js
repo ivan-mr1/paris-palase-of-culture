@@ -50,9 +50,11 @@ export default function sliderVideoAPI() {
       modules: [Navigation, Pagination]
     });
 
+    // Создание YouTube-плееров
     document.querySelectorAll('.slider-video__slide').forEach(slide => {
       const videoId = slide.dataset.videoId;
       const playerId = 'player-' + videoId;
+
       players.set(videoId, new YT.Player(playerId, {
         videoId,
         playerVars: {
@@ -71,18 +73,7 @@ export default function sliderVideoAPI() {
       }));
     });
 
-    function stopActiveVideo() {
-      if (activeVideoId) {
-        const player = players.get(activeVideoId);
-        if (player && player.getPlayerState() === YT.PlayerState.PLAYING) {
-          player.pauseVideo();
-        }
-        showThumb(activeVideoId);
-        togglePlayBtn(activeVideoId, false);
-        activeVideoId = null;
-      }
-    }
-
+    // Функции управления thumb и кнопками
     function showThumb(videoId) {
       const slide = document.querySelector(`.slider-video__slide[data-video-id="${videoId}"]`);
       if (!slide) return;
@@ -110,34 +101,7 @@ export default function sliderVideoAPI() {
       }
     }
 
-    document.querySelectorAll('.slider-video__slide').forEach(slide => {
-      slide.addEventListener('click', (e) => {
-        if (e.target.classList.contains('play-btn') || e.target === slide) {
-          const videoId = slide.dataset.videoId;
-          const player = players.get(videoId);
-          if (!player) return;
-
-          if (activeVideoId === videoId && player.getPlayerState() === YT.PlayerState.PLAYING) {
-            player.pauseVideo();
-            togglePlayBtn(videoId, false);
-            showThumb(videoId);
-            activeVideoId = null;
-          } else {
-            stopActiveVideo();
-            if (window.mainPlayerAPI) {
-              window.mainPlayerAPI.stopMainVideo();
-            }
-            player.playVideo();
-            togglePlayBtn(videoId, true);
-            hideThumb(videoId);
-            activeVideoId = videoId;
-          }
-        }
-      });
-    });
-
-    swiper.on('slideChangeTransitionStart', stopActiveVideo);
-
+    // Обработка окончания видео
     function onPlayerStateChange(event, videoId) {
       if (event.data === YT.PlayerState.ENDED) {
         togglePlayBtn(videoId, false);
@@ -148,8 +112,71 @@ export default function sliderVideoAPI() {
       }
     }
 
-    return { stopActiveVideo };
+    // Остановка текущего активного видео (используется при смене слайда)
+    function stopActiveVideo() {
+      if (activeVideoId) {
+        const prevPlayer = players.get(activeVideoId);
+        if (prevPlayer && prevPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+          prevPlayer.pauseVideo();
+        }
+        togglePlayBtn(activeVideoId, false);
+        showThumb(activeVideoId);
+        activeVideoId = null;
+      }
+    }
+
+    // Обработка кликов по кнопке, превью и слайду
+    document.querySelectorAll('.slider-video__slide').forEach(slide => {
+      slide.addEventListener('click', (e) => {
+        const clickedOnPlayBtn = e.target.classList.contains('play-btn');
+        const clickedOnThumb = e.target.classList.contains('video-thumb');
+        const clickedOnSlide = e.target === slide;
+
+        if (clickedOnPlayBtn || clickedOnThumb || clickedOnSlide) {
+          const videoId = slide.dataset.videoId;
+          const player = players.get(videoId);
+          if (!player) return;
+
+          const isSameVideo = activeVideoId === videoId;
+          const wasPlaying = player.getPlayerState() === YT.PlayerState.PLAYING;
+
+          if (isSameVideo && wasPlaying) {
+            player.pauseVideo();
+            togglePlayBtn(videoId, false);
+            showThumb(videoId);
+            activeVideoId = null;
+          } else {
+            // Остановим другое активное видео
+            if (activeVideoId && activeVideoId !== videoId) {
+              const prevPlayer = players.get(activeVideoId);
+              if (prevPlayer && prevPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+                prevPlayer.pauseVideo();
+                togglePlayBtn(activeVideoId, false);
+                showThumb(activeVideoId);
+              }
+            }
+
+            // Остановим основной видеоплеер
+            if (window.mainPlayerAPI) {
+              window.mainPlayerAPI.stopMainVideo();
+            }
+
+            player.playVideo();
+            togglePlayBtn(videoId, true);
+            hideThumb(videoId);
+            activeVideoId = videoId;
+          }
+        }
+      });
+    });
+
+    // Остановка при перелистывании слайда
+    swiper.on('slideChangeTransitionStart', stopActiveVideo);
+
+    return {
+      stopActiveVideo
+    };
   }
 
   return init();
-} 
+}

@@ -49,9 +49,11 @@ export default function customMainVideoPlayer() {
     if (video.paused) {
       playBtn.classList.remove('pause');
       bigPlayBtn.style.display = 'block';
+      if (preloader) preloader.style.display = 'block';
     } else {
       playBtn.classList.add('pause');
       bigPlayBtn.style.display = 'none';
+      if (preloader) preloader.style.display = 'none';
     }
   }
 
@@ -157,6 +159,14 @@ export default function customMainVideoPlayer() {
 
   progress.style.background = `linear-gradient(to right, #710707 0%, #710707 0%, #fff 0%, white 100%)`;
   volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${volume.value * 100}%, #fff ${volume.value * 100}%, white 100%)`;
+
+  // Добавляем возможность кликать по прелоадеру, чтобы запускать/ставить на паузу видео
+  if (preloader) {
+    //preloader.style.cursor = 'pointer';
+    preloader.addEventListener('click', () => {
+      togglePlay();
+    });
+  }
 
   // Экспорт API для управления из слайдера
   window.mainPlayerAPI = {

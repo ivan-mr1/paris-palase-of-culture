@@ -8,9 +8,11 @@
 // import tabs from "./modules/tabs";
  import popup from "./modules/popup";
 // import spollers from "./modules/spollers";
- import { stepperCounter } from "./modules/stepperCounter";
+// import { stepperCounter } from "./modules/stepperCounter";
  import { formValidate } from "./modules/form-validate";
  import { inputToDiv } from "./modules/inputToDiv";
+ import { ticketCalc } from "./modules/ticketsCalc";
+ import { modalCalcTickets } from "./modules/modalCalc";
 
 // import headerFon from "./modules/headerFon";
 import pageNavigation from "./modules/page-navigation";
@@ -31,9 +33,11 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollUp();
     popup();
     
-    stepperCounter();
+    //stepperCounter();
     formValidate();
     inputToDiv();
+    ticketCalc();
+    modalCalcTickets();
 
 
     pageNavigation();

@@ -1,3 +1,4 @@
+ 
 const stepperCounter = () => {
   const carts = document.querySelectorAll('.js-cart');//делегирование событий, вешаем обработчик на все корзины
 
@@ -33,7 +34,7 @@ const stepperCounter = () => {
 
 export {
   stepperCounter
-};
+}; 
 
 /* 
 <div class="js-counter">

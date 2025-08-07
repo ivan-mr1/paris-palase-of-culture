@@ -418,18 +418,18 @@
               <div class="tickets__amount amount js-cart">
                 <h3 class="amount__title">Amount</h3>
                 <h4 class="amount__subtitle">Basic 18+</h4>
-                <div class="amount__stepper stapper js-counter">
+                <div class="amount__stepper stapper js-counter js-basic-counter">
                   <button type="button" class="stapper__button stapper__button--light js-minus disabled">–</button>
                   <div class="stapper__number stapper__number--basic  js-current-items">0</div>
                   <button type="button" class="stapper__button stapper__button--light js-plus">+</button>
                 </div>
                 <h4 class="amount__subtitle">Senior 65+</h4>
-                <div class="amount__stepper stapper js-counter">
+                <div class="amount__stepper stapper js-counter js-senior-counter">
                   <button type="button" class="stapper__button stapper__button--light js-minus disabled">–</button>
                   <div class="stapper__number stapper__number--senior js-current-items">0</div>
                   <button type="button" class="stapper__button stapper__button--light js-plus">+</button>
                 </div>
-                <span class="amount__price">Total €<span>0</span></span>
+                <span class="amount__price">Total €<span class="js-price-total">0</span></span>
                 <a href="#popup1" class="popup-link amount__btn btn">Buy Now</a>
               </div>
             </form>
@@ -679,23 +679,23 @@
                     <ul class="price-overwiev__list">
                       <li class="price-overwiev__item">
                         <div class="price-overwiev__group">
-                          <div class="price-overwiev__calc">0</div>
+                          <div class="price-overwiev__calc js-calc-basic-modal">0</div>
                           <div class="price-overwiev__text">Basic (20 €)</div>
                         </div>
-                        <span class="price-overwiev__price">0 €</span>
+                        <span class="price-overwiev__price js-price-basic-modal">0 €</span>
                       </li>
                       <li class="price-overwiev__item">
                         <div class="price-overwiev__group">
-                          <div class="price-overwiev__calc">0</div>
+                          <div class="price-overwiev__calc js-calc-senior-modal">0</div>
                           <div class="price-overwiev__text">Senior (10 €)</div>
                         </div>
-                        <span class="price-overwiev__price">0 €</span>
+                        <span class="price-overwiev__price js-price-senior-modal">0 €</span>
                       </li>
                     </ul>
                     <div class="header-block__line"></div>
                     <div class="price-overwiev__total">
                       <div class="price-overwiev__total-title">Total:</div>
-                      <div class="price-overwiev__total-price">0 €</div>
+                      <div class="price-overwiev__total-price"><span class="js-price-total-modal">0</span> €</div>
                     </div>
                   </div>
                   <div class="overwiev__card card">
