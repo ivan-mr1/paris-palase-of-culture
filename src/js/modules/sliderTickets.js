@@ -16,8 +16,8 @@ export default function sliderTickets() {
         cubeEffect: {
             shadow: true,
             slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
+            shadowOffset: 10,
+            shadowScale: 0.8,
         },
     });
     //console.log('sliderTickets loaded');

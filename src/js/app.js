@@ -7,6 +7,7 @@
 // import initCountdown from "./modules/timer-countdown";
 // import tabs from "./modules/tabs";
  import popup from "./modules/popup";
+ import { mapLazy } from "./modules/mapLazy";
 // import spollers from "./modules/spollers";
 // import { stepperCounter } from "./modules/stepperCounter";
  import { formValidate } from "./modules/form-validate";
@@ -30,6 +31,24 @@ import gallery from './modules/gallery';
 
 window.addEventListener('DOMContentLoaded', () => {
     // Основные модули вызываем сразу
+    // getting today's date and displaying it on a page in Russian or English (HTML and JavaScript) <div class="date"></div> 
+    // addDate();
+
+    // для каждого нового вызова передавать класс таймера, конечную дату в формате '29 Jun 2025 17:28' и сообщение об окончании таймера 'The timer is over'
+    // Передача конечной даты
+    // initCountdown('.countdown', '27 Jun 2025 12:30', 'The timer is over');
+    // Передача количества секунд (сутки = 86400с) (1 час = 3600секунд)
+    // initCountdown('.countdown', 86440, 'The timer is over'); // Таймер на 1 день (86400 секунд)
+
+    // tabs();
+
+    // spollers();     
+
+    // headerFon();
+
+
+
+    // go to top button with scroll indicator and smooth scrolling to the top
     scrollUp();
     popup();
     
@@ -43,6 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
     pageNavigation();
     menuBurger();
     gallery();
+    mapLazy();// lazy loadind click google maps
 
     // Динамическая загрузка с обработкой ошибок для каждого модуля отдельно
     import('./modules/welcome-slider')
@@ -78,4 +98,19 @@ window.addEventListener('DOMContentLoaded', () => {
         .catch(err => console.error('Error loading module "sliderBooking":', err));
 
     //console.log('main functionality loaded');
+    console.log(`реализовано:
+        - кнопка вверх
+        - мобильное меню бургер
+        - слайдер в секции welcome
+        - слайдер сравнения изображений
+        - видеоплеер 
+        - слайдер видео
+        - анимация галереи
+        - слайдер в секции tickets
+        - калькулятор стоимости билетов с сохранением в local storage
+        - модальное окно
+        - слайдер в модальном окне
+        - валидация формы
+        - ленивая загрузка карты
+        `);
 });
