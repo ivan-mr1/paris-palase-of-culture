@@ -123,6 +123,7 @@
   &__btn {
     @media (max-width: em(500)){
       width: 100%;
+      display: flex;
     }
   }
 }
