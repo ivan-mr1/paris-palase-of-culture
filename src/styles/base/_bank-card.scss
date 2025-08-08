@@ -47,28 +47,25 @@
   }
 
   &__month {
-    width: 31%;
+    width: 30%;
   }
 
   &__year {
-    width: 31%;
+    width: 30%;
   }
 
   &__name {
-    width: 100%;
+    width: 97%;
   }
 
   &__back {
     display: none;//=================
 
-    position: absolute;
-    top: 30px;
-    right: 0;
-    width: 360px;
-    @media (max-width: em(500)){
-      display: none;
-    }
-  }
+    //position: absolute;
+    //top: 30px;
+    //right: 0;
+    //width: 360px;
+  }/* 
 
   &__wrapper {
     background: #939393;
@@ -106,5 +103,5 @@
   }
 
   &__info {
-  }
+  } */
 }

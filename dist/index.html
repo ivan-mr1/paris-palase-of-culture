@@ -232,7 +232,7 @@
               <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
               <p>It was cleaned in 1984 to remove a <span class="color-span">"yellow veil"</span> of dust that had
                 gathered since the previous restoration in the 19th century.</p>
-              <p class="explore__text--hidden">The cleaning provoked furious protests, not because the picture had been
+              <p>The cleaning provoked furious protests, not because the picture had been
                 damaged in any way, but
                 because it looked different.</p>
             </div>
@@ -283,14 +283,12 @@
 
           <div class="swiper video__slider slider-video">
             <div class="swiper-wrapper slider-video__wrapper">
-
               <div class="swiper-slide slider-video__slide" data-video-id="zp1BXPX8jcU">
                 <div class="slider-video__video-container video-container" id="player-zp1BXPX8jcU"></div>
                 <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster0.webp" alt="preview"
                   loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
-
               <div class="swiper-slide slider-video__slide" data-video-id="Vi5D6FKhRmo">
                 <div class="slider-video__video-container video-container" id="player-Vi5D6FKhRmo">
                 </div>
@@ -298,28 +296,24 @@
                   loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
-
               <div class="swiper-slide slider-video__slide" data-video-id="NOhDysLnTvY">
                 <div class="slider-video__video-container video-container" id="player-NOhDysLnTvY"></div>
                 <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster2.webp" alt="preview"
                   loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
-
               <div class="swiper-slide slider-video__slide" data-video-id="aWmJ5DgyWPI">
                 <div class="slider-video__video-container video-container" id="player-aWmJ5DgyWPI"></div>
                 <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster3.webp" alt="preview"
                   loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
-
               <div class="swiper-slide slider-video__slide" data-video-id="2OR0OCr6uRE">
                 <div class="slider-video__video-container video-container" id="player-2OR0OCr6uRE"></div>
                 <img class="slider-video__video-thumb video-thumb" src="./assets/video/poster4.webp" alt="preview"
                   loading="lazy">
                 <button class="slider-video__play-btn play-btn" aria-label="Play video"></button>
               </div>
-
             </div>
             <div class="slider-video__controls">
               <div class="swiper-button-next slider-video__button slider-video__button-next"></div>
@@ -327,7 +321,6 @@
               <div class="swiper-button-prev slider-video__button slider-video__button-prev"></div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -460,11 +453,10 @@
                 <a href="mailto:info@louvre.fr" class="address__link hover-link">info@louvre.fr</a>
               </li>
             </ul>
-            <div id="map" class="contacts__map map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10499.212570619604!2d2.325642918775264!3d48.861964141318836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e25d0482b3d%3A0x1c0b82c6e1d85100!2zNzUwMDEg0J_QsNGA0LjQtiwg0KTRgNCw0L3RhtC40Y8!5e0!3m2!1sru!2sro!4v1752657985792!5m2!1sru!2sro"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
+            <div class="contacts__map map" data-map>
+              <div class="map__preview" data-map-trigger>
+                <img class="map__img" src="./assets/img/map.webp" alt="open map">
+              </div>
             </div>
           </div>
         </div>
@@ -577,7 +569,7 @@
                       <p>Tour to Louvre</p>
                     </div>
                     <div class="header-block__line"></div>
-                  </div>                
+                  </div>
                   <form action="#" class="booking__form form-booking" id="bookingForm" novalidate>
                     <fieldset class="form-booking__wrap-date">
                       <label class="form-booking__date">
@@ -703,17 +695,17 @@
                       <img src="./assets/img/booking/card.png" alt="card">
                       <form action="#" class="card__form">
                         <p class="">Card number</p>
-                        <input type="text" class="card__number">
+                        <input type="text" class="card__number" placeholder="xxxx xxxx xxxx xxxx">
                         <p class="">Expiration date</p>
                         <div class="card__date">
                           <input class="card__month" type="number" value="08">
                           <input class="card__year" type="number" value="2025">
                         </div>
                         <p class="">Cardholder name</p>
-                        <input type="text" class="card__name">
+                        <input type="text" class="card__name" placeholder="name surname">
                       </form>
                     </div>
-                    <div class="card__back">
+                    <!-- <div class="card__back">
                       <div class="card__wrapper">
                         <div class="card__line"></div>
                         <div class="card__cvv">
@@ -722,7 +714,7 @@
                           <p class="card__info">The last 3 or 4 digits on back of the card</p>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <button type="submit" form="bookingForm" class="overwiev__btn btn btn--accent btn--long">Book</button>
                 </div>
