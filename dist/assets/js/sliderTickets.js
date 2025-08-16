@@ -1,0 +1,1 @@
+import{S as e}from"./swiper-core.js";import{A as t}from"./autoplay.js";import{E as s}from"./effect-cube.js";function f(){new e(".slider-tickets__swiper",{modules:[t,s],spaceBetween:10,centeredSlides:!1,loop:!0,autoplay:{delay:2500,disableOnInteraction:!1},effect:"cube",grabCursor:!0,cubeEffect:{shadow:!0,slideShadows:!0,shadowOffset:10,shadowScale:.8}})}export{f as default};

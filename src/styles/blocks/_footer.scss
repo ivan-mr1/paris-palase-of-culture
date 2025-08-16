@@ -1,12 +1,10 @@
-//@use "../config/functions" as *;
-//@use "../config/mixins" as *;
-//@use "../config/variables" as global;
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
 
 .footer {    
   background-color: var(--c-bg-body-dark);
   &__container {
   }
-
   &__top {
     display: grid;
     grid-template-columns: 195px 365px 1fr;
@@ -84,9 +82,9 @@
 }
 .menu-footer {
   font-weight: 100;
-  font-size: 22px;
   line-height: 1;
   letter-spacing: 0.09em;
+  @include adaptive-clamp("font-size", 22, 16);
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -102,7 +100,6 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
       row-gap: 8px;
-      font-size: 16px;
     }
   }
 
@@ -116,13 +113,12 @@
   }
 }
 .social {
-
   &__list {
     display: flex;
     align-items: center;
     justify-content: end;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 22px;
     @media (max-width: 980px){
         justify-content: start; 
     }

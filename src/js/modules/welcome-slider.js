@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 export default function sliderWelcome() {
     const totalSlides = document.querySelectorAll('.slider-welcome__slide').length;
@@ -34,7 +34,11 @@ export default function sliderWelcome() {
         },
         mousewheel: true,
         keyboard: true,
-        modules: [Navigation, Pagination],
+        modules: [Autoplay, Navigation, Pagination],
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         on: {
             init: function () {
                 updateCounter(this.realIndex);

@@ -1,0 +1,364 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.booking {
+  color: var(--c-dark);
+  &__wrapper {
+    max-width: 970px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    @media (max-width: em(930.98)){
+      flex-direction: column;
+    }
+  }
+
+  &__main {
+    width: 41%;
+    flex: 0 1 41%;
+    @media (max-width: em(930.98)) {
+      width: 100%;
+      flex: 0 1 100%;
+    }
+  }
+  &__overwiev {
+    width: 54%;
+    flex: 0 1 54%;
+    @media (max-width: em(930.98)) {
+      width: 100%;
+      flex: 0 1 100%;
+    }
+  }
+
+  &__header-block {
+    &:not(:last-child) {
+      @include adaptive-clamp("margin-bottom", 50, 25);
+    }
+  }
+
+  &__logo {
+  }
+  &__logo--img {
+  }
+
+  &__title {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    
+    text-transform: uppercase;
+    color: #9d8665;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    @include adaptive-clamp("font-size", 50, 25);
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    color: #710707;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__form {
+  }
+}
+.overwiev {
+  border: 1px solid #000;
+  padding: 25px 30px;
+  @media (max-width: em(500)){
+      padding: 8px 8px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: em(525)){
+       flex-direction: column;
+       gap: 10px; 
+       margin-bottom: 16px;
+    }
+  }
+
+  &__content {
+    &:not(:last-child) {
+      @include adaptive-clamp("margin-bottom", 22, 18);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    @include adaptive-clamp("font-size", 32, 20);    
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    color: var(--c-dark-red);
+    @include adaptive-clamp("font-size", 22, 20);
+    &:not(:last-child) {
+     margin-bottom: 10px; 
+    }
+  }
+
+  &__booking {
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__date {
+    display: flex;
+    gap: 15px;
+    img {
+      width: 25px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__time {
+    display: flex;
+    gap: 15px;
+    img {
+      width: 25px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__type-ticket {
+    display: flex;
+    gap: 15px;
+    img {
+      width: 25px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__images {
+  }
+
+  &__price {
+    margin-bottom: 10px;
+  }
+
+  &__card {
+    @include adaptive-clamp("margin-bottom", 45, 20);
+	}
+
+  &__btn {
+    @media (max-width: em(500)){
+      display: flex;
+      width: 100%;
+        
+    }
+  }
+}
+.slider-overwiev {
+
+  &__swiper {
+    width: 150px;
+    height: 120px;
+
+  }
+  &__wrapper {}
+
+  &__slide {
+  }
+
+  &__slide img {
+  }
+}
+
+.form-booking {
+  img {
+    flex-shrink: 0;
+  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  input,
+  select {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px 0 43px;
+    border: 1px solid var(--c-dark);
+    font-size: 18px;
+    color: var(--c-dark);
+    @media (max-width: em(500)) {
+      width: 100%;
+      padding: 0 5px 0 35px;
+    }
+    &::placeholder {
+      font-size: 18px;
+      color: var(--c-dark);
+    }
+  }
+  &__wrap-date {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &label {
+  }
+
+  &__date {
+    width: 47%;
+    input {
+      @media (max-width: em(500)) {
+        padding: 0 0px 0 5px;
+      }
+    }
+  }
+
+  &__time {
+    width: 47%;
+    input {
+      @media (max-width: em(500)) {
+        padding: 0 0px 0 5px;
+      }
+    }
+  }
+
+  &__name {
+    input {
+      background: url('../assets/svg/form/name.svg') no-repeat left 12px center;
+    }
+  }
+
+  &__email {
+    input {
+      background: url('../assets/svg/form/email.svg') no-repeat left 12px center;
+    }
+  }
+
+  &__phone {
+    input {
+      background: url('../assets/svg/form/phone.svg') no-repeat left 12px center;
+    }
+  }
+
+  &__select {
+    select {
+      background: url('../assets/svg/form/type-ticket.svg') no-repeat left 12px center;
+    }
+  }
+
+  &__steppers {
+
+    .header-block__line {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title {
+    font-family: var(--ff-secondary);
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #9d8665;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.price-overwiev {
+
+		&__list {
+      font-weight: 400;
+      font-size: 22px;
+		}
+
+		&__item {
+      display: flex;
+      justify-content: space-between;
+		}
+
+		&__group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+		}
+
+		&__calc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 32px;
+      height: 28px;
+      background-color: var(--c-bg-body-dark);
+      color: var(--c-white);
+      border-radius: 7px;
+      font-size: 18px;
+		}
+
+		&__text {
+		}
+
+		&__price {
+		}
+
+    .header-block__line {
+      margin-bottom: 10px;
+    }
+
+		&__total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 400;
+      font-size: 32px;
+		}
+
+		&__total-title {
+		}
+
+		&__total-price {
+		}
+}
+
+.stappers-booking {
+  font-weight: 400;
+  font-size: 18px;
+  &__basic {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  &__senior {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  &__subtitle {
+  }
+
+  &__stepper {
+  }
+}
+
+.error {
+  display: block;
+  color: red;
+  font-size: 14px;
+}
+input.valid, 
+select.valid, 
+textarea.valid {
+  border: 2px solid green;
+}
+
+input.invalid, 
+select.invalid, 
+textarea.invalid {
+  border: 2px solid red;
+}

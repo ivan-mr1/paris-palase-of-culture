@@ -9,35 +9,30 @@
   }
   &__header-block {
     display: flex;
-    margin-bottom: 75px;
-    @media (max-width: 1024px){
-      margin-bottom: 40px;
-    }
-    @media (max-width: 768px){
-      margin-bottom: 40px;
-    }
-    @media (max-width: 425px){
-      margin-bottom: 20px;
+    column-gap: 16px;
+    &:not(:last-child) {
+      @include adaptive-clamp("margin-bottom", 75, 25);
     }
   }
-
   &__title {
-    flex-basis: 50%;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    flex-basis: 45%;
     @media (max-width: 768px){
        flex-basis: auto;
-       &:not(:last-child) {
-        margin-bottom: 0;
-       }
+
     }
   }
   &__subtitle {
-    flex-basis: 50%;
+    flex-basis: 45%;
     @media (max-width: 768px){
       display: none; 
     }
   }
   &__main-player {
     margin-bottom: 40px;
+    @include adaptive-clamp("margin-bottom", 40, 25);
   }
   &__slider {
   }

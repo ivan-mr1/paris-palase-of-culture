@@ -68,6 +68,10 @@
         opacity: 1;
       }
     }
+    @media (max-width: 768px){
+       width: 45px;
+       height: 45px; 
+    }
   }
 
   &__controls {
