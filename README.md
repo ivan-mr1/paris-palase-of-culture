@@ -1,14 +1,3 @@
- В сборку добавлены модули:
-
-- scrollUp
-- addDate
-- timer-countdown
-- tabs
-- popup
-- spollers
-- header-burger
-- page-navigation
-
 Требования к именам коммитов
 
 - Названия коммитов должны быть согласно гайдлайну
@@ -24,15 +13,37 @@
 - style: - используется при изменениях стиля и оформления кода.
 - chore: - используется, когда не меняются исходные файлы и файлы тестов.
 
-работа со сборкой 
+работа со сборкой
 
-- npm install
+- npm i
 - npm run dev
 - npm run build
 - npm run preview
 
-- http://localhost:5173/
+- npm run lint:js
+- npm run lint:js:fix
 
-git add .
-git commit -m "feat: add header"
-git push origin museum
+- npm run lint:css
+- npm run lint:css:fix
+
+- npm run format
+- npm run format:fix
+
+- npm run lint
+- npm run lint:fix
+
+- git fetch --all --prune
+
+for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
+  echo "� Обновление ветки: $branch"
+  git checkout "$branch" || continue
+
+# Проверка, существует ли ветка на origin
+
+if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+    git branch --set-upstream-to=origin/$branch "$branch"
+    git pull
+  else
+    echo "⚠️  У ветки '$branch' нет соответствующей ветки на origin."
+fi
+done

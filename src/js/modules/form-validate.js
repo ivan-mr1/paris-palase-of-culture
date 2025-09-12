@@ -46,19 +46,31 @@ const formValidate = () => {
 
   // Тексты ошибок
   const errorMessages = {
-    userName: 'Имя должно содержать 3–15 букв (русские или латинские) и пробелы.',
+    userName:
+      'Имя должно содержать 3–15 букв (русские или латинские) и пробелы.',
     userEmail: 'Email должен быть в формате username@example.com',
-    userPhone: 'Телефон должен содержать 10 цифр, можно с пробелами или дефисами.',
+    userPhone:
+      'Телефон должен содержать 10 цифр, можно с пробелами или дефисами.',
     userDate: 'Нельзя выбрать прошедшую дату.',
     userTime: 'Выберите время от 09:00 до 18:00 с шагом 30 минут.',
   };
 
   // Live-валидация
-  nameInput.addEventListener('input', () => handleValidation(nameInput, 'nameError', 'userName'));
-  emailInput.addEventListener('input', () => handleValidation(emailInput, 'emailError', 'userEmail'));
-  phoneInput.addEventListener('input', () => handleValidation(phoneInput, 'phoneError', 'userPhone'));
-  dateInput.addEventListener('input', () => handleValidation(dateInput, 'dateError', 'userDate'));
-  timeInput.addEventListener('input', () => handleValidation(timeInput, 'timeError', 'userTime'));
+  nameInput.addEventListener('input', () =>
+    handleValidation(nameInput, 'nameError', 'userName'),
+  );
+  emailInput.addEventListener('input', () =>
+    handleValidation(emailInput, 'emailError', 'userEmail'),
+  );
+  phoneInput.addEventListener('input', () =>
+    handleValidation(phoneInput, 'phoneError', 'userPhone'),
+  );
+  dateInput.addEventListener('input', () =>
+    handleValidation(dateInput, 'dateError', 'userDate'),
+  );
+  timeInput.addEventListener('input', () =>
+    handleValidation(timeInput, 'timeError', 'userTime'),
+  );
 
   // Обработка отправки формы
   form.addEventListener('submit', (e) => {
@@ -127,14 +139,12 @@ const formValidate = () => {
 
   // Очистить все ошибки
   function clearErrors() {
-    document.querySelectorAll('.error').forEach(el => el.textContent = '');
-    document.querySelectorAll('.invalid, .valid').forEach(el => {
+    document.querySelectorAll('.error').forEach((el) => (el.textContent = ''));
+    document.querySelectorAll('.invalid, .valid').forEach((el) => {
       el.classList.remove('invalid');
       el.classList.remove('valid');
     });
   }
 };
 
-export {
-  formValidate
-};
+export { formValidate };

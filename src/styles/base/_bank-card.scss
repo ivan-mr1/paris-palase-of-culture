@@ -3,25 +3,27 @@
 
 .card {
   position: relative;
-  font-weight: 400;
   font-size: 12px;
+  font-weight: 400;
   color: #161615;
 
   input {
-    background-color: #fff;
-    padding: 0 10px;
     height: 35px;
+    padding: 0 10px;
+    background-color: #ffffff;
   }
+
   &__front {
     position: relative;
     z-index: 1;
-    background: #bcbcbc;
-    padding: 15px 20px 25px 20px;
-    border-radius: 12px;
     max-width: 360px;
-    @media (max-width: em(500)){
-      max-width: 100%; 
-      padding: 8px 12px 15px 12px; 
+    padding: 15px 20px 25px;
+    background: #bcbcbc;
+    border-radius: 12px;
+
+    @media (max-width: em(500)) {
+      max-width: 100%;
+      padding: 8px 12px 15px;
     }
 
     img {
@@ -59,13 +61,13 @@
   }
 
   &__back {
-    display: none;//=================
+    display: none; // =================
 
-    //position: absolute;
-    //top: 30px;
-    //right: 0;
-    //width: 360px;
-  }/* 
+    // position: absolute;
+    // top: 30px;
+    // right: 0;
+    // width: 360px;
+  } /* 
 
   &__wrapper {
     background: #939393;

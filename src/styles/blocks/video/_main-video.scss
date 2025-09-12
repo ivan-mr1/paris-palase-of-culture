@@ -1,13 +1,14 @@
-//@use '../../config/mixins'; 
-//@use '../../config/functions'; 
+// @use '../../config/mixins';
+// @use '../../config/functions';
 
 .main-player {
   position: relative;
+
   &__wrapper {
     position: relative;
-    aspect-ratio: 1440 / 650;
     overflow: hidden;
-	}
+    aspect-ratio: 1440 / 650;
+  }
 
   &__video {
     position: absolute;
@@ -28,19 +29,21 @@
   }
 
   &__setting {
-    background-color: var(--c-dark);
-    padding: 25px 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     column-gap: 16px;
-    @media (max-width: 1024px){
+    padding: 25px 30px;
+    background-color: var(--c-dark);
+
+    @media (width <= 1024px) {
       padding: 15px 40px;
     }
-    @media (max-width: 768px){
-      padding: 15px 16px 10px 16px;
-      column-gap: 10px;
+
+    @media (width <= 768px) {
       position: relative;
+      column-gap: 10px;
+      padding: 15px 16px 10px;
     }
   }
 
@@ -48,37 +51,42 @@
     width: 23px;
     height: 31px;
     background: url('../assets/svg/play.svg') center / cover no-repeat;
+
     &.pause {
       background: url('../assets/svg/pause.svg') center / cover no-repeat;
     }
-    @media (max-width: 1024px){
+
+    @media (width <= 1024px) {
       width: 23px;
-      height: 30px; 
+      height: 30px;
     }
   }
 
   &__big-btn {
-    background: url('../assets/svg/main-play.svg') center / cover no-repeat;
-    background-size: contain;
     position: absolute;
+    z-index: 5;
     top: 50%;
     left: 50%;
+    display: block;
     width: 220px;
     height: 220px;
+    background: url('../assets/svg/main-play.svg') center / cover no-repeat;
+    background-size: contain;
     transform: translate(-50%, -50%);
-    z-index: 5;
-    display: block;
-    @media (max-width: 1024px){
-       width: 150px;
-       height: 150px; 
+
+    @media (width <= 1024px) {
+      width: 150px;
+      height: 150px;
     }
-    @media (max-width: 768px){
-       width: 80px;
-       height: 80px;        
+
+    @media (width <= 768px) {
+      width: 80px;
+      height: 80px;
     }
-    @media (max-width: 550px){
-       width: 60px;
-       height: 60px;        
+
+    @media (width <= 550px) {
+      width: 60px;
+      height: 60px;
     }
   }
 
@@ -86,12 +94,14 @@
     width: 38px;
     height: 31px;
     background: url('../assets/svg/volume.svg') center / cover no-repeat;
+
     &.muted {
       background: url('../assets/svg/mute.svg') center / cover no-repeat;
     }
-    @media (max-width: 1024px){
+
+    @media (width <= 1024px) {
       width: 26px;
-      height: 20px; 
+      height: 20px;
     }
   }
 
@@ -99,45 +109,51 @@
     width: 36px;
     height: 36px;
     background: url('../assets/svg/fullscreen.svg') center / cover no-repeat;
-    @media (max-width: 1024px){
-       width: 26px;
-       height: 26px; 
+
+    @media (width <= 1024px) {
+      width: 26px;
+      height: 26px;
     }
   }
 
   &__fullscreen-exit {
     width: 36px;
     height: 36px;
-    background: url('../assets/svg/fullscreen_exit.svg') center / cover no-repeat;
-    @media (max-width: 1024px){
-       width: 26px;
-       height: 26px; 
+    background: url('../assets/svg/fullscreen_exit.svg') center / cover
+      no-repeat;
+
+    @media (width <= 1024px) {
+      width: 26px;
+      height: 26px;
     }
   }
 
   &__progress,
   &__volume {
-    outline: none;
-    transition: background 450ms ease-in;
-    -webkit-appearance: none;
+    appearance: none;
     appearance: none;
     height: 4px;
-    background: #C4C4C4;
+    background: #c4c4c4;
     border-radius: 2px;
+    outline: none;
     cursor: pointer;
+    transition: background 450ms ease-in;
   }
+
   &__progress::-webkit-slider-thumb,
   &__volume::-webkit-slider-thumb {
-    border-radius: 50px;
+    appearance: none;
     width: 13px;
     height: 13px;
-    -webkit-appearance: none;
+    background: #ffffff;
+    border-radius: 50px;
     cursor: ew-resize;
-    background: #fff;
   }
+
   &__progress {
     width: 63%;
-    @media (max-width: 768px){
+
+    @media (width <= 768px) {
       position: absolute;
       top: 0;
       left: 0;
@@ -148,19 +164,20 @@
 
   &__volume {
     width: 11%;
-    @media (max-width: 768px){
+
+    @media (width <= 768px) {
       width: 65%;
     }
   }
 
   &__speed {
     position: absolute;
-    bottom: 100%;
     right: 20px;
-    font-size: 14px;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
+    bottom: 100%;
     padding: 4px 8px;
+    font-size: 14px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -190,4 +207,3 @@ import customMainVideoPlayer from "./section-video/customMainVideoPlayer";
   <div class="main-player__speed">1x</div>
 </div>
 */
-

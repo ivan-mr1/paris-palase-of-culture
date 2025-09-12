@@ -1,66 +1,81 @@
 @use './../config/functions' as *;
 @use './../config/mixins' as *;
 
-$menuColor: #fff;//text
-$menuBackground: #000;//background
-$iconMenuColor: #000;//burger button
+$menuColor: #ffffff; // text
+$menuBackground: #000000; // background
+$iconMenuColor: #000000; // burger button
 .header {
-	&__logo {
-		position: relative;//burger
-		z-index: 5;//burger
-	}
-}
-.menu {
-	&__body {
-		@media (max-width: 1024px){//burger
-			display: grid;
-			grid-template-rows: 1fr auto;
-			gap: rem(25);
-			position: fixed;
-			width: 31%;
-			height: 100%;
-			top: 0;
-			left: -100%;
-			overflow: auto;
-			background-color: $menuBackground;
-			padding: rem(120) rem(15) rem(30) rem(35);
-			transition: left 0.3s;
-			&::before{//подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
-				content:'';
-				position: fixed;
-				width: 100%;
-				@include adaptive-clamp("height", 110, 60);//должно совпадать с высотой header. для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
-				top: 0;
-				left: -100%;
-				z-index: 2;
-				background-color: $menuBackground;
-				transition: left 0.3s;
-			}
-		}
-	}
-	&__list {
-		@media (max-width: 1024px){//burger
-			flex-direction: column;
-			column-gap: rem(25);
-		}
-	}
-	&__item {
-		
-	}
-	&__link {
-		display: block;//burger
-		@media (max-width: 1024px){//burger
-			color: $menuColor;//перепишется в header.scss
-			font-size: rem(20);
-		}
-	}
-}
-@media (max-width: 1024px) {
-	.menu-open.menu__body {
-		left: 0;
-	}
-	.menu-open.menu__body::before {
-		left: 0;
-	}
+  &__logo {
+    position: relative; // burger
+    z-index: 5; // burger
+  }
 }
 
+.menu {
+  &__body {
+    @media (width <= 1024px) {
+      // burger
+      position: fixed;
+      top: 0;
+      left: -100%;
+      overflow: auto;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: rem(25);
+      width: 31%;
+      height: 100%;
+      padding: rem(120) rem(15) rem(30) rem(35);
+      background-color: $menuBackground;
+      transition: left 0.3s;
+
+      &::before {
+        // подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+        content: '';
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        background-color: $menuBackground;
+        transition: left 0.3s;
+
+        @include adaptive-clamp(
+          'height',
+          110,
+          60
+        ); // должно совпадать с высотой header. для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+      }
+    }
+  }
+
+  &__list {
+    @media (width <= 1024px) {
+      // burger
+      flex-direction: column;
+      column-gap: rem(25);
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: block; // burger
+
+    @media (width <= 1024px) {
+      // burger
+      font-size: rem(20);
+      color: $menuColor; // перепишется в header.scss
+    }
+  }
+}
+
+@media (width <= 1024px) {
+  .menu-open.menu__body {
+    left: 0;
+  }
+
+  .menu-open.menu__body::before {
+    left: 0;
+  }
+}

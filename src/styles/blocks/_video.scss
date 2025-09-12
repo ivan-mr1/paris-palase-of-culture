@@ -1,39 +1,47 @@
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
+@use '../config/functions' as *;
+@use '../config/mixins' as *;
 @use 'video/main-video';
 @use 'video/slider-videoAPI';
-
 
 .video {
   &__container {
   }
+
   &__header-block {
     display: flex;
     column-gap: 16px;
+
     &:not(:last-child) {
-      @include adaptive-clamp("margin-bottom", 75, 25);
+      @include adaptive-clamp('margin-bottom', 75, 25);
     }
   }
+
   &__title {
     &:not(:last-child) {
       margin-bottom: 0;
     }
-    flex-basis: 45%;
-    @media (max-width: 768px){
-       flex-basis: auto;
 
+    flex-basis: 45%;
+
+    @media (width <= 768px) {
+      flex-basis: auto;
     }
   }
+
   &__subtitle {
     flex-basis: 45%;
-    @media (max-width: 768px){
-      display: none; 
+
+    @media (width <= 768px) {
+      display: none;
     }
   }
+
   &__main-player {
     margin-bottom: 40px;
-    @include adaptive-clamp("margin-bottom", 40, 25);
+
+    @include adaptive-clamp('margin-bottom', 40, 25);
   }
+
   &__slider {
   }
 }

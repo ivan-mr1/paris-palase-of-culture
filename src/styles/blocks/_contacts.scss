@@ -1,45 +1,56 @@
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
+@use '../config/functions' as *;
+@use '../config/mixins' as *;
 
 .contacts {
   color: var(--second-color);
+
   &__container {
   }
+
   &__header-block {
     &:not(:last-child) {
-      @include adaptive-clamp("margin-bottom", 75, 25);
+      @include adaptive-clamp('margin-bottom', 75, 25);
     }
   }
+
   &__title {
   }
+
   &__content {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    @media (max-width: em(767.98)){
-       flex-direction: column; 
+
+    @media (max-width: em(767.98)) {
+      flex-direction: column;
     }
   }
+
   &__address {
   }
+
   &__map {
     width: 60%;
+
     @media (max-width: em(767.98)) {
       width: 100%;
     }
   }
 }
+
 .address {
   &__item {
     display: block;
+
     &:not(:last-child) {
-      @include adaptive-clamp("margin-bottom", 25, 15);
+      @include adaptive-clamp('margin-bottom', 25, 15);
     }
   }
+
   &__title {
     font-weight: 500;
-    @include adaptive-clamp("font-size", 28, 16); 
-    @include adaptive-clamp("margin-bottom", 50, 20);  
+
+    @include adaptive-clamp('font-size', 28, 16);
+    @include adaptive-clamp('margin-bottom', 50, 20);
   }
 }
-

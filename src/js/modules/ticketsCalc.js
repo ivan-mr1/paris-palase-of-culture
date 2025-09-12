@@ -11,8 +11,10 @@ const PRICES = {
 };
 
 let currentTicketType = localStorage.getItem(STORAGE_KEYS.ticketType) || '20';
-let currentBasicCount = parseInt(localStorage.getItem(STORAGE_KEYS.basicCount)) || 0;
-let currentSeniorCount = parseInt(localStorage.getItem(STORAGE_KEYS.seniorCount)) || 0;
+let currentBasicCount =
+  parseInt(localStorage.getItem(STORAGE_KEYS.basicCount)) || 0;
+let currentSeniorCount =
+  parseInt(localStorage.getItem(STORAGE_KEYS.seniorCount)) || 0;
 
 const totalPriceElem = document.querySelector('.js-price-total');
 const ticketRadios = document.querySelectorAll('input[name="radio"]');
@@ -22,7 +24,10 @@ const minusButtons = document.querySelectorAll('.js-minus');
 function calculateTotal() {
   const basicPrice = PRICES.basic[currentTicketType];
   const seniorPrice = PRICES.senior[currentTicketType];
-  return (basicPrice * currentBasicCount + seniorPrice * currentSeniorCount).toFixed(0);
+  return (
+    basicPrice * currentBasicCount +
+    seniorPrice * currentSeniorCount
+  ).toFixed(0);
 }
 
 function updateTotalPrice() {
@@ -36,15 +41,17 @@ function getCurrentTicketType() {
 }
 
 const ticketCalc = () => {
-  document.querySelector('.stapper__number--basic').textContent = currentBasicCount;
-  document.querySelector('.stapper__number--senior').textContent = currentSeniorCount;
+  document.querySelector('.stapper__number--basic').textContent =
+    currentBasicCount;
+  document.querySelector('.stapper__number--senior').textContent =
+    currentSeniorCount;
 
-  ticketRadios.forEach(radio => {
+  ticketRadios.forEach((radio) => {
     radio.checked = radio.value === currentTicketType;
   });
 
   function toggleMinusButtons() {
-    minusButtons.forEach(button => {
+    minusButtons.forEach((button) => {
       const counter = button.closest('.js-counter');
       if (counter.classList.contains('js-basic-counter')) {
         button.classList.toggle('disabled', currentBasicCount === 0);
@@ -54,7 +61,7 @@ const ticketCalc = () => {
     });
   }
 
-  ticketRadios.forEach(radio => {
+  ticketRadios.forEach((radio) => {
     radio.addEventListener('change', (e) => {
       currentTicketType = e.target.value;
       localStorage.setItem(STORAGE_KEYS.ticketType, currentTicketType);
@@ -62,7 +69,7 @@ const ticketCalc = () => {
     });
   });
 
-  plusButtons.forEach(button => {
+  plusButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const counter = button.closest('.js-counter');
       const numberElem = counter.querySelector('.js-current-items');
@@ -82,16 +89,22 @@ const ticketCalc = () => {
     });
   });
 
-  minusButtons.forEach(button => {
+  minusButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const counter = button.closest('.js-counter');
       const numberElem = counter.querySelector('.js-current-items');
 
-      if (counter.classList.contains('js-basic-counter') && currentBasicCount > 0) {
+      if (
+        counter.classList.contains('js-basic-counter') &&
+        currentBasicCount > 0
+      ) {
         currentBasicCount--;
         numberElem.textContent = currentBasicCount;
         localStorage.setItem(STORAGE_KEYS.basicCount, currentBasicCount);
-      } else if (counter.classList.contains('js-senior-counter') && currentSeniorCount > 0) {
+      } else if (
+        counter.classList.contains('js-senior-counter') &&
+        currentSeniorCount > 0
+      ) {
         currentSeniorCount--;
         numberElem.textContent = currentSeniorCount;
         localStorage.setItem(STORAGE_KEYS.seniorCount, currentSeniorCount);
@@ -106,9 +119,4 @@ const ticketCalc = () => {
   toggleMinusButtons();
 };
 
-export {
-  ticketCalc,
-  updateTotalPrice,
-  PRICES,
-  getCurrentTicketType
-};
+export { ticketCalc, updateTotalPrice, PRICES, getCurrentTicketType };

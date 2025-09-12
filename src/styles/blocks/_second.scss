@@ -1,83 +1,102 @@
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
+@use '../config/functions' as *;
+@use '../config/mixins' as *;
 
 .visiting {
   &__container {
   }
+
   &__header-block {
     &:not(:last-child) {
-      @include adaptive-clamp("margin-bottom", 75, 25);
+      @include adaptive-clamp('margin-bottom', 75, 25);
     }
   }
+
   &__title {
   }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 16px;
-    @include adaptive-clamp("row-gap", 60, 16);
-    @media (max-width: 991.98px) {
+
+    @include adaptive-clamp('row-gap', 60, 16);
+
+    @media (width <= 991.98px) {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    @media (max-width: 620px) {
+
+    @media (width <= 620px) {
       grid-template-columns: minmax(280px, 100%);
       justify-content: center;
     }
   }
+
   &__card {
   }
 }
+
 .card-visiting {
   max-width: 440px;
   margin: 0 auto;
   color: var(--c-dark);
   transition: all 0.3s;
-  @media (any-hover: hover){
-    &:hover{
+
+  @media (any-hover: hover) {
+    &:hover {
       filter: grayscale(50%);
     }
-  } 
+  }
+
   &__image {
-    width: 100%;
     aspect-ratio: 440 / 285;
+    width: 100%;
+
     &:not(:last-child) {
-      @include adaptive-clamp("margin-bottom", 25, 18);
+      @include adaptive-clamp('margin-bottom', 25, 18);
     }
   }
+
   &__img {
   }
+
   &__title {
     position: relative;
     font-family: var(--ff-secondary);
     font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    @include adaptive-clamp("font-size", 32, 22);
+
+    @include adaptive-clamp('font-size', 32, 22);
+
     &:not(:last-child) {
       margin-bottom: 20px;
     }
-    &::before{
+
+    &::before {
+      content: '';
       position: absolute;
-      content:'';
       bottom: -10px;
       left: 0;
-      height: 2px;
       width: 68%;
+      height: 2px;
       background-color: var(--c-dark-red);
       transition: all 0.3s;
     }
   }
+
   &__google {
     font-size: 18px;
   }
+
   &__descr {
     font-weight: 100;
-    @include adaptive-clamp("font-size", 22, 18);
+
+    @include adaptive-clamp('font-size', 22, 18);
   }
 }
+
 .card-visiting:hover {
   .card-visiting__title::before {
     width: 100%;
   }
 }
-

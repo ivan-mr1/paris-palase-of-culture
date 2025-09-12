@@ -34,70 +34,93 @@ export default function sliderVideoAPI() {
         769: { slidesPerView: 3, spaceBetween: 30 },
       },
       navigation: {
-        nextEl: ".slider-video__button-prev",
-        prevEl: ".slider-video__button-next",
+        nextEl: '.slider-video__button-prev',
+        prevEl: '.slider-video__button-next',
       },
       pagination: {
         el: '.slider-video__pagination',
-        type: "bullets",
+        type: 'bullets',
         clickable: true,
-        bulletClass: "slider-dot",
-        bulletActiveClass: "slider-dot_active",
-        renderBullet: (index, className) => `<div class="${className}"></div>`
+        bulletClass: 'slider-dot',
+        bulletActiveClass: 'slider-dot_active',
+        renderBullet: (index, className) => `<div class="${className}"></div>`,
       },
       mousewheel: true,
       keyboard: true,
-      modules: [Navigation, Pagination]
+      modules: [Navigation, Pagination],
     });
 
     // Создание YouTube-плееров
-    document.querySelectorAll('.slider-video__slide').forEach(slide => {
+    document.querySelectorAll('.slider-video__slide').forEach((slide) => {
       const videoId = slide.dataset.videoId;
       const playerId = 'player-' + videoId;
 
-      players.set(videoId, new YT.Player(playerId, {
+      players.set(
         videoId,
-        playerVars: {
-          controls: 0,
-          modestbranding: 1,
-          rel: 0,
-          showinfo: 0,
-          autoplay: 0,
-          fs: 0,
-          iv_load_policy: 3,
-          disablekb: 1,
-        },
-        events: {
-          onStateChange: (event) => onPlayerStateChange(event, videoId),
-        }
-      }));
+        new YT.Player(playerId, {
+          videoId,
+          playerVars: {
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            showinfo: 0,
+            autoplay: 0,
+            fs: 0,
+            iv_load_policy: 3,
+            disablekb: 1,
+          },
+          events: {
+            onStateChange: (event) => onPlayerStateChange(event, videoId),
+          },
+        }),
+      );
     });
 
     // Функции управления thumb и кнопками
     function showThumb(videoId) {
-      const slide = document.querySelector(`.slider-video__slide[data-video-id="${videoId}"]`);
-      if (!slide) return;
+      const slide = document.querySelector(
+        `.slider-video__slide[data-video-id="${videoId}"]`,
+      );
+      if (!slide) {
+        return;
+      }
       const thumb = slide.querySelector('.video-thumb');
-      if (thumb) thumb.style.display = '';
+      if (thumb) {
+        thumb.style.display = '';
+      }
     }
 
     function hideThumb(videoId) {
-      const slide = document.querySelector(`.slider-video__slide[data-video-id="${videoId}"]`);
-      if (!slide) return;
+      const slide = document.querySelector(
+        `.slider-video__slide[data-video-id="${videoId}"]`,
+      );
+      if (!slide) {
+        return;
+      }
       const thumb = slide.querySelector('.video-thumb');
-      if (thumb) thumb.style.display = 'none';
+      if (thumb) {
+        thumb.style.display = 'none';
+      }
     }
 
     function togglePlayBtn(videoId, playing) {
-      const slide = document.querySelector(`.slider-video__slide[data-video-id="${videoId}"]`);
-      if (!slide) return;
+      const slide = document.querySelector(
+        `.slider-video__slide[data-video-id="${videoId}"]`,
+      );
+      if (!slide) {
+        return;
+      }
       const btn = slide.querySelector('.play-btn');
-      if (!btn) return;
+      if (!btn) {
+        return;
+      }
 
       if (playing) {
-        btn.style.backgroundImage = 'url("data:image/svg+xml;utf8,<svg fill=\'%23B3B3B3\' viewBox=\'0 0 64 64\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'14\' y=\'12\' width=\'12\' height=\'40\'/><rect x=\'38\' y=\'12\' width=\'12\' height=\'40\'/></svg>")';
+        btn.style.backgroundImage =
+          "url(\"data:image/svg+xml;utf8,<svg fill='%23B3B3B3' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><rect x='14' y='12' width='12' height='40'/><rect x='38' y='12' width='12' height='40'/></svg>\")";
       } else {
-        btn.style.backgroundImage = 'url("data:image/svg+xml;utf8,<svg fill=\'%23B3B3B3\' viewBox=\'0 0 64 64\' xmlns=\'http://www.w3.org/2000/svg\'><polygon points=\'16,12 52,32 16,52\'/></svg>")';
+        btn.style.backgroundImage =
+          "url(\"data:image/svg+xml;utf8,<svg fill='%23B3B3B3' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><polygon points='16,12 52,32 16,52'/></svg>\")";
       }
     }
 
@@ -116,7 +139,10 @@ export default function sliderVideoAPI() {
     function stopActiveVideo() {
       if (activeVideoId) {
         const prevPlayer = players.get(activeVideoId);
-        if (prevPlayer && prevPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+        if (
+          prevPlayer &&
+          prevPlayer.getPlayerState() === YT.PlayerState.PLAYING
+        ) {
           prevPlayer.pauseVideo();
         }
         togglePlayBtn(activeVideoId, false);
@@ -126,7 +152,7 @@ export default function sliderVideoAPI() {
     }
 
     // Обработка кликов по кнопке, превью и слайду
-    document.querySelectorAll('.slider-video__slide').forEach(slide => {
+    document.querySelectorAll('.slider-video__slide').forEach((slide) => {
       slide.addEventListener('click', (e) => {
         const clickedOnPlayBtn = e.target.classList.contains('play-btn');
         const clickedOnThumb = e.target.classList.contains('video-thumb');
@@ -135,7 +161,9 @@ export default function sliderVideoAPI() {
         if (clickedOnPlayBtn || clickedOnThumb || clickedOnSlide) {
           const videoId = slide.dataset.videoId;
           const player = players.get(videoId);
-          if (!player) return;
+          if (!player) {
+            return;
+          }
 
           const isSameVideo = activeVideoId === videoId;
           const wasPlaying = player.getPlayerState() === YT.PlayerState.PLAYING;
@@ -149,7 +177,10 @@ export default function sliderVideoAPI() {
             // Остановим другое активное видео
             if (activeVideoId && activeVideoId !== videoId) {
               const prevPlayer = players.get(activeVideoId);
-              if (prevPlayer && prevPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+              if (
+                prevPlayer &&
+                prevPlayer.getPlayerState() === YT.PlayerState.PLAYING
+              ) {
                 prevPlayer.pauseVideo();
                 togglePlayBtn(activeVideoId, false);
                 showThumb(activeVideoId);
@@ -174,7 +205,7 @@ export default function sliderVideoAPI() {
     swiper.on('slideChangeTransitionStart', stopActiveVideo);
 
     return {
-      stopActiveVideo
+      stopActiveVideo,
     };
   }
 

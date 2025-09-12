@@ -8,9 +8,9 @@ export default function gallery() {
       return array;
     }
 
-    const imgSource = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,]);// 13, 14, 15,
-    const galleryColumns = document.querySelectorAll(".gallery__column");
-    let elems = "";
+    const imgSource = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]); // 13, 14, 15,
+    const galleryColumns = document.querySelectorAll('.gallery__column');
+    let elems = '';
     let i = 0;
     let column = 0;
 
@@ -20,7 +20,7 @@ export default function gallery() {
       i++;
       if (i == 4) {
         galleryColumns[column].innerHTML = elems;
-        elems = "";
+        elems = '';
         i = 0;
         column++;
       }
@@ -28,10 +28,10 @@ export default function gallery() {
   }
 
   function galleryAnimation() {
-    const animItems = document.querySelectorAll(".gallery__img");
+    const animItems = document.querySelectorAll('.gallery__img');
 
     if (animItems.length > 0) {
-      window.addEventListener("scroll", animOnScroll);
+      window.addEventListener('scroll', animOnScroll);
       function animOnScroll() {
         for (let i = 0; i < animItems.length; i++) {
           const animItem = animItems[i],
@@ -49,15 +49,16 @@ export default function gallery() {
             scrollY > animItemOffset - animItemPoint &&
             scrollY < animItemOffset + animItemHeight
           ) {
-            animItem.classList.add("animation-gallery");
+            animItem.classList.add('animation-gallery');
           } else {
-            animItem.classList.remove("animation-gallery");
+            animItem.classList.remove('animation-gallery');
           }
         }
       }
       function offset(el) {
         const rect = el.getBoundingClientRect(),
-          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+          scrollLeft =
+            window.pageXOffset || document.documentElement.scrollLeft,
           scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
       }
@@ -67,5 +68,4 @@ export default function gallery() {
 
   galleryRandom();
   galleryAnimation();
-} 
-
+}

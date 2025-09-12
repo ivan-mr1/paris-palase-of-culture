@@ -1,21 +1,30 @@
-//@use "../config/functions" as *;
-@use "../config/mixins" as *;
+// @use "../config/functions" as *;
+@use '../config/mixins' as *;
 
-[class*="page__"] {
-    @include adaptive-clamp("padding-top", 75, 35);
-    @include adaptive-clamp("padding-bottom", 75, 35);
+[class*='page__'] {
+  @include adaptive-clamp('padding-top', 75, 35);
+  @include adaptive-clamp('padding-bottom', 75, 35);
 }
+
 .page {
-    &__welcome {}
-    &__visiting {}
-    &__explore {}
-    &__video {}
-    &__video {}
-    &__tickets {}
-    &__gallery {
-        @media (max-width: 1025px){
-            padding-bottom: 0px;
-        }
+  &__welcome {
+  }
+  &__visiting {
+  }
+  &__explore {
+  }
+  &__video {
+  }
+  &__video {
+  }
+  &__tickets {
+  }
+
+  &__gallery {
+    @media (width <= 1025px) {
+      padding-bottom: 0;
     }
-    &__contacts {}
+  }
+  &__contacts {
+  }
 }
