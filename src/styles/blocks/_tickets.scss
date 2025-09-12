@@ -1,51 +1,65 @@
-@use "../config/functions" as *;
-@use "../config/mixins" as *;
+@use '../config/functions' as *;
+@use '../config/mixins' as *;
 
 .tickets {
   color: var(--second-color);
+
   &__container {
   }
+
   &__header-block {
-    @include adaptive-clamp("margin-bottom", 75, 25);
+    @include adaptive-clamp('margin-bottom', 75, 25);
   }
+
   &__title {
   }
+
   &__content {
     display: grid;
     grid-template-columns: 50% 45%;
-    @include adaptive-clamp("gap", 60, 25);
-    @media (max-width: em(1100)){
+
+    @include adaptive-clamp('gap', 60, 25);
+
+    @media (max-width: em(1100)) {
       grid-template-columns: auto;
       justify-items: center;
     }
   }
+
   &__image {
     width: 100%;
     max-width: clamp(280px, 80vw, 720px);
   }
+
   &__booking {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    @media (max-width: em(500)){
-       flex-direction: column;
-       align-items: start;
+
+    @media (max-width: em(500)) {
+      flex-direction: column;
+      align-items: start;
     }
   }
+
   &__amount {
     display: flex;
     flex-direction: column;
   }
 }
+
 .slider-tickets {
   &__swiper {
   }
+
   &__wrapper {
   }
+
   &__slide {
-    aspect-ratio: 720 / 550;
     position: relative;
+    aspect-ratio: 720 / 550;
+
     img {
       position: absolute;
       top: 0;
@@ -56,79 +70,90 @@
     }
   }
 }
+
 .type-tickets {
   &__title {
-    font-weight: 700;
     font-size: 28px;
-    @include adaptive-clamp("font-size", 28, 20);
-    @include adaptive-clamp("margin-bottom", 50, 25);
+    font-weight: 700;
+
+    @include adaptive-clamp('font-size', 28, 20);
+    @include adaptive-clamp('margin-bottom', 50, 25);
   }
+
   &__label {
     display: flex;
-    align-items: center;  
+    align-items: center;
     gap: 16px;
+
     &:not(:last-child) {
       margin-bottom: 25px;
     }
   }
+
   &__span {
   }
+
   &__input {
     &--radio {
       width: 17px;
       height: 17px;
       background-color: transparent;
-      border: 1px solid #000;
+      border: 1px solid #000000;
       border-radius: 50%;
     }
   }
 }
+
 .amount {
-  min-width: 210px;//для отоброжения цены
+  min-width: 210px; // для отоброжения цены
   &__title {
     margin-bottom: 25px;
     font-weight: 700;
-    @include adaptive-clamp("font-size", 28, 20);
-    @include adaptive-clamp("margin-bottom", 25, 15);
+
+    @include adaptive-clamp('font-size', 28, 20);
+    @include adaptive-clamp('margin-bottom', 25, 15);
   }
+
   &__subtitle {
     margin-bottom: 13px;
   }
+
   &__stepper {
-    width: 150px;
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    padding: 3px 5px;
+    align-items: center;
+    width: 150px;
     margin-bottom: 10px;
-    border: 3px solid #000;
+    padding: 3px 5px;
+    border: 3px solid #000000;
   }
 
   &__button {
+    font-size: 32px;
+    font-weight: 400;
     background: none;
     border: none;
-    font-weight: 400;
-    font-size: 32px;
     cursor: pointer;
   }
 
   &__price {
     font-weight: 700;
     letter-spacing: 1.65px;
-    @include adaptive-clamp("font-size", 28, 20);
-    @include adaptive-clamp("margin-top", 35, 20);
-    @include adaptive-clamp("margin-bottom", 58, 25);
+
+    @include adaptive-clamp('font-size', 28, 20);
+    @include adaptive-clamp('margin-top', 35, 20);
+    @include adaptive-clamp('margin-bottom', 58, 25);
   }
 
   &__btn {
-    @media (max-width: em(500)){
-      width: 100%;
+    @media (max-width: em(500)) {
       display: flex;
+      width: 100%;
     }
   }
 }
-.stapper {
 
+.stapper {
   &__button {
   }
 
@@ -142,6 +167,3 @@
   &__number--senior {
   }
 }
-
-
-

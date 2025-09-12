@@ -6,28 +6,30 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 const noAttr = () => {
   return {
     transformIndexHtml(html) {
-      return html.replaceAll(' crossorigin', '')
-    }
-  }
-}
+      return html.replaceAll(' crossorigin', '');
+    },
+  };
+};
 
 export default defineConfig({
   plugins: [
     SassGlob(),
     noAttr(),
     ViteImageOptimizer({
+      // https://sharp.pixelplumbing.com/api-output#jpeg
+      //https://github.com/FatehAK/vite-plugin-image-optimizer
       png: {
         quality: 70,
       },
-      jpeg: {        
+      jpeg: {
         quality: 70,
       },
       jpg: {
         quality: 70,
-      },       
+      },
       webp: {
-        quality: 85,					
-      }
+        quality: 85,
+      },
     }),
   ],
   build: {
@@ -35,9 +37,11 @@ export default defineConfig({
       input: sync('src/**/*.html'.replace(/\\/g, '/')),
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name
-          if (/css/.test(extType)) { extType = 'assets/css' }
-          return assetInfo.originalFileName ?? `${extType}/[name][extname]`
+          let extType = assetInfo.name;
+          if (/css/.test(extType)) {
+            extType = 'assets/css';
+          }
+          return assetInfo.originalFileName ?? `${extType}/[name][extname]`;
         },
         chunkFileNames: 'assets/js/[name].js',
         entryFileNames: 'assets/js/[name].js',
@@ -49,4 +53,4 @@ export default defineConfig({
   },
   root: 'src',
   base: '',
-})
+});

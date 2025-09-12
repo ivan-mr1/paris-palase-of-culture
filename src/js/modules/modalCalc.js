@@ -1,17 +1,27 @@
-import { updateTotalPrice, PRICES, getCurrentTicketType } from "./ticketsCalc";
+import { updateTotalPrice, PRICES, getCurrentTicketType } from './ticketsCalc';
 
 const modalCalcTickets = () => {
-  const basicStepper = document.querySelector('.stappers-booking__basic .js-counter');
-  const seniorStepper = document.querySelector('.stappers-booking__senior .js-counter');
+  const basicStepper = document.querySelector(
+    '.stappers-booking__basic .js-counter',
+  );
+  const seniorStepper = document.querySelector(
+    '.stappers-booking__senior .js-counter',
+  );
 
   const basicCountElem = basicStepper.querySelector('.js-current-items');
   const seniorCountElem = seniorStepper.querySelector('.js-current-items');
 
-  const basicSectionElem = document.querySelector('.js-basic-counter .js-current-items');
-  const seniorSectionElem = document.querySelector('.js-senior-counter .js-current-items');
+  const basicSectionElem = document.querySelector(
+    '.js-basic-counter .js-current-items',
+  );
+  const seniorSectionElem = document.querySelector(
+    '.js-senior-counter .js-current-items',
+  );
 
   const basicModalCountDisplay = document.querySelector('.js-calc-basic-modal');
-  const seniorModalCountDisplay = document.querySelector('.js-calc-senior-modal');
+  const seniorModalCountDisplay = document.querySelector(
+    '.js-calc-senior-modal',
+  );
 
   const basicModalPrice = document.querySelector('.js-price-basic-modal');
   const seniorModalPrice = document.querySelector('.js-price-senior-modal');
@@ -20,12 +30,17 @@ const modalCalcTickets = () => {
 
   function toggleMinusButtons(stepper) {
     const minusBtn = stepper.querySelector('.js-minus');
-    const count = parseInt(stepper.querySelector('.js-current-items').textContent, 10);
+    const count = parseInt(
+      stepper.querySelector('.js-current-items').textContent,
+      10,
+    );
     minusBtn.classList.toggle('disabled', count <= 0);
   }
 
   function syncFromSection() {
-    if (!basicSectionElem || !seniorSectionElem) return;
+    if (!basicSectionElem || !seniorSectionElem) {
+      return;
+    }
 
     basicCountElem.textContent = basicSectionElem.textContent;
     seniorCountElem.textContent = seniorSectionElem.textContent;
@@ -37,7 +52,9 @@ const modalCalcTickets = () => {
   }
 
   function syncToSection() {
-    if (!basicSectionElem || !seniorSectionElem) return;
+    if (!basicSectionElem || !seniorSectionElem) {
+      return;
+    }
 
     basicSectionElem.textContent = basicCountElem.textContent;
     seniorSectionElem.textContent = seniorCountElem.textContent;
@@ -55,11 +72,19 @@ const modalCalcTickets = () => {
     const basicTotalPrice = basicCount * basicPrice;
     const seniorTotalPrice = seniorCount * seniorPrice;
 
-    if (basicModalCountDisplay) basicModalCountDisplay.textContent = basicCount;
-    if (seniorModalCountDisplay) seniorModalCountDisplay.textContent = seniorCount;
+    if (basicModalCountDisplay) {
+      basicModalCountDisplay.textContent = basicCount;
+    }
+    if (seniorModalCountDisplay) {
+      seniorModalCountDisplay.textContent = seniorCount;
+    }
 
-    if (basicModalPrice) basicModalPrice.textContent = basicTotalPrice.toFixed(0) + ' €';
-    if (seniorModalPrice) seniorModalPrice.textContent = seniorTotalPrice.toFixed(0) + ' €';
+    if (basicModalPrice) {
+      basicModalPrice.textContent = basicTotalPrice.toFixed(0) + ' €';
+    }
+    if (seniorModalPrice) {
+      seniorModalPrice.textContent = seniorTotalPrice.toFixed(0) + ' €';
+    }
 
     if (totalPriceModalElem) {
       const totalPrice = basicTotalPrice + seniorTotalPrice;

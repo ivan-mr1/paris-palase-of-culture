@@ -2,65 +2,76 @@
 @use './../config/mixins' as *;
 @use './../config/variables';
 
-$iconMenuColor: #FFFFFF;//burger button
-//Burger
- 
-.icon-menu {
-	display: none;
-	@media (max-width: em(1024.98)) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		flex: 0 0 rem(30);
-		height: rem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: $iconMenuColor;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-	}
-}
-.icon-menu.menu-open {
-	@media (max-width:em(1024.98)){
-		span,
-		&::before,
-		&::after {
-			background-color: $iconMenuColor;
-		}
-		span {
-			width: 0;
-		}
-		&::before {
-			top: calc(50% - rem(1));
-			transform: rotate(-45deg);
-		}
-		&::after {
-			bottom: calc(50% - rem(1));
-			transform: rotate(45deg);
-		}
-	}
-} 
+$iconMenuColor: #ffffff; // burger button
+// Burger
 
-// Burger second version  
+.icon-menu {
+  display: none;
+
+  @media (max-width: em(1024.98)) {
+    flex: 0 0 rem(30);
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: rem(30);
+    height: rem(18);
+
+    @media (any-hover: none) {
+      cursor: default;
+    }
+
+    span,
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: rem(2);
+      background-color: $iconMenuColor;
+      transition: all 0.3s ease 0s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+  }
+}
+
+.icon-menu.menu-open {
+  @media (max-width: em(1024.98)) {
+    span,
+    &::before,
+    &::after {
+      background-color: $iconMenuColor;
+    }
+
+    span {
+      width: 0;
+    }
+
+    &::before {
+      top: calc(50% - rem(1));
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      bottom: calc(50% - rem(1));
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// Burger second version
+
 /* 
 .icon-menu {
 	display: none;

@@ -20,25 +20,32 @@ export default function customMainVideoPlayer() {
     updatePlayButtons();
     progress.value = 0;
     progress.style.background = `linear-gradient(to right, #710707 0%, #710707 0%, #fff 0%, white 100%)`;
-    if (preloader) preloader.style.display = 'block';
+    if (preloader) {
+      preloader.style.display = 'block';
+    }
   }
 
   function togglePlay() {
     // Остановить YouTube-видео (если есть iframe)
-    document.querySelectorAll('iframe[id^="player-"]').forEach(iframe => {
-      iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    document.querySelectorAll('iframe[id^="player-"]').forEach((iframe) => {
+      iframe.contentWindow?.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*',
+      );
     });
 
     if (video.paused || video.ended) {
       if (window.sliderVideoAPIInstance) {
-        window.sliderVideoAPIInstance.then(api => {
+        window.sliderVideoAPIInstance.then((api) => {
           if (api && api.stopActiveVideo) {
             api.stopActiveVideo();
           }
         });
       }
       video.play();
-      if (preloader) preloader.style.display = 'none';
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
     } else {
       video.pause();
     }
@@ -49,11 +56,15 @@ export default function customMainVideoPlayer() {
     if (video.paused) {
       playBtn.classList.remove('pause');
       bigPlayBtn.style.display = 'block';
-      if (preloader) preloader.style.display = 'block';
+      if (preloader) {
+        preloader.style.display = 'block';
+      }
     } else {
       playBtn.classList.add('pause');
       bigPlayBtn.style.display = 'none';
-      if (preloader) preloader.style.display = 'none';
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
     }
   }
 
@@ -126,7 +137,9 @@ export default function customMainVideoPlayer() {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (document.activeElement.tagName === 'INPUT') return;
+    if (document.activeElement.tagName === 'INPUT') {
+      return;
+    }
 
     switch (e.key.toLowerCase()) {
       case ' ':
@@ -140,10 +153,14 @@ export default function customMainVideoPlayer() {
         fullscreenBtn.click();
         break;
       case '>':
-        if (e.shiftKey) changeSpeed(0.25);
+        if (e.shiftKey) {
+          changeSpeed(0.25);
+        }
         break;
       case '<':
-        if (e.shiftKey) changeSpeed(-0.25);
+        if (e.shiftKey) {
+          changeSpeed(-0.25);
+        }
         break;
     }
   });
@@ -153,7 +170,9 @@ export default function customMainVideoPlayer() {
   video.addEventListener('click', togglePlay);
   video.addEventListener('play', () => {
     updatePlayButtons();
-    if (preloader) preloader.style.display = 'none';
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
   });
   video.addEventListener('pause', updatePlayButtons);
 

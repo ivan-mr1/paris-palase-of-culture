@@ -1,6 +1,6 @@
-@use "functions" as *;
-@use "mixins" as *;
-@use "variables" as global;
+@use 'functions' as *;
+@use 'mixins' as *;
+@use 'variables' as global;
 @use 'css-variables' as *;
 
 /* 
@@ -16,74 +16,84 @@
 	border: 0 !important
 } */
 body {
-	font-weight: var(--f-font-weight);
-	color: var(--main-color);
-	background-color: var(--c-bg-body);
-	line-height: var(--f-line-height);
-	font-family: var(--font-family), sans-serif;
-	font-size: var(--f-font-size);
-	//@media (max-width: em(767.98)){
-	//	font-size: var(--f-font-size-mobile);
-	//}
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--f-font-size);
+  font-weight: var(--f-font-weight);
+  line-height: var(--f-line-height);
+  color: var(--main-color);
+  background-color: var(--c-bg-body);
 
-	//only this project
-	@media (max-width: 1024px){
-		font-size: 20px; 
-	}
-	@media (max-width: 767.98px){
-		font-size: 18px; 
-	}
-	@media (max-width: 450px){
-		font-size: 16px; 
-	}
-}
-body.lock {
-	//touch-action: none;
-	overflow: hidden;
-}
-.wrapper {
-	display: flex;	
-	flex-direction: column;
-	min-height: 100%;	
-	//overflow: clip;
-	overflow: hidden;//min-block-size: 100%; Поменять на clip - если используется в проекте position: sticky
-}
-.page {
-	flex: 1 1 auto;
-}
-[class*="__container"] {
-	margin-inline: auto;
-	max-inline-size: rem(global.$max-width-container);
-	padding-inline: rem(global.$main-offset);
-}
+  // @media (max-width: em(767.98)){
+  //	font-size: var(--f-font-size-mobile);
+  // }
 
+  // only this project
+  @media (width <= 1024px) {
+    font-size: 20px;
+  }
 
-.iframe-wrapper {//у iframe удалить ширину, высоту и style
-  //position: relative;
-  //aspect-ratio: 452 / 254;
-  //padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
-  //height: 0;
-  //overflow: hidden;
-  iframe {
-	//position: absolute;
-	//top: 0;
-	//left: 0;
-	//width: 100%;
-	//height: 100%;
-	//border: 0;
+  @media (width <= 767.98px) {
+    font-size: 18px;
+  }
+
+  @media (width <= 450px) {
+    font-size: 16px;
   }
 }
-.map {//у iframe удалить ширину, высоту и style
-  position: relative;
-  aspect-ratio: 16 / 9;
+
+body.lock {
+  // touch-action: none;
   overflow: hidden;
+}
+
+.wrapper {
+  // overflow: clip;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; // min-block-size: 100%; Поменять на clip - если используется в проекте position: sticky
+}
+
+.page {
+  flex: 1 1 auto;
+}
+
+[class*='__container'] {
+  margin-inline: auto;
+  max-inline-size: rem(global.$max-width-container);
+  padding-inline: rem(global.$main-offset);
+}
+
+.iframe-wrapper {
+  // у iframe удалить ширину, высоту и style
+  // position: relative;
+  // aspect-ratio: 452 / 254;
+  // padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+  // height: 0;
+  // overflow: hidden;
   iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+    // border: 0;
+  }
+}
+
+.map {
+  // у iframe удалить ширину, высоту и style
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 }
 
@@ -105,24 +115,26 @@ body.lock {
 	}
 } */
 
-
 .ibg {
-	position: relative;
-	img {
-		position: absolute;
-		inset-block-start: 0;
-		inset-inline-start: 0;
-		object-fit: cover;
-		block-size: 100%;
-		inline-size: 100%;
-	}
-	&_contain {
-		img {
-			object-fit: contain;
-		}
-	}
-} 
- /* 
+  position: relative;
+
+  img {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    object-fit: cover;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  &_contain {
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+/* 
 .gradient-text {
 	background: var(--gradient-color);//можно использовать фото
 	background-clip: text;//обрезка фона, чтобы он соответствовал тексту
@@ -136,5 +148,5 @@ p {
  */
 
 .disabled {
-	opacity: 0.6;
+  opacity: 0.6;
 }

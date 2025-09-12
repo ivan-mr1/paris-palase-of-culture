@@ -1,32 +1,29 @@
- @use 'config/fonts';
+@use 'config/fonts';
+
 // @use 'config/icons';
 
 // use swiper style
- @use 'swiper/css';
- @use 'swiper/css/effect-cube';
+@use 'swiper/css';
+@use 'swiper/css/effect-cube';
+
 // @use 'swiper/css/navigation';
 // @use 'swiper/css/pagination';
 
-
- @use 'config/variables';
- @use 'config/css-variables';
- @use 'config/reset';
- @use 'config/setting';  
-
- @use 'base/base';
-
- @use 'blocks/page';
- @use 'blocks/common';
- @use 'blocks/header';
- @use 'blocks/footer';
- @use 'blocks/hero';
- @use 'blocks/second';
- @use 'blocks/explore';
- @use 'blocks/video';
- @use 'blocks/gallery'; 
- @use 'blocks/tickets';
- @use 'blocks/booking';
- @use 'blocks/parallax';
- @use 'blocks/contacts';
-
-
+@use 'config/variables';
+@use 'config/css-variables';
+@use 'config/reset';
+@use 'config/setting';
+@use 'base/base';
+@use 'blocks/page';
+@use 'blocks/common';
+@use 'blocks/header';
+@use 'blocks/footer';
+@use 'blocks/hero';
+@use 'blocks/second';
+@use 'blocks/explore';
+@use 'blocks/video';
+@use 'blocks/gallery';
+@use 'blocks/tickets';
+@use 'blocks/booking';
+@use 'blocks/parallax';
+@use 'blocks/contacts';

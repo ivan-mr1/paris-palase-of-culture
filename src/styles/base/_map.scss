@@ -3,36 +3,37 @@
 
 .map {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+
   &__preview {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     z-index: 2;
+    inset: 0;
     cursor: pointer;
   }
+
   &__img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     pointer-events: none; // весь блок кликабельный
-    user-select: none;//запрещает пользователю выделять текст или элементы
+    user-select: none; // запрещает пользователю выделять текст или элементы
   }
+
   iframe {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: 0;
-    z-index: 1;
   }
 }
+
 /* 
 <div class="map" data-map>
   <div class="map__preview" data-map-trigger>

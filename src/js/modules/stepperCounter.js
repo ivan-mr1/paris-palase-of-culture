@@ -1,6 +1,5 @@
- 
 const stepperCounter = () => {
-  const carts = document.querySelectorAll('.js-cart');//делегирование событий, вешаем обработчик на все корзины
+  const carts = document.querySelectorAll('.js-cart'); //делегирование событий, вешаем обработчик на все корзины
 
   const updateCartItemCount = () => {
     carts.forEach((cart) => {
@@ -8,9 +7,9 @@ const stepperCounter = () => {
         let currentItems, minusBtn;
 
         if (e.target.matches('.js-minus') || e.target.matches('.js-plus')) {
-          const counter  = e.target.closest('.js-counter');//ближайший родитель для элемента, по которому был клик
-          currentItems = counter.querySelector('.js-current-items');//текущее значение счетчика, ищем именно внутри родителя, а не всего документа   
-          minusBtn = counter.querySelector('.js-minus');     
+          const counter = e.target.closest('.js-counter'); //ближайший родитель для элемента, по которому был клик
+          currentItems = counter.querySelector('.js-current-items'); //текущее значение счетчика, ищем именно внутри родителя, а не всего документа
+          minusBtn = counter.querySelector('.js-minus');
         }
 
         if (e.target.matches('.js-plus')) {
@@ -21,10 +20,11 @@ const stepperCounter = () => {
         if (e.target.matches('.js-minus')) {
           if (parseInt(currentItems.textContent) > 1) {
             currentItems.textContent = --currentItems.textContent;
-          } else if (parseInt(currentItems.textContent) === 1) {//если 0, делаем кнопку не активной
+          } else if (parseInt(currentItems.textContent) === 1) {
+            //если 0, делаем кнопку не активной
             currentItems.textContent = --currentItems.textContent;
             minusBtn.classList.add('disabled');
-          }        
+          }
         }
       });
     });
@@ -32,9 +32,7 @@ const stepperCounter = () => {
   updateCartItemCount();
 };
 
-export {
-  stepperCounter
-}; 
+export { stepperCounter };
 
 /* 
 <div class="js-counter">

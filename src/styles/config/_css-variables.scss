@@ -1,37 +1,42 @@
- @use 'functions' as *;
+@use 'functions' as *;
+
 // --f-font-size: #{rem(16)}; #{rgba(#000, 10%) (если используем функции в css переменных, надо обернуть в #{} , иначе функции не будут работать)
 :root {
-	--font-family: "Roboto", sans-serif;
-	--ff-primary: 'Roboto', sans-serif;
-	--ff-secondary: 'Forum', sans-serif;
-	//--f-font-size: #{rem(22)};
-	--f-font-size: 22px;
-	//--f-font-size-mobile: #{rem(16)};
-	--f-font-weight: 300;
-	--f-line-height: 1.18;
+  --font-family: 'Roboto', sans-serif;
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Forum', sans-serif;
 
-	--main-color: var(--c-white);
-	--second-color: var(--c-dark); 
-	--accent-color: var(--c-font-gold);
-	--hover-color: var(--c-scrollUp);
-	--hover-background: var(--c-scrollUp);
-	--c-scrollUp: #9D8665;
+  // --f-font-size: #{rem(22)};
+  --f-font-size: 22px;
 
-	--c-white: #FFFFFF;
-	--c-dark: #000000;
-	--c-yellow-first: #CAAA7D;
-	--c-font-gold: #9D8665;
+  // --f-font-size-mobile: #{rem(16)};
+  --f-font-weight: 300;
+  --f-line-height: 1.18;
 
-	--c-dark-red: #710707;
-	--c-bg-body-dark: #030303;
+  --main-color: var(--c-white);
+  --second-color: var(--c-dark);
+  --accent-color: var(--c-font-gold);
+  --hover-color: var(--c-scrollUp);
+  --hover-background: var(--c-scrollUp);
+  --c-scrollUp: #9d8665;
 
-	--transition: 0.3s ease 0s;
+  --c-white: #ffffff;
+  --c-dark: #000000;
+  --c-yellow-first: #caaa7d;
+  --c-font-gold: #9d8665;
 
-	//--c-lightgrey: #B2B2B9;	
-	//--c-orange: #c2410c;	
-	/* --c-black: #{rgba(#000, 10%)}; */	
-	/* --b-radius: #{rem(10)}; */
+  --c-dark-red: #710707;
+  --c-bg-body-dark: #030303;
+
+  --transition: 0.3s ease 0s;
+
+  // --c-lightgrey: #B2B2B9;
+  // --c-orange: #c2410c;
+
+  /* --c-black: #{rgba(#000, 10%)}; */
+
+  /* --b-radius: #{rem(10)}; */
 }
 
-$headerContainerHeigthBig: 144; //для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
-$headerContainerHeigthSmall: 60;//для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка 
+$headerContainerHeigthBig: 144; // для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+$headerContainerHeigthSmall: 60; // для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка

@@ -5,7 +5,9 @@ const inputToDiv = () => {
 
   const ticketDateSpan = document.querySelector('.overwiev__date--date');
   const ticketTimeSpan = document.querySelector('.overwiev__time--time');
-  const ticketTypeSpan = document.querySelector('.overwiev__type-ticket--type-ticket');
+  const ticketTypeSpan = document.querySelector(
+    '.overwiev__type-ticket--type-ticket',
+  );
 
   // Формат даты: "Friday, August 19"
   dateInput.addEventListener('change', () => {
@@ -35,7 +37,4 @@ const inputToDiv = () => {
   });
 };
 
-export {
-    inputToDiv
-};
-
+export { inputToDiv };

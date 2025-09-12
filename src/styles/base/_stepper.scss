@@ -1,22 +1,24 @@
-//@use './../config/css-variables' as *;
-//@use './../config/functions' as *;
-//@use './../config/mixins' as *;
+// @use './../config/css-variables' as *;
+// @use './../config/functions' as *;
+// @use './../config/mixins' as *;
 
-.stapper{
-  width: 105px;
-  border: 1px solid #000;
+.stapper {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  width: 105px;
+  border: 1px solid #000000;
+
   &__button {
     width: 35px;
     height: 25px;
-    background-color: var(--c-dark);
     color: var(--c-white);
+    background-color: var(--c-dark);
     cursor: pointer;
+
     &--light {
-      background-color: var(--c-white);
       color: var(--c-dark);
+      background-color: var(--c-white);
     }
   }
 
