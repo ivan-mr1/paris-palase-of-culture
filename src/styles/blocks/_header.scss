@@ -1,21 +1,25 @@
 @use './../base/header-fon';
 @use './../base/burger';
-
-// @use './../base/menu-header';
-
-// @use "sass:math" as math;
 @use '../config/functions' as *;
 @use '../config/mixins' as *;
 @use '../config/variables' as global;
 
+$menuColor: #ffffff; // text
+$menuBackground: #000000; // background
+$iconMenuColor: #000000; // burger button
+
 .header {
-  // position: fixed;
   position: relative;
   z-index: 50;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--c-bg-body-dark);
+
+  &__logo {
+    position: relative;
+    z-index: 5;
+  }
 
   &__container {
     display: flex;
@@ -26,73 +30,11 @@
     @include adaptive-clamp('padding-top', 50, 20);
     @include adaptive-clamp('padding-bottom', 50, 20);
   }
-
-  &__logo {
-  }
-
-  &__menu {
-  }
-}
-
-.menu {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 50px;
-
-    @media (width <= 1300px) {
-      column-gap: 30px;
-    }
-
-    @media (width <= 1200px) {
-      column-gap: 10px;
-    }
-
-    // @include adaptive-clamp("column-gap", 55, 15, 760, 0);
-    @media (width <= 1024.98px) {
-      // flex-direction: column;
-      // gap: rem(20);
-    }
-  }
-
-  &__body {
-  }
-
-  &__item {
-  }
-
-  &__link {
-    font-size: 22px;
-    font-weight: 100;
-    letter-spacing: 0.09em;
-    color: #ffffff;
-  }
-
-  &__icon {
-  }
-
-  &__images,
-  &__social {
-    display: none;
-  }
-}
-
-// adaptive
-$menuColor: #ffffff; // text
-$menuBackground: #000000; // background
-$iconMenuColor: #000000; // burger button
-.header {
-  &__logo {
-    position: relative; // burger
-    z-index: 5; // burger
-  }
 }
 
 .menu {
   &__body {
     @media (width <= 1024px) {
-      // burger
       position: fixed;
       top: 0;
       left: -100%;
@@ -107,7 +49,6 @@ $iconMenuColor: #000000; // burger button
       transition: left 0.3s;
 
       &::before {
-        // подложка безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
         content: '';
         position: fixed;
         z-index: 2;
@@ -117,11 +58,7 @@ $iconMenuColor: #000000; // burger button
         background-color: $menuBackground;
         transition: left 0.3s;
 
-        @include adaptive-clamp(
-          'height',
-          110,
-          60
-        ); // должно совпадать с высотой header. для высоты подложки безопасности, чтобы пункты меню не налазили на логотип, а появлялась прокрутка
+        @include adaptive-clamp('height', 110, 60);
       }
     }
 
@@ -145,6 +82,8 @@ $iconMenuColor: #000000; // burger button
 
   &__images,
   &__social {
+    display: none;
+
     @media (width <= 768px) {
       display: block;
     }
@@ -210,8 +149,20 @@ $iconMenuColor: #000000; // burger button
   }
 
   &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 50px;
+
+    @media (width <= 1300px) {
+      column-gap: 30px;
+    }
+
+    @media (width <= 1200px) {
+      column-gap: 10px;
+    }
+
     @media (width <= 1024px) {
-      // burger
       flex-direction: column;
       align-items: start;
       column-gap: rem(25);
@@ -220,26 +171,23 @@ $iconMenuColor: #000000; // burger button
     @media (width <= 768px) {
       margin-bottom: 35px;
     }
-
-    @media (width <= 425px) {
-    }
-  }
-
-  &__item {
   }
 
   &__link {
-    // display: block;//burger
-    // text-align: left;
+    font-size: 22px;
+    font-weight: 100;
+    letter-spacing: 0.09em;
+    color: #ffffff;
+
     @media (width <= 1024px) {
-      // burger
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 122px;
       font-size: rem(20);
-      color: $menuColor; // перепишется в header.scss
+      color: $menuColor;
+
       &::before {
         content: '';
         position: absolute;

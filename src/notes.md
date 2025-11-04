@@ -47,4 +47,3 @@ if git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
     echo "⚠️  У ветки '$branch' нет соответствующей ветки на origin."
 fi
 done
-

@@ -3,12 +3,6 @@
 // @use './../config/variables';
 
 .form {
-  &__fieldset {
-  }
-
-  &__label {
-  }
-
   &__input {
     width: 100%;
     height: 100%;
@@ -33,8 +27,5 @@
     font-size: 18px;
     font-weight: 400;
     color: #030303;
-  }
-
-  &__steppers {
   }
 }

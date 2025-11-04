@@ -18,7 +18,7 @@ export default function gallery() {
       let img = `<img class="gallery__img" src="assets/img/galery/galery${item}.webp" alt="gallery${item}">`;
       elems += img;
       i++;
-      if (i == 4) {
+      if (i === 4) {
         galleryColumns[column].innerHTML = elems;
         elems = '';
         i = 0;

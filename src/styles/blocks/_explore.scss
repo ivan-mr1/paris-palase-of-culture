@@ -36,9 +36,6 @@
     }
   }
 
-  &__title {
-  }
-
   &__text {
     @include adaptive-clamp('margin-bottom', 60, 10);
   }

@@ -4,9 +4,6 @@
 .footer {
   background-color: var(--c-bg-body-dark);
 
-  &__container {
-  }
-
   &__top {
     display: grid;
     grid-template-columns: 195px 365px 1fr;
@@ -84,9 +81,6 @@
       display: none;
     }
   }
-
-  &__bottom--developer {
-  }
 }
 
 .menu-footer {
@@ -103,26 +97,11 @@
     justify-content: space-between;
     gap: 25px 16px;
 
-    @media (width <= 1029px) {
-    }
-
-    @media (width <= 980px) {
-    }
-
     @media (width <= 650px) {
       grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(3, 1fr);
       row-gap: 8px;
     }
-  }
-
-  &__column {
-  }
-
-  &__item {
-  }
-
-  &__link {
   }
 }
 
@@ -151,6 +130,7 @@
     color: var(
       --c-white
     ); // начальный цвет иконки и текста внутри (currentColor)
+
     border: 1px solid #666666;
     border-radius: 50%;
     cursor: pointer;

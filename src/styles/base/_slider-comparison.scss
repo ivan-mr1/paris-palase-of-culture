@@ -18,12 +18,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    &--after {
-    }
-
-    &--before {
-    }
   }
 
   &__line-top {
@@ -83,9 +77,6 @@
 
 @media (width <= 767.98px) {
   .slider-comparison {
-    &__img {
-    }
-
     &__line-top,
     &__line-bottom {
       width: 2px;

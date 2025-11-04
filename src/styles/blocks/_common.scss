@@ -7,9 +7,6 @@
   align-items: center;
   gap: 25px;
 
-  &--img {
-  }
-
   &--text {
     font-family: var(--ff-secondary);
     font-size: 28px;
@@ -27,7 +24,6 @@
   }
 }
 
-// =============================
 .header-block {
   &__title {
     font-family: var(--ff-secondary);
@@ -71,15 +67,6 @@
   }
 }
 
-// =============================
 .color-span {
   color: var(--c-yellow-first);
 }
-
-// =============================
-
-// =============================
-
-// =============================
-
-// =============================

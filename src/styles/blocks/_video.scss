@@ -4,9 +4,6 @@
 @use 'video/slider-videoAPI';
 
 .video {
-  &__container {
-  }
-
   &__header-block {
     display: flex;
     column-gap: 16px;
@@ -40,8 +37,5 @@
     margin-bottom: 40px;
 
     @include adaptive-clamp('margin-bottom', 40, 25);
-  }
-
-  &__slider {
   }
 }

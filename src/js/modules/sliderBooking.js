@@ -21,4 +21,5 @@ export default function sliderBooking() {
     },
   });
   //console.log('sliderBooking loaded');
+  return swiper;
 }

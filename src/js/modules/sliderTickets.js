@@ -20,5 +20,7 @@ export default function sliderTickets() {
       shadowScale: 0.8,
     },
   });
+
+  return swiper;
   //console.log('sliderTickets loaded');
 }

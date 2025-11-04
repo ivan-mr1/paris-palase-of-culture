@@ -9,8 +9,6 @@
 
   &__container {
     position: relative;
-
-    // padding: 0;
   }
 
   &__content {
@@ -88,13 +86,9 @@
       display: none;
     }
   }
-
-  &__btn {
-  }
 }
 
 .welcome__content.menu-open {
-  // only project museum louvre, revove this instruction
   z-index: 1;
 }
 
@@ -112,9 +106,6 @@
     @media (max-width: em(768)) {
       padding-bottom: 96px;
     }
-  }
-
-  &__wrapper {
   }
 
   &__slide {
@@ -156,8 +147,6 @@
     bottom: 0;
     left: 40%;
     display: flex;
-
-    // flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     column-gap: 15px;
@@ -206,9 +195,6 @@
     @media (max-width: em(450)) {
       font-size: 16px;
     }
-  }
-
-  &__dots {
   }
 
   &__buttons {
@@ -283,31 +269,4 @@
 
 .swiper-button-disabled {
   opacity: 0.6;
-}
-
-@media (width <= 1024px) {
-}
-
-@media (width <= 767.98px) {
-}
-
-@media (width <= 450px) {
-}
-
-.swiper {
-}
-
-.swiper-wrapper {
-}
-
-.swiper-slide {
-}
-
-.swiper-pagination {
-}
-
-.swiper-button-prev {
-}
-
-.swiper-button-next {
 }

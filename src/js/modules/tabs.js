@@ -29,7 +29,7 @@ export default function tabs() {
   tabsParent.addEventListener('click', (e) => {
     if (e.target && e.target.classList.contains('tabheader__item')) {
       tabs.forEach((item, i) => {
-        if (e.target == item) {
+        if (e.target === item) {
           hideTabContent();
           showTabContent(i);
         }

@@ -42,12 +42,6 @@
     }
   }
 
-  &__logo {
-  }
-
-  &__logo--img {
-  }
-
   &__title {
     font-family: var(--ff-secondary);
     font-weight: 400;
@@ -69,9 +63,6 @@
     &:not(:last-child) {
       margin-bottom: 10px;
     }
-  }
-
-  &__form {
   }
 }
 
@@ -159,9 +150,6 @@
     }
   }
 
-  &__images {
-  }
-
   &__price {
     margin-bottom: 10px;
   }
@@ -182,14 +170,6 @@
   &__swiper {
     width: 150px;
     height: 120px;
-  }
-  &__wrapper {
-  }
-
-  &__slide {
-  }
-
-  &__slide img {
   }
 }
 
@@ -225,9 +205,6 @@
   &__wrap-date {
     display: flex;
     justify-content: space-between;
-  }
-
-  &label {
   }
 
   &__date {
@@ -324,12 +301,6 @@
     border-radius: 7px;
   }
 
-  &__text {
-  }
-
-  &__price {
-  }
-
   .header-block__line {
     margin-bottom: 10px;
   }
@@ -339,12 +310,6 @@
     justify-content: space-between;
     font-size: 32px;
     font-weight: 400;
-  }
-
-  &__total-title {
-  }
-
-  &__total-price {
   }
 }
 
@@ -362,12 +327,6 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 18px;
-  }
-
-  &__subtitle {
-  }
-
-  &__stepper {
   }
 }
 

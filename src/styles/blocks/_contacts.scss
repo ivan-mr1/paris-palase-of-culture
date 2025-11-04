@@ -4,16 +4,10 @@
 .contacts {
   color: var(--second-color);
 
-  &__container {
-  }
-
   &__header-block {
     &:not(:last-child) {
       @include adaptive-clamp('margin-bottom', 75, 25);
     }
-  }
-
-  &__title {
   }
 
   &__content {
@@ -24,9 +18,6 @@
     @media (max-width: em(767.98)) {
       flex-direction: column;
     }
-  }
-
-  &__address {
   }
 
   &__map {

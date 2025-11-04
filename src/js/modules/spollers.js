@@ -1,4 +1,4 @@
-import { _slideUp, _slideToggle, _slideDown } from '../function';
+import { _slideUp, _slideToggle } from '../function';
 /*
 data-one-spoiler функция акордеона, может быть открыт только один спойлер из всех
 data-spoilers пустой атрибут вешаем на родителя, если надо вывести спойлеры, которые будут работать на любом разрешении экрана
@@ -10,22 +10,18 @@ export default function spollers() {
   const spollersArray = document.querySelectorAll('[data-spollers]');
   if (spollersArray.length > 0) {
     // Получение обычных слойлеров
-    const spollersRegular = Array.from(spollersArray).filter(
-      function (item, index, self) {
-        return !item.dataset.spollers.split(',')[0];
-      },
-    );
+    const spollersRegular = Array.from(spollersArray).filter(function (item) {
+      return !item.dataset.spollers.split(',')[0];
+    });
     // Инициализация обычных слойлеров
     if (spollersRegular.length > 0) {
       initSpollers(spollersRegular);
     }
 
     // Получение слойлеров с медиа запросами
-    const spollersMedia = Array.from(spollersArray).filter(
-      function (item, index, self) {
-        return item.dataset.spollers.split(',')[0];
-      },
-    );
+    const spollersMedia = Array.from(spollersArray).filter(function (item) {
+      return item.dataset.spollers.split(',')[0];
+    });
 
     // Инициализация слойлеров с медиа запросами
     if (spollersMedia.length > 0) {

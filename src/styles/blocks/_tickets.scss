@@ -4,14 +4,8 @@
 .tickets {
   color: var(--second-color);
 
-  &__container {
-  }
-
   &__header-block {
     @include adaptive-clamp('margin-bottom', 75, 25);
-  }
-
-  &__title {
   }
 
   &__content {
@@ -50,12 +44,6 @@
 }
 
 .slider-tickets {
-  &__swiper {
-  }
-
-  &__wrapper {
-  }
-
   &__slide {
     position: relative;
     aspect-ratio: 720 / 550;
@@ -88,9 +76,6 @@
     &:not(:last-child) {
       margin-bottom: 25px;
     }
-  }
-
-  &__span {
   }
 
   &__input {
@@ -154,16 +139,7 @@
 }
 
 .stapper {
-  &__button {
-  }
-
   &__number {
     text-align: center;
-  }
-
-  &__number--basic {
-  }
-
-  &__number--senior {
   }
 }

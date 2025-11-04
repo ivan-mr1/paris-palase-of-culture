@@ -2,16 +2,10 @@
 @use '../config/mixins' as *;
 
 .visiting {
-  &__container {
-  }
-
   &__header-block {
     &:not(:last-child) {
       @include adaptive-clamp('margin-bottom', 75, 25);
     }
-  }
-
-  &__title {
   }
 
   &__cards {
@@ -29,9 +23,6 @@
       grid-template-columns: minmax(280px, 100%);
       justify-content: center;
     }
-  }
-
-  &__card {
   }
 }
 
@@ -54,9 +45,6 @@
     &:not(:last-child) {
       @include adaptive-clamp('margin-bottom', 25, 18);
     }
-  }
-
-  &__img {
   }
 
   &__title {

@@ -12,14 +12,11 @@
 }
 
 .init .spollers__title {
-  cursor: pointer;
-}
-
-.init .spollers__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .init .spollers__title::after {
@@ -36,8 +33,6 @@
 .init .spollers__title.active::after {
   transform: rotate(-180deg);
 }
-
-// указать свои стили
 
 /* 
 add this markup to index.html

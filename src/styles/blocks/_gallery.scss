@@ -6,14 +6,8 @@
   overflow-y: hidden;
   background-color: var(--c-bg-body-dark);
 
-  &__container {
-  }
-
   &__header-block {
     @include adaptive-clamp('margin-bottom', 75, 25);
-  }
-
-  &__title {
   }
 
   &__items {

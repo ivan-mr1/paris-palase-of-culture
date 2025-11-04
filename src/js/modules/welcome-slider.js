@@ -50,4 +50,6 @@ export default function sliderWelcome() {
       },
     },
   });
+
+  return swiper;
 }
