@@ -4,7 +4,7 @@
 
 - Design: [link](https://www.figma.com/design/xkP6mIaq7uG1Uru7CpasXq/Museum-04.09)
 
-- Deploy: [link](https://ivan1986mrpl.github.io/paris-palase-of-culture/dist/)
+- Deploy: [link](https://ivan-mr1.github.io/paris-palase-of-culture/dist/)
 
 - Technologies: HTML, SCSS, Javascript, Vite, Eslint, Stylelint, Prettier
 
